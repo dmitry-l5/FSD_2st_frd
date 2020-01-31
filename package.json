@@ -1,0 +1,8 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dmitry-l5/FSD_2st_frd.git",
+  "author": "dmitry-l5 <60506213+dmitry-l5@users.noreply.github.com>",
+  "license": "MIT"
+}
