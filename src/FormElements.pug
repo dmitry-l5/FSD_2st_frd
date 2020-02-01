@@ -1,5 +1,6 @@
 doctype html
 include ./components/textFields/textFields
+include ./components/textFields_HF/textFields_hf
 html
     head
         meta(charset="UTF-8")
@@ -8,12 +9,13 @@ html
         style
 
     body
-        .ext_div_320 
-            //.border_block
-                div gcjghdhhcfcjgcjgfcg
+        .formElements-sheet
+            .ext_div_320 
+                //.border_block
+                    div gcjghdhhcfcjgcjgfcg
 
-            +texField({id: "#1", Left:"Text Field", Right:"Default", Placeholder: "Email"})
-            br
-            br
-            +texField({id: "#2", Left:"Text Field", Right:"Hover / Focus", Placeholder:"This is pretty awesome"})
-                
+                +texField({id: "#1", Left:"Text Field", Right:"Default", Placeholder: "Email"})
+                br
+                br
+                +texField_hf({id: "#2", Left:"Text Field", Right:"Hover / Focus", Placeholder:"This is pretty awesome"})
+

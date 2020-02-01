@@ -1,5 +1,14 @@
 @import  "./components/textFields/textFields.scss";
+@import  "./components/textFields_HF/textFields_hf.scss";
 .border_block{
+    border: 1px dotted black;
+}
+.formElements-sheet{
+    /* Form Elements */
+    position: relative;
+    width: 1440px;
+    height: 1853px;
+    background: #FFFFFF;
     border: 1px dotted black;
 }
 .ext_div_320{

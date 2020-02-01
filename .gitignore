@@ -2,5 +2,6 @@
 /.cache
 /fonts
 /docs
+/dist
 package-lock.json
 yarn.lock
