@@ -1,0 +1,26 @@
+//Call as:
+//+texField({id: "Input id", Left:"Left lable name", Right:"Right lable name"})
+//+texField({id: "Input id", Left:"Left lable name", Right:"Right lable name", Placeholder: "placeholder"})
+mixin texField(args) 
+    -
+        var leftLabel = args.Left?args.Left:"UNKNOWN",
+            rightLabel = args.Right?args.Right:"UNKNOWN";
+    div(class="textField")
+        div(class="textField__title")
+            label(for=args.id class="textField__leftLabel")= leftLabel
+            label(for=args.id class="textField__rightLabel")= rightLabel
+        div(class="textField__input")           
+            input(id=args.id ltype="text" placeholder=args.Placeholder )
+
+mixin dropdownList(args)
+    -
+        var leftLabel = args.Left?args.Left:"UNKNOWN";
+    
+    div(style={border: "1px solid gray"})
+        divdiv(class="inputInfo")
+            label(for=args.id style={border: "1px solid blue"} class="leftLabel")= leftLabel
+        div(class="input") 
+            select(name="DROPDOWN" style={border: "1px solid gray"} class="dropdown")
+                option(value="1") One *
+                option(value="2") One **
+                option(value="3") One Two Three Four ... COME ON!!! ***   
