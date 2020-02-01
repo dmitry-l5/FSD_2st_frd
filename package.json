@@ -4,5 +4,14 @@
   "main": "index.js",
   "repository": "https://github.com/dmitry-l5/FSD_2st_frd.git",
   "author": "dmitry-l5 <60506213+dmitry-l5@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/FormElements.pug --open",
+    "build": "parcel src/FormElements.pug -d docs --public-url ./assets "
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4",
+    "sass": "^1.25.0"
+  }
 }
