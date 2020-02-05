@@ -1,5 +1,6 @@
 @import  "./components/textFields/textFields.scss";
 @import  "./components/textFields_HF/textFields_hf.scss";
+@import  "./components/editableDropdown/editableDropdown.scss";
 .border_block{
     border: 1px dotted black;
 }
@@ -13,4 +14,6 @@
 }
 .ext_div_320{
     width: 320px;
+    border: 1px solid black;
+    
 }

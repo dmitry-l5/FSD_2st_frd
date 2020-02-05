@@ -27,6 +27,7 @@
   justify-content: space-between;
 }
 .textField_hf__leftLabel{
+  margin-bottom: 0px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -35,6 +36,7 @@
     text-transform: uppercase;
     float: left;
     color: #1F2041;
+    margin-top: 4px ;
 }
 .textField_hf__rightLabel{
     font-family: Montserrat;
@@ -46,6 +48,7 @@
     text-transform: uppercase;
     color: rgba(31, 32, 65, 0.5);
     float: right;
+    margin-bottom: 8px;
 }
 .textField_hf__input{
   display:flex; 
@@ -59,6 +62,10 @@
   border: 1px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
+}
+.textField_hf__input input{
+  height: 35px;
+  border:1px solid rgb(129, 129, 129);
 }
 .textField_hf__input:hover input{
   background-color: rgb(218, 237, 255);

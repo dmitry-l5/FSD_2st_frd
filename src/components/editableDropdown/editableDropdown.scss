@@ -1,0 +1,189 @@
+@font-face{
+
+    font-family: 'Montserrat';  
+    src: url('../fonts/Montserrat-Bold.svg') format('svg'),
+    url('../fonts/Montserrat-Bold.woff') format('woff'),
+    url('../fonts/Montserrat-Bold.ttf') format('truetype');  
+    font-weight: bold;
+    font-style: normal;  
+  }
+  @font-face{
+  
+    font-family: 'Montserrat';  
+    src: url('../fonts/Montserrat-Medium.svg') format('svg'),
+    url('../fonts/Montserrat-Medium.woff') format('woff'),
+    url('../fonts/Montserrat-Medium.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;  
+  }
+  
+  
+  .dropdownField{
+   margin: 0px;
+   padding: 0px;
+   position: relative; 
+  }
+  .dropdownField__title{
+    display:flex; 
+    justify-content: space-between;
+  
+  }
+  .dropdownField__leftLabel{
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      float: left;
+      color: #1F2041;
+      margin-top: 4px ;
+  }
+  .dropdownField__rightLabel{
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: right;
+      text-transform: uppercase;
+      color: rgba(31, 32, 65, 0.5);
+      float: right;
+      margin-bottom: 8px;
+  }
+  .dropdownField__input{
+    display:flex; 
+    flex-direction:column;     
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    background: #FFFFFF;
+    /* Dark 50% */
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  .dropdownField__input input{
+    height: 39px;
+    background-image: url(./components/editableDropdown/expand_more.svg);
+    background-position: right 10px top 15px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    border:1px solid rgb(129, 129, 129);
+    
+  }
+  .dropdownField__list{
+        display: block;
+        margin-top: -2px;
+        padding-top: 5px;
+        border-radius:0px 0px 4px 4px;
+        border:2px solid rgb(129, 129, 129);
+        background: white;
+        position: absolute; 
+        width: 100%;
+        padding: 0px;;
+        z-index: 1;
+  }
+  .dropdownField__footer{
+      width: 100%;
+      //border:2px solid rgb(129, 129, 129);
+  }
+  .dropdownField__acceptRight{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    text-align: right;
+    color: #1F2041;
+    height: 30px;
+    //border: 1px solid black; 
+    margin-top: 3px;
+    width: 50%;
+    
+  }
+  .dropdownField__acceptLeft{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    text-align: left;
+    color: #1F2041;
+    //border: 1px solid black;
+    width: 50%;
+    height: 30px;
+    margin-top: 3px;
+  }
+
+    .tlistItem{
+        //background: rgb(94, 255, 0);
+        height: 40px;
+        margin: 0px;
+       
+        padding-right: 4px;
+        padding-left: 10px;
+        padding-top: 0px;
+        //border: 1px solid black;
+        //border-spacing: 0px 0px;
+    }
+    .tlistItem__table{
+        //border: 1px solid black;
+        height: 30px;
+        width: 100%;
+        border-spacing: 2px 0px;
+        margin: -2px 0px 0px 0px;
+    }
+
+    .tlistItem__title {
+        //border:solid 1px rgba(0, 128, 0, 0.473);            
+        margin:0px;
+        padding: 0px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        //background: rgb(255, 208, 0);
+    }
+    .tlistItem__count {
+
+        //background: rgb(255, 230, 0);
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        width: 30px;
+        height: 30px;
+        //border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        //border-radius: 22px;
+        text-align: center;
+    }
+    .tlistItem__button {
+
+        //background: rgb(94, 255, 0);
+
+        width: 30px;
+        height: 30px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        border-radius: 22px;
+        text-align: center;
+    }

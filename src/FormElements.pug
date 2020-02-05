@@ -1,21 +1,21 @@
 doctype html
 include ./components/textFields/textFields
 include ./components/textFields_HF/textFields_hf
+include ./components/editableDropdown/editableDropdown
 html
     head
         meta(charset="UTF-8")
         title Form Elements
         link(rel="stylesheet", href="FormElements.scss")
-        style
-
+        style.
     body
+        
         .formElements-sheet
             .ext_div_320 
-                //.border_block
-                    div gcjghdhhcfcjgcjgfcg
-
                 +texField({id: "#1", Left:"Text Field", Right:"Default", Placeholder: "Email"})
                 br
-                br
                 +texField_hf({id: "#2", Left:"Text Field", Right:"Hover / Focus", Placeholder:"This is pretty awesome"})
-
+                br
+                +editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})
+                +editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})
+                +editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})

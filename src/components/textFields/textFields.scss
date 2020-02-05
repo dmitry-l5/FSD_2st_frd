@@ -25,6 +25,7 @@
 .textField__title{
   display:flex; 
   justify-content: space-between;
+
 }
 .textField__leftLabel{
     font-family: Montserrat;
@@ -35,6 +36,7 @@
     text-transform: uppercase;
     float: left;
     color: #1F2041;
+    margin-top: 4px ;
 }
 .textField__rightLabel{
     font-family: Montserrat;
@@ -46,6 +48,7 @@
     text-transform: uppercase;
     color: rgba(31, 32, 65, 0.5);
     float: right;
+    margin-bottom: 8px;
 }
 .textField__input{
   display:flex; 
@@ -61,6 +64,10 @@
   border: 1px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
+}
+.textField__input input{
+  height: 35px;
+  border:1px solid rgb(129, 129, 129);
 }
 
 

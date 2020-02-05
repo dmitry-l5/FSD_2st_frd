@@ -1,0 +1,30 @@
+//Call as:
+//+editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})
+mixin editableDropdown(args, ...listItems)
+    -
+        var leftLabel = args.Left?args.Left:"UNKNOWN",
+            rightLabel = args.Right?args.Right:"UNKNOWN";
+        var baseId = args.id + "_dropdown";
+    div(id=baseId, name="base", class="dropdownField", data-label=leftLabel) 
+        div(class="dropdownField__title")
+            label(for=args.id class="dropdownField__leftLabel")= leftLabel
+            label(for=args.id class="dropdownField__rightLabel")= rightLabel
+        div( class="dropdownField__input") 
+            input(name="target", data-fullList="nothing", class="hz2")
+        div(name="dropdown", class="dropdownField__list", style={display: "none"})        
+                each item in listItems
+                    +dropdownListItem(item.name, item.min, item.max)
+                table(class="dropdownField__footer")
+                    td(name="reset", class="dropdownField__acceptLeft")  сброс
+                    td(name="accept", class="dropdownField__acceptRight") применить 
+        script
+            include Dropdown.js
+    
+mixin dropdownListItem(name, minCount, maxCount)
+    -
+    div(name="row", class="tlistItem", data-min=minCount, data-max=maxCount, data-current=minCount)
+        table(class="tlistItem__table")
+            td(name="title", class="tlistItem__title", data-title=name)= name
+            td(name="decButton", class="tlistItem__button") -
+            td(name="currentCount",class="tlistItem__count")= maxCount
+            td(name="incButton", class="tlistItem__button") +
