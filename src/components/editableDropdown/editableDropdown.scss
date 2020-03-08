@@ -85,6 +85,7 @@
         position: absolute; 
         width: 100%;
         padding: 0px;;
+        box-sizing: border-box;
         z-index: 1;
   }
   .dropdownField__footer{
@@ -138,6 +139,7 @@
         width: 100%;
         border-spacing: 2px 0px;
         margin: -2px 0px 0px 0px;
+        
     }
 
     .tlistItem__title {

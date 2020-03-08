@@ -1,0 +1,108 @@
+
+mixin dateDropdown(arg)
+    -
+        var prefix = arg.prefix;
+        var p = "tttt";
+        var baseId =  arg.id;        
+        function daysInMonth (year, month) { 
+            return new Date(year, month, 0).getDate(); 
+        } 
+        function reload(pre){
+            fstDate = document.getElementById(pre + "fst");
+            scdDate = document.getElementById(pre + "scd").innerHTML;
+            //var startDay = fstDate.
+        }
+        function init(p){
+            //reload();
+            alert(p);
+        }
+
+    div(id=baseId, name="base", class="dateDropdown")
+        div(name="title", class="dateDropdown__title")
+            table(class="dateDropdown__table")
+                tr
+                    td(name="inHeader", class="dateDropdown__titles") Прибытие
+                    td(name="outHeader", class="dateDropdown__titles") Выезд
+                tr
+                    td(name="dateIn", class="dateDropdown__dataCells left")
+                        input(name="target", data-fullList="nothing", class="dateDropdown__dataInput")
+                    td(name="dateOut", class="dateDropdown__dataCells right")
+                        input(name="target", data-fullList="nothing", class="dateDropdown__dataInput")
+
+        +calendar()        
+        script
+            include dateDropdown.js
+
+mixin calendar(arg)
+    -
+    div(name="calendar", class="calendar")
+        table(class="calendar__header")
+            tr
+                td(name="prev", class="dateDropdown__prevButton" ) 
+                td(name="monthTitle", class="dateDropdown__montTitle" ) monthTitle
+                td(name="yearTitle", class="dateDropdown__yearTitle" ) yearTitle
+                td(name="next", class="dateDropdown__nextButton" ) 
+        table(name="daysArea",class="calendar__month")
+            script.
+                var shift = 40;
+                let scripts = document.getElementsByTagName("script");
+                var base = scripts[scripts.length - 1].parentNode;
+                base.style.width = (base.parentNode.offsetWidth-shift)+ "px";
+                base.style.marginLeft = (shift/2)+ "px";
+                base.style.height = (base.parentNode.offsetWidth-shift)+"px" ;
+            tr(class="calendar__daysTitle")
+                th Пн
+                th Вт
+                th Ср
+                th Чт
+                th Пт
+                th Сб
+                th Вс 
+            - for(p = 0; p<6; p++)
+                tr(class="")
+                    - for(z = 0; z < 7; z++)
+                        td(name="cell", class="calendar__normalCells") X
+                        //td(name="cell"+(p*7 + z), class="calendar__normalCells") X
+
+
+
+                
+        
+        
+        
+        
+        
+    
+        
+        //div(class="calendar__month")  
+            
+
+
+
+            ul(class="calendar__daysTitle")
+                li Пн
+                li Вт
+                li Ср
+                li(class="rrr") Чт
+                li Пт
+                li Сб
+                li Вс  
+            ul(class="calendar__dayCells")
+                -for( j = 0; j<6;j++)
+                    -for(i = 0; i <7; i++)
+                        -var hz = (j*7)+i
+                        li(id="dayCell-"+hz, onclick='msg(this.id)')=hz
+        //script. 
+            var scripts = document.getElementsByTagName('script');
+            var base = scripts[scripts.length - 1].parentNode;
+            console.log("111111111111111111111111111111111111111111111111111111111111111");
+            console.log(base);
+            console.log(base.offsetWidth);
+            console.log(base.offsetHeight);
+            base.style.height = base.offsetWidth + "px";
+                        console.log(base.offsetWidth);
+            console.log(base.offsetHeight);
+                      
+        table(class="dropdownField__footer")
+            td(name="reset", class="dropdownField__acceptLeft")  сброс
+            td(name="accept", class="dropdownField__acceptRight") применить 

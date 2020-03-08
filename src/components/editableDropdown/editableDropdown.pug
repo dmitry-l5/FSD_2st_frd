@@ -5,7 +5,7 @@ mixin editableDropdown(args, ...listItems)
         var leftLabel = args.Left?args.Left:"UNKNOWN",
             rightLabel = args.Right?args.Right:"UNKNOWN";
         var baseId = args.id + "_dropdown";
-    div(id=baseId, name="base", class="dropdownField", data-label=leftLabel) 
+    div(id=baseId, name="base", class="dropdownField") 
         div(class="dropdownField__title")
             label(for=args.id class="dropdownField__leftLabel")= leftLabel
             label(for=args.id class="dropdownField__rightLabel")= rightLabel

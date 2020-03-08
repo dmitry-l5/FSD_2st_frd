@@ -1,0 +1,324 @@
+@font-face{
+
+    font-family: 'Montserrat';  
+    src: url('../fonts/Montserrat-Bold.svg') format('svg'),
+    url('../fonts/Montserrat-Bold.woff') format('woff'),
+    url('../fonts/Montserrat-Bold.ttf') format('truetype');  
+    font-weight: bold;
+    font-style: normal;  
+  }
+  @font-face{
+  
+    font-family: 'Montserrat';  
+    src: url('../fonts/Montserrat-Medium.svg') format('svg'),
+    url('../fonts/Montserrat-Medium.woff') format('woff'),
+    url('../fonts/Montserrat-Medium.ttf') format('truetype');  
+    font-weight: normal;
+    font-style: normal;  
+  }
+
+  @font-face{
+
+    font-family: 'Quicksand';  
+    src: url('../fonts/Quicksand-Bold.svg') format('svg'),
+    url('../fonts/Quicksand-Bold.woff') format('woff'),
+    url('../fonts/Quicksand-Bold.ttf') format('truetype');  
+    font-weight: bold;
+    font-style: normal;  
+  }
+
+.dateDropdown{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    position: relative;
+
+
+    background: #FFFFFF;
+border: 1px solid rgba(31, 32, 65, 0.25);
+box-sizing: border-box;
+box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+border-radius: 4px;
+}
+.dateDropdown__title{
+    //height: 40px;
+    margin: 0px;
+   
+
+}
+.dateDropdown__table td{
+    border: chartreuse 1px solid;
+}
+.dateDropdown__table{
+
+    width: 100%;
+    border-spacing: 0px 0px;
+    
+    border: 1px solid black;
+}
+.dateDropdown__dataCells{
+
+    background: #FFFFFF;
+    padding: 0px 00px 0px 0px;
+
+}
+
+
+.right{
+    float: right;
+}
+.dateDropdown__titles{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+    border: rgb(81, 0, 255) 1px solid;
+    /* Dark 100% */
+    color: #1F2041;
+}
+.dateDropdown__dataInput{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    width: 150px;
+    height: 44px;
+    left: 760px;
+    top: 260.44px;
+    background: #FFFFFF;
+    /* Dark 25% */
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    background-image: url(./components/dateDropdown/expand_more.svg);
+    background-position: right 15px top 15px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    border:1px solid rgb(129, 129, 129);
+
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 171% */
+
+/* Dark 75% */
+color: rgba(31, 32, 65, 0.75);
+
+}
+.dateDropdown__calendar{
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(238, 255, 0, 0.5);
+    position: absolute;
+    border: 3px solid rgb(255, 0, 136);
+}
+.calendar__header{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+.calendar__header ul{
+    margin: 0;
+    padding: 0;
+}
+.calendar__header ul li{
+    width: 20%;
+    list-style-type: none;
+    border: 1px solid rgb(255, 0, 136);
+}
+.dateDropdown__montTitle{
+    font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 24px;
+color: #1F2041;
+    text-align: right;
+    border: 1px solid rgb(255, 0, 136);
+    width: 25%;
+}
+.dateDropdown__yearTitle{
+    font-family: Quicksand;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 24px;
+/* Dark 100% */
+color: #1F2041;
+    text-align: left;
+    border: 1px solid rgb(255, 0, 136);
+    width: 25%;
+}
+.dateDropdown__prevButton{
+    /*float: left;*/
+    border: 1px solid rgb(255, 0, 136);
+    background-image: url(./components/dateDropdown/arrow_back.svg);
+    transform: scale(1,-1);
+    background-position: right 10px top 15px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10%;
+
+}
+.dateDropdown__nextButton{
+    /*float: right;*/
+    width: 10%;
+    border: 1px solid rgb(255, 0, 136);
+    background-image: url(./components/dateDropdown/arrow_forward.svg);
+    background-position: center;
+    background-size: 15px;
+    background-repeat: no-repeat;
+}
+.days {
+    padding: 0px 0;
+    background: rgb(255, 255, 255);
+    margin: 0;
+}
+.days ul{
+padding: 20px;
+padding-right: 0px;
+padding-top: 10px;
+padding-bottom: 0;
+}
+.days li {
+        list-style-type: none;
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 12px;
+        color: #777;
+
+}
+.calendar__month{
+    margin-bottom: 10px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(17, 0, 255);
+    border-spacing:0px 0px 0px 0px;
+    /*border-collapse: collapse;*/
+    border-spacing: 0;
+}
+.calendar__daysTitle {
+    margin: 0px;
+    padding:0px;
+
+    text-align: left;
+
+}
+.calendar__daysTitle th{
+
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    /* Primary Color */
+    color: #BC9CFF;
+    height: 13.6%;
+    width: 13.6%;
+
+}
+.calendar__dayCells{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.calendar__dayCells td{
+    padding: 0px;
+    margin: 0px;
+    background: rgb(21, 255, 0);
+    
+    border-radius: 40px;
+    height: 13.6%;
+    width: 13.7%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+
+    /* Secondary Gradient */
+
+border-radius: 22px;
+    
+}
+.calendar__normalCells{
+    padding: 0px;
+    margin: 0px;
+    background: white;
+    color: black;
+    
+    border-radius: 40px;
+    height: 13.6%;
+    width: 13.7%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+
+    /* Secondary Gradient */
+
+    border-radius: 22px;
+    
+}
+.calendar__mutedCells{
+    color: rgba(31, 32, 65, 0.25);
+}
+.calendar__greenCells{
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    color: white;
+}
+.calendar__blueCells{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: white;
+}
+
+.calendar__middleCells{
+    padding: px;
+    margin: 10px;
+    color: black;
+    height: 13.6%;
+    width: 13.7%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+
+    /* Secondary Gradient */
+
+    background:rgba(127, 157, 255, 0.5) ;
+    border-radius: 22px;
+}
+.calendar{
+    border: 0px brown double;
+}

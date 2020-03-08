@@ -1,4 +1,3 @@
-
 var scripts = document.getElementsByTagName('script');
 var base = scripts[scripts.length - 1].parentNode;
 clear(base);
@@ -11,17 +10,11 @@ base.onclick = function (event) {
     let panel = this.querySelector("[name=dropdown]");
     let rowDate = {};
 
-    console.log(target.getAttribute("name"));
-    console.log(this);
-
-
     switch (target.getAttribute("name")) { 
         case "base":
             break;
         case "target":
-
             panel.style.display = (panel.style.display == "none") ? "block" : "none";
-
             break;
         case "reset":
             clear(this);
@@ -65,10 +58,6 @@ function listUpdate(panel) {
     let result = 0;
     for (let i = 0; i < rows.length - 1; i++) {
         let data = getRowData(rows[i]);
-        console.log(rows[i]);
-        console.log(data);
-        console.log((data.current < data.max));
-        console.log((data.current > data.min));
         rows[i].querySelector("[name=currentCount]").innerHTML = data.current;
         rows[i].querySelector("[name=incButton]").style.visibility =
             (data.current < data.max) ? "visible" : "hidden";
@@ -83,8 +72,6 @@ function inputUpdate(base) {
     let rows = panel.children;
     let count = 0;
     let result = 0;
-
-    console.log(rows);
     mainInput.setAttribute("data-fullList", "");
     for (let i = 0; i < rows.length - 1; i++) {
         result += parseInt(rows[i].getAttribute("data-current"));
@@ -92,13 +79,10 @@ function inputUpdate(base) {
             rows[i].querySelector("[name=title]").getAttribute("data-title") + ":" +
             rows[i].getAttribute("data-current") + ";");
     }
-
     base.querySelector("[name=target]").value = getCustomTitle({ result });
-
 }
 
 function clear(base) {
-    console.log(base);
     let mainInput = base.querySelector("[name=target]");
     let panel = base.querySelector("[name=dropdown]");
     let rows = panel.children;
@@ -110,13 +94,8 @@ function clear(base) {
     listUpdate(panel);
 }
 
-
-
-//function accept(base) {
-
-//}
 function getCustomTitle(args) {
-    if (args.result == "default") { return "Сколько гостей"; }
+    if (args.result == "default") { return "Сколько гостей?"; }
     if (args.result  == 0 || args.result > 4) {
         return args.result  + " Гостей";
     }
