@@ -1,0 +1,5 @@
+mixin link(arg)
+    -
+        var _title = arg.title?arg.title:"UNKNOWN",
+        _href = arg.href?arg.href:"*";
+    a(class="link" href=_href)=_title

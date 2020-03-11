@@ -1,0 +1,83 @@
+doctype html
+//include ../components/header/header
+include ../components/label/label
+include ../components/link/link
+head    
+    link(rel="stylesheet" href="common.scss")
+    meta(charset="UTF-8")
+    title Search Room v.1
+    meta(name="viewport" content="width=device-width, initial-scale=1" )
+    link(rel="stylesheet" href="SearchRoom_1.scss")
+    link(rel="stylesheet" href="../modules/common_modules.scss")
+
+body
+    .page
+        //main grid
+        .base
+            //grid header
+            .header
+                include ../modules/header.pug
+            //filter bar
+            .left_side
+                div
+                    span(class="common__inputTitle") Даты пребывания в отеле
+                    input(class="common__inputDropdown")
+                div
+                    span(class="common__inputTitle") Гости
+                    input(class="common__inputDropdown")
+                div
+                    span(class="common__inputTitle") дивпазон цены
+                    span(class="common__inputText12Up") 5 000p-10 000p
+                    input(class="common__inputDropdown" value="This is slaider!!!")
+                    span(class="common__inputText12") Стоимость за сутки пребывания в номере
+                div
+                    span(class="common__inputTitle") Опции
+                    br
+                    input(type="checkbox") 
+                    span(class="common__inputText12") Можно курить
+                    br
+                    input(type="checkbox") 
+                    span(class="common__inputText12") Можно с питомцами
+                    br
+                    input(type="checkbox") 
+                    span(class="common__inputText12") Можно пригласить гостей (до 10 человек)
+                div
+                    span(class="common__inputTitle") доступность
+                    br
+                    input(type="checkbox") 
+                    span(class="common__inputText12") Широкий коридор
+                    br
+                    span(class="common__inputText12") Ширина коридоров в номере не менее 91 см.
+                    br
+                    input(type="checkbox") 
+                    span(class="common__inputText12") Помощник для инвалидов
+                    br
+                    span(class="common__inputText12") На 1 этаже вас встретит специалист  и проводит до номера.
+                div
+                    span(class="common__inputTitle") удобства номера
+                    input(class="common__inputDropdown")
+                div
+                    input(class="common__inputDropdown" value="дополнительные удобства")
+
+            //grid room prevews
+            .main
+                p
+                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+                p 
+                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+                p
+                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+                p
+                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+                p
+                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+                p
+                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+
+            //grid footer
+            .footer
+                include ../modules/footer.pug
+
+            //grid social links
+            .social
+                include ../modules/social.pug

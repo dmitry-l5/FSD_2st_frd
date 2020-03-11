@@ -1,0 +1,30 @@
+.footerModule{
+    display: flex;
+}
+.footerModule ul{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.footerModule>div:first-child{
+    flex:25% 1 1;
+    
+}
+.footerModule>div:last-child{
+    flex:25% 1 1;
+}
+.footerModule>div:not(:first-child):not(:last-child){
+    flex:16.67% 1 1;
+}
+.footerModule>*+*{
+    margin-left: 25px;
+}
+
+
+
+
+
+.socialModule{
+    display: flex;
+}

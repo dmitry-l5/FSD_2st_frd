@@ -6,8 +6,8 @@
   "author": "dmitry-l5 <60506213+dmitry-l5@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/FormElements.pug --open",
-    "build": "parcel src/FormElements.pug -d docs --public-url ./assets "
+    "dev": "parcel src/pages/SearchRoom_1.pug --open",
+    "build": "parcel src/pages/SearchRoom_1.pug -d docs --public-url ./assets "
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
