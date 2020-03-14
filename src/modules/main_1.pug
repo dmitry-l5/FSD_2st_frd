@@ -1,0 +1,73 @@
+//requaire : ../components/common/formItems_base.js
+script
+    include ../components/common/formItems_base.js
+p hello main_1.pug
+
+mixin checkboxContainer(arg)
+    -
+        let numID = arg.id;
+        let title = arg.title?arg.title:"Title";
+    div.checkboxPanel(id = arg.id) 
+        .checkboxPanel__title= title
+        if block
+            block
+            script. 
+                say();
+                let scripts = document.getElementsByTagName("script");
+                let base = scripts[scripts.length - 1].parentNode;
+                console.log(base.id);
+
+                setFormItem(base.id);
+
+                infoFormItems();
+                //if(window.formItems == void 0)
+                //{
+                //    console.log("Create variable formItems");
+                //    var formItems = [];
+                //}
+                //let item = {
+                //    id:base.id,
+                //    value:{
+                //        getState: 
+                //            function(id){
+                //                console.log("This is HANDLER");
+                //            }
+                //    }
+                //};
+                //formItems.push(item);
+                //console.log(window.formItems);
+                base.onclick = function(){
+                    formItems.forEach(function(item){
+                            item.value.getState(item);
+                            
+                        }
+                    );
+                    //alert(this.id);
+                }
+        else
+            p empty block passed
+mixin checkboxItem(arg)
+    -
+        let id = arg.id;
+        let state = arg.check? "true":"false";
+        let name = arg.name?arg.name:"UNKNOWN";
+        let title = arg.title?arg.title:"Title";
+        let comment = arg.comment?arg.comment:"Coment";
+    div.checkboxItem
+        if(arg.withoutComent)
+            div.checkboxItem__mainRow
+                if(state == "true") 
+                    input(type="checkbox",id=id, checked, name=name)
+                else
+                    input(type="checkbox",id=id, name=name)
+                span.checkboxItem__additionalRow= title
+        else
+            div.checkboxItem__mainRow
+                if(state == "true") 
+                    input(type="checkbox",id=id, checked, name=name)
+                else
+                    input(type="checkbox",id=id, name=name)
+                span= title
+            div.checkboxItem__additionalRow
+                span= comment
+        

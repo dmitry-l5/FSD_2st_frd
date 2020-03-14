@@ -8,9 +8,9 @@ head
     title Search Room v.1
     meta(name="viewport" content="width=device-width, initial-scale=1" )
     link(rel="stylesheet" href="SearchRoom_1.scss")
-    link(rel="stylesheet" href="../modules/common_modules.scss")
-
+    link(rel="stylesheet" href="../modules/common_modules.scss")   
 body
+
     .page
         //main grid
         .base
@@ -19,6 +19,7 @@ body
                 include ../modules/header.pug
             //filter bar
             .left_side
+                include ../modules/main_1.pug
                 div
                     span(class="common__inputTitle") Даты пребывания в отеле
                     input(class="common__inputDropdown")
@@ -31,28 +32,34 @@ body
                     input(class="common__inputDropdown" value="This is slaider!!!")
                     span(class="common__inputText12") Стоимость за сутки пребывания в номере
                 div
-                    span(class="common__inputTitle") Опции
-                    br
-                    input(type="checkbox") 
-                    span(class="common__inputText12") Можно курить
-                    br
-                    input(type="checkbox") 
-                    span(class="common__inputText12") Можно с питомцами
-                    br
-                    input(type="checkbox") 
-                    span(class="common__inputText12") Можно пригласить гостей (до 10 человек)
+                    +checkboxContainer({id:"options", title:"Опции"})
+                        +checkboxItem({
+                            id:"hz", 
+                            title:"Можно курить",
+                            withoutComent:"true"
+                            })
+                        +checkboxItem({
+                            id: "hz", 
+                            title:"Можно с питомцами",
+                            withoutComent:"true"
+                            })
+                        +checkboxItem({
+                            id: "hz", 
+                            title:"Можно пригласить гостей (до 10 человек)",
+                            withoutComent:"true"
+                            })
                 div
-                    span(class="common__inputTitle") доступность
-                    br
-                    input(type="checkbox") 
-                    span(class="common__inputText12") Широкий коридор
-                    br
-                    span(class="common__inputText12") Ширина коридоров в номере не менее 91 см.
-                    br
-                    input(type="checkbox") 
-                    span(class="common__inputText12") Помощник для инвалидов
-                    br
-                    span(class="common__inputText12") На 1 этаже вас встретит специалист  и проводит до номера.
+                    +checkboxContainer({id:"availability", title:"доступность"})
+                        +checkboxItem({
+                            id:"hz", 
+                            title:"Широкий коридор", 
+                            comment:"Ширина коридоров в номере не менее 91 см."
+                            })
+                        +checkboxItem({
+                            id: "hz", 
+                            title:"Помощник для инвалидов", 
+                            comment:"На 1 этаже вас встретит специалист  и проводит до номера."
+                            })
                 div
                     span(class="common__inputTitle") удобства номера
                     input(class="common__inputDropdown")
@@ -61,18 +68,25 @@ body
 
             //grid room prevews
             .main
-                p
-                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
-                p 
-                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
-                p
-                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
-                p
-                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
-                p
-                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
-                p
-                    span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo explicabo quia temporibus est, placeat, hic adipisci optio, neque aliquid incidunt odit. Expedita quas error totam, officia pariatur blanditiis iste velit.
+                include ../modules/main_1.pug
+
+                +checkboxContainer({id:"testCheckbox_1"})
+                    +checkboxItem({id:"qwe", check: "da", name:"one"})
+                    +checkboxItem({id: "123"})
+                    +checkboxItem({name:"three"})
+                    +checkboxItem({name:"four"})
+
+                +checkboxContainer({id:"testCheckbox_2"})
+                    +checkboxItem({name:"one"})
+                    +checkboxItem({name:"two"})
+                    +checkboxItem({name:"three"})
+                    +checkboxItem({name:"four"})
+
+                +checkboxContainer({id:"testCheckbox_3"})
+                    +checkboxItem({name:"one", coment:"coment"}) 
+                    +checkboxItem({name:"two"})
+                    +checkboxItem({name:"three"})
+                    +checkboxItem({name:"four"})
 
             //grid footer
             .footer

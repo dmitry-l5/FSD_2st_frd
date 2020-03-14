@@ -1,30 +1,10 @@
-@font-face{
+@import "./../ColorsANDText.scss";
 
-    font-family: 'Montserrat';  
-    src: url('../fonts/Montserrat-Bold.svg') format('svg'),
-    url('../fonts/Montserrat-Bold.woff') format('woff'),
-    url('../fonts/Montserrat-Bold.ttf') format('truetype');  
-    font-weight: bold;
-    font-style: normal;  
-  }
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Medium.svg') format('svg'), 
-    url('../fonts/Montserrat-Medium.woff') format('woff'), 
-    url('../fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 .common__whiteButton {
     border-radius: 22px;
     border: 2px solid #BC9CFF;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-    text-transform: uppercase;
+    
+    @extend %h3_text;
     /* Primary Color */
     color: #BC9CFF;
 
@@ -36,13 +16,8 @@
 .common__blueButton {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-    text-transform: uppercase;
+
+    @extend %h3_text;
     color: #FFFFFF;
 
     padding-left:20px;
@@ -51,16 +26,10 @@
     padding-bottom:10px;
 }
 .common__inputTitle{
-font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 12px;
-line-height: 15px;
-/* identical to box height */
-text-transform: uppercase;
+    @extend %h3_text;
 
 /* Dark 100% */
-color: #1F2041;
+color: $dark-100_color;
 }
 
 
@@ -80,41 +49,110 @@ color: #1F2041;
     border: 1px solid rgb(129, 129, 129);
 }
 .common__inputText14{
-    font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 18px;
 /* identical to box height, or 129% */
-
+@extend %body_text;
 /* Dark 50% */
-color: rgba(31, 32, 65, 0.5);
+color: $dark-50_color;
 }
 .common__inputText12Up{
-    font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 15px;
-/* identical to box height */
-text-align: right;
-text-transform: uppercase;
-
+@extend %h3_text;
 /* Dark 50% */
-color: rgba(31, 32, 65, 0.5);
+color: $dark-50_color;
 }
 
 .common__inputText12{
-    font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 14px;
-/* identical to box height, or 117% */
-
+@extend %body_text;
 /* Dark 50% */
-color: rgba(31, 32, 65, 0.5);
+color: $dark-50_color;
 }
 .test{
     background-color: crimson;
+}
+
+
+
+
+.checkboxItem{
+    & > .checkboxItem__mainRow{
+        display: flex;
+        align-items: center;
+        @extend %h3_text;
+        color: &dark-25_color;
+
+        & > span{
+            margin-left: 5px;
+        }
+
+        & > input[type=checkbox]{
+
+            flex: 20px 0 0;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            display: inline-block;        
+            width: 20px;
+            height: 20px;
+            background-color: #FFFFFF;
+            /* Primary Color */
+            border: 1px solid $dark-50_color;
+            border-radius: 4px;
+        }
+        & > input[type=checkbox]:checked{
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url(../images/checkbox_arrow.svg) ;
+            background-position: right 4px top 2px;
+            background-size: 11px;
+            background-repeat: no-repeat;
+            border: 1px solid $primary_color;
+            background-color: #FFFFFF;
+        }
+        /**/
+        /*---IE---*/
+        & > input::-ms-check{
+            background-color: #fafafa;
+            border: 1px solid #cacece;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            padding: 9px;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+        }
+        & >  input:checked::-ms-check{
+            background: url(../images/checkbox_arrow.svg) ;
+            background-position: right 4px top 2px;
+            background-size: 11px;
+            background-repeat: no-repeat;
+            border: 1px solid $primary_color;
+            background-color: #FFFFFF;
+        }
+        /*---IE---*/
+        /**/
+    }    
+
+    & >.checkboxItem__additionalRow{
+        @extend %comment_text;
+        color: $dark-75_color;
+        margin-left: 35px;
+    }    
+    & * .checkboxItem__additionalRow{
+        @extend %body_text;
+        color: $dark-75_color;
+        text-transform: none;
+        margin-left: 5px;
+
+    }
+
+}
+.checkboxPanel> *+*{
+    margin-top:5px;
+    padding: 0px;
+}
+.checkboxPanel__title:nth-child(1){
+    margin-bottom:15px;
+}
+.checkboxPanel__title{
+    @extend %h3_text;
 }
