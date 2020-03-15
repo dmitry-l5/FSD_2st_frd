@@ -3,7 +3,7 @@ function say() {
 }
 function setFormItem(id) {
     if (window.formItems == void 0) {
-         window.formItems = [];
+        window.formItems = [];
     }
     let tmp = {
         id: id

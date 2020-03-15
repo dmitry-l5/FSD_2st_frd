@@ -156,3 +156,96 @@ color: $dark-50_color;
 .checkboxPanel__title{
     @extend %h3_text;
 }
+
+.dropdownInput{
+    margin: 0px;
+    padding: 0px;
+    position: relative; 
+    & > .dropdownInput__title{
+        display: flex;
+
+        & > .dropdownInput__leftLabel{
+            @extend %h3_text;
+            color: $dark-100_color;
+        }
+
+        & > .dropdownInput__rightLabel{
+            @extend %leftLabel_text;
+            color: $dark-50_color;
+            margin-left: auto;
+        }
+    }
+
+    & > .dropdownInput__input{
+        display:flex; 
+        flex-direction:column;     
+        background: #FFFFFF;
+        /* Dark 50% */
+        border: 1px solid $dark-50_color;
+        box-sizing: border-box;
+        border-radius: 4px;
+        
+        & > input{
+            @extend %body_text;
+            color: $dark-75_color;
+            height: 39px;
+            background-image: url(../images/expand_more.svg);
+            background-position: right 10px top 15px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            border:1px solid rgb(129, 129, 129);
+        }
+
+    }
+
+    & > .dropdownInput__list{
+        display: block;
+        margin-top: -2px;
+
+        border-radius:0px 0px 4px 4px;
+        border:2px solid rgb(129, 129, 129);
+        background: white;
+        position: absolute; 
+        width: 100%;
+        padding: 0px 5px 0px 10px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+}
+
+
+.tlistItem{
+    display: flex;
+    align-items: center;
+    & > * {
+        margin-top: 7px;
+        margin-bottom: 0px;
+    }
+
+    & > * + * {
+        margin-left: 12px;
+    }
+
+    & > .tlistItem__title{
+        @extend %h3_text;
+    }
+    & > .tlistItem__spliter{
+        margin-left: auto;
+    }
+    & > .tlistItem__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid  $dark-25_color;
+        box-sizing: border-box;
+        border-radius: 22px;
+        @extend %body_text;
+        color: $dark-50_color;
+    }
+    & > .tlistItem__count{
+        @extend %h3_text;
+    }
+}

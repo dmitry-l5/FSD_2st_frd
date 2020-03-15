@@ -2,7 +2,7 @@
 script
     include ../components/common/formItems_base.js
 p hello main_1.pug
-
+//////////////////////////////////////////////////////////////////////////////////////
 mixin checkboxContainer(arg)
     -
         let numID = arg.id;
@@ -12,7 +12,6 @@ mixin checkboxContainer(arg)
         if block
             block
             script. 
-                say();
                 let scripts = document.getElementsByTagName("script");
                 let base = scripts[scripts.length - 1].parentNode;
                 console.log(base.id);
@@ -37,11 +36,11 @@ mixin checkboxContainer(arg)
                 //formItems.push(item);
                 //console.log(window.formItems);
                 base.onclick = function(){
-                    formItems.forEach(function(item){
-                            item.value.getState(item);
-                            
-                        }
-                    );
+                    //formItems.forEach(function(item){
+                    //        item.value.getState(item);
+                    //        
+                    //    }
+                    //);
                     //alert(this.id);
                 }
         else
@@ -70,4 +69,37 @@ mixin checkboxItem(arg)
                 span= title
             div.checkboxItem__additionalRow
                 span= comment
-        
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+mixin dropdownContainer(arg)
+    -
+        let id = arg.id;
+        let title = arg.title?arg.title:"UNKNOWN";
+        let leftLabel = arg.Left?args.Left:"UNKNOWN";
+        let rightLabel = arg.Right?args.Right:"UNKNOWN";
+    .dropdownInput(id= id, name="base")
+        .dropdownInput__title(name="title")
+            label.dropdownInput__leftLabel(for=arg.id, name="leftLabel")= leftLabel
+            label.dropdownInput__rightLabel(for=arg.id, name="rightLabel")= rightLabel
+        .dropdownInput__input
+            input(name="target", data-fullList="nothing", class="hz2")
+        .dropdownInput__list(name="dropdown", style={display: "none"})
+            if block
+                block
+        script
+            include ../components/common/dropdown.js
+
+
+
+mixin dropdownItem(arg)
+    -
+        let id = arg.id;
+        let title = arg.title?arg.title:"UNKNOWN";
+        let minCount = arg.minCount?arg.minCount:0;
+    .tlistItem(name="row", data-min=minCount, data-max=maxCount, data-current=minCount)
+        .tlistItem__title(name="title", data-title=name)= title
+        .tlistItem__spliter
+        .tlistItem__button(name="decButton") -
+        .tlistItem__count(name="currentCount")= minCount
+        .tlistItem__button(name="incButton") +
