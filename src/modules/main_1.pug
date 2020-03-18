@@ -7,7 +7,7 @@ mixin checkboxContainer(arg)
     -
         let numID = arg.id;
         let title = arg.title?arg.title:"Title";
-    div.checkboxPanel(id = arg.id) 
+    .checkboxPanel(id = arg.id) 
         .checkboxPanel__title= title
         if block
             block
@@ -71,35 +71,50 @@ mixin checkboxItem(arg)
                 span= comment
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 mixin dropdownContainer(arg)
     -
         let id = arg.id;
         let title = arg.title?arg.title:"UNKNOWN";
-        let leftLabel = arg.Left?args.Left:"UNKNOWN";
-        let rightLabel = arg.Right?args.Right:"UNKNOWN";
-    .dropdownInput(id= id, name="base")
+        let leftLabel = arg.leftLabel?arg.leftLabel:"UNKNOWN";
+        let rightLabel = arg.rightLabel?arg.rightLabel:"";
+        let value = arg.defaultValue?arg.defaultValue:"";
+        let queryTitle = arg.queryTitle?arg.queryTitle:"UNKNOWN";
+        let info = arg.info?arg.info:title+";"+title+";"+title+";"+title+";";
+    .dropdownInput(id= id, name="base", data-info= info, data-queryTitle=queryTitle)
         .dropdownInput__title(name="title")
             label.dropdownInput__leftLabel(for=arg.id, name="leftLabel")= leftLabel
             label.dropdownInput__rightLabel(for=arg.id, name="rightLabel")= rightLabel
         .dropdownInput__input
-            input(name="target", data-fullList="nothing", class="hz2")
+            input(name="target", data-fullList="nothing",value= value, class="hz2", data-defaultValue=value)
         .dropdownInput__list(name="dropdown", style={display: "none"})
             if block
                 block
         script
             include ../components/common/dropdown.js
 
-
-
 mixin dropdownItem(arg)
     -
         let id = arg.id;
         let title = arg.title?arg.title:"UNKNOWN";
         let minCount = arg.minCount?arg.minCount:0;
-    .tlistItem(name="row", data-min=minCount, data-max=maxCount, data-current=minCount)
+        let maxCount = arg.maxCount?arg.maxCount:0;
+        let queryTitle = arg.queryTitle?arg.queryTitle:"UNKNOWN";
+        let name = "row";
+        let info = arg.info?arg.info:title+";"+title+";"+title+";"+title+";";
+    .tlistItem(name= name, data-min=minCount, data-max=maxCount, data-current=minCount, data-info= info, data-queryTitle=queryTitle)
         .tlistItem__title(name="title", data-title=name)= title
         .tlistItem__spliter
         .tlistItem__button(name="decButton") -
         .tlistItem__count(name="currentCount")= minCount
         .tlistItem__button(name="incButton") +
+
+mixin ACPanel(arg)
+    -
+        let target = arg.targetId;
+        let leftTitle = arg.leftTitle?arg.leftTitle:"очистить";
+        let rightTitle = arg.rightTitle?arg.rightTitle:"применить";
+    .clearAceptPanel(name="ACPanel", id = target + "_ACPanel", target= target)
+        .clear(name="clear")= leftTitle
+        .accept(name="accept")= rightTitle
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

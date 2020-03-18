@@ -210,11 +210,14 @@ color: $dark-50_color;
         padding: 0px 5px 0px 10px;
         box-sizing: border-box;
         z-index: 1;
+
+        & > .clearAceptPanel{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
     }
 
 }
-
-
 .tlistItem{
     display: flex;
     align-items: center;
@@ -247,5 +250,19 @@ color: $dark-50_color;
     }
     & > .tlistItem__count{
         @extend %h3_text;
+        color: $dark-100_color;
+    }
+}
+.clearAceptPanel{
+    display: flex;
+    
+    & > .clear{
+        @extend %h3_text;
+        color: $dark-50_color;
+    }
+    & > .accept{
+        @extend %h3_text;
+        color: $primary_color;
+        margin-left: auto;
     }
 }

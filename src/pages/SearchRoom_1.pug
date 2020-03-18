@@ -23,14 +23,13 @@ body
                 div
                     span(class="common__inputTitle") Даты пребывания в отеле
                     input(class="common__inputDropdown")
-                div
-                    span(class="common__inputTitle") Гости
-                    input(class="common__inputDropdown")
 
-                    +dropdownContainer({id:"DD_1"})
-                        +dropdownItem({id:"01"})
-                        +dropdownItem({id:"03"})
-                        +dropdownItem({id:"02"})
+
+                    +dropdownContainer({id:"DD_1", defaultValue:"Сколько гостей", leftLabel:"гости",queryTitle:"quest_count", info:"Гостей;Гость;Гостя;Гостей;"})
+                        +dropdownItem({  id:"01", title:"взрослые", minCount:0, maxCount:5,  queryTitle:"adult", info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
+                        +dropdownItem({  id:"03", title:"дети", minCount:0, maxCount:4,      queryTitle:"child", info:"Детей;Ребёнок;Ребёнка;Детей;"})
+                        +dropdownItem({  id:"02", title:"младенцы", minCount:0, maxCount:3,  queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
+                        +ACPanel({targetId:"DD_1"})
                 div
                     span(class="common__inputTitle") дивпазон цены
                     span(class="common__inputText12Up") 5 000p-10 000p
