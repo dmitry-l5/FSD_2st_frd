@@ -85,7 +85,7 @@ mixin dropdownContainer(arg)
             label.dropdownInput__leftLabel(for=arg.id, name="leftLabel")= leftLabel
             label.dropdownInput__rightLabel(for=arg.id, name="rightLabel")= rightLabel
         .dropdownInput__input
-            input(name="target", data-fullList="nothing",value= value, class="hz2", data-defaultValue=value)
+            input(type="text", name="target", data-fullList="nothing",value= value, class="hz2", data-defaultValue=value)
         .dropdownInput__list(name="dropdown", style={display: "none"})
             if block
                 block

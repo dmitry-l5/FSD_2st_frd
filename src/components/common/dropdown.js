@@ -6,16 +6,19 @@ base.onclick=function(event)
     let rows = null;
     let result = 0;
     let target = event.target;
+    target.blur();
     let panel = this.querySelector("[name=dropdown]");
     let rowDate = {};
-    console.log(target.getAttribute("name"));
+    //console.log(target.getAttribute("name"));
 
 
     switch (target.getAttribute("name")) {
         //case "base":
         //    break;
         case "target":
+            
             panel.style.display = (panel.style.display == "none") ? "block" : "none";
+            target.innerHTML = "";
             break;
         case "clear":
             
@@ -41,7 +44,7 @@ base.onclick=function(event)
             listItemDraw(target.parentNode);
             break;
         default:
-            console.log("default");
+            //console.log("default");
             break;
     }
 }
@@ -68,6 +71,7 @@ function clear(base) {
         item.setAttribute("data-current", item.getAttribute("data-min"));
         item.querySelector("[name=currentCount]").innerHTML = item.getAttribute("data-min");
     }
+    
     target.setAttribute("value", target.getAttribute("data-defaultValue"));
 
 }

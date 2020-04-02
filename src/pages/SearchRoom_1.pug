@@ -2,13 +2,19 @@ doctype html
 //include ../components/header/header
 include ../components/label/label
 include ../components/link/link
+include ../components/slider/slider
 head    
-    link(rel="stylesheet" href="common.scss")
+    //link(rel="stylesheet" href="common.scss")
     meta(charset="UTF-8")
     title Search Room v.1
     meta(name="viewport" content="width=device-width, initial-scale=1" )
+
+    style
+
+     
     link(rel="stylesheet" href="SearchRoom_1.scss")
-    link(rel="stylesheet" href="../modules/common_modules.scss")   
+    //link(rel="stylesheet" href="../modules/common_modules.scss")   
+    //link(rel="stylesheet" href="../components/slider/slider.scss")   
 body
 
     .page
@@ -35,6 +41,37 @@ body
                     span(class="common__inputText12Up") 5 000p-10 000p
                     input(class="common__inputDropdown" value="This is slaider!!!")
                     span(class="common__inputText12") Стоимость за сутки пребывания в номере
+
+                    +slider({id:"firstSlider", type:"solid"})
+                        +slider_stage({empty:"null", type:"number", value:500, move_as:"solid", index:1})
+                        +slider_stage({empty:"null", type:"number", value:1000, move_as:"solid", index:2})
+                        +slider_stage({empty:"null", type:"number", value:5000, move_as:"solid", index:3})
+                        +slider_stage({empty:"null", type:"number", value:10000, move_as:"solid", index:4})
+                        +slider_stage({empty:"null", type:"number", value:40000, move_as:"solid", index:5})
+                        +slider_stage({empty:"null", type:"number", value:100, move_as:"solid", index:6})
+                        +slider_stage({empty:"null", type:"number", value:200, move_as:"solid", index:7})
+
+
+                    +slider({id:"secondSlider", pointCount:"two"})
+                        +slider_stage({empty:"null", type:"number", value:500, move_as:"solid", index:1})
+                        +slider_stage({empty:"null", type:"number", value:1000, move_as:"solid", index:2})
+                        +slider_stage({empty:"null", type:"number", value:5000, move_as:"solid", index:3})
+                        +slider_stage({empty:"null", type:"number", value:10000, move_as:"solid", index:4})
+                        +slider_stage({empty:"null", type:"number", value:40000, move_as:"solid", index:5})
+                        +slider_stage({empty:"null", type:"number", value:100, move_as:"solid", index:6})
+                        +slider_stage({empty:"null", type:"number", value:200, move_as:"solid", index:7})
+
+
+                    +slider({id:"thrideSlider", count:"two"})
+                        +slider_stage({empty:"null", type:"number", value:500, move_as:"solid", index:1})
+                        +slider_stage({empty:"null", type:"number", value:1000, move_as:"solid", index:2})
+                        +slider_stage({empty:"null", type:"number", value:5000, move_as:"solid", index:3})
+                        +slider_stage({empty:"null", type:"number", value:10000, move_as:"solid", index:4})
+                        +slider_stage({empty:"null", type:"number", value:40000, move_as:"solid", index:5})
+                        +slider_stage({empty:"null", type:"number", value:100, move_as:"solid", index:6})
+                        +slider_stage({empty:"null", type:"number", value:200, move_as:"solid", index:7})
+
+
                 div
                     +checkboxContainer({id:"options", title:"Опции"})
                         +checkboxItem({

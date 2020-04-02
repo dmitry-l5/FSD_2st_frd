@@ -17,8 +17,13 @@
     /*border: 1px black solid;*/
 }
 
+
+@import "./../styles/ColorsANDText.scss";
+@import "./../styles/common.scss";
 @import "./../components/label/label.scss";
 @import "./../components/link/link.scss";
+@import "./../components/slider/slider.scss";
+
 
 ///////// IE<<<<<
 

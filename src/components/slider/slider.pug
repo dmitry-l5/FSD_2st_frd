@@ -1,0 +1,56 @@
+mixin slider(arg)
+    -
+        let id =arg.id;
+        let direction = (arg.direction=="horizontal")?"horizontal":"vertical";
+        let hz1 = true?"range":"single";
+        let title = arg.title?arg.title:"UNKNOWN"
+        let type = arg.type=="solid"?"solid":"step";
+        let count = (arg.pointCount == "two")?"two":"one";
+    .slider(
+        id= arg.id, 
+        aux-use_as="Slider_Base", 
+        aux-slider_type=type, 
+        aux-slider_count=count,
+        )
+        .head
+            .title= title
+            .values
+                //.min(aux-use_as="Slider_minLabel")= "MIN"
+                .max(aux-use_as="Slider_Label")= "LABEL"
+        .slider_box(aux-use_as="Slider_Frame", aux-base_id=id)
+            .emptyLine(aux-base_id=id)
+            .string(aux-base_id=id)
+                .point1(aux-use_as="Slider_minPoint", aux-base_id=id)
+                .preview(aux-use_as="Slider_Preview") preview
+                .fillLine(aux-use_as="Slider_Fill_Line", aux-base_id=id)
+                .point2(aux-use_as="Slider_maxPoint", aux-base_id =id)
+
+        
+        if block
+            block
+        script
+            include ../../components/slider/slider.js
+
+mixin slider_stage(arg)
+    -
+        let space= arg.space?arg.space:"auto";//count parts of scale
+        let position = arg.position?arg.position:"auto";//location in percent
+        //let type = (arg.type=="number")?"number":"text";
+        let continues;
+        let value = arg.value;
+        let index = arg.index?arg.index:"none";
+        //if(arg.type=="text"){ continues = "step"; }
+        //else {continues = (arg.move_as=="solid")?"solid":"step";}
+        //if(arg.value){value = arg.value;}
+        //else{value = "UNKNOWN"; continues = "step"; type = "text";}
+        let rate=arg.stage_rate;//?arg.stage_rate:"";
+        let title=arg.stage_title?arg.title:"UNKNOWN";
+    div(style={display:"none"},
+        aux-use_as="Slider_Stage",
+        aux-stage_rate=rate, 
+        aux-stage_title=title, 
+        aux-stage_type = type,
+        aux-stage_value = value,
+        aux-stage_continues = continues,
+        aux-stage_index = index,
+        )
