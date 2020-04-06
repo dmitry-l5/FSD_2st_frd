@@ -1,0 +1,15 @@
+mixin expandList(arg)
+    -
+        let id = arg.id?arg.id:"UNKNOWN";
+        let title = arg.title?arg.title:"title";
+
+    .expandList(id=id)
+        .expandList__header
+            .expandList__title= title
+            .expandList__arrow 
+        .expandList__content
+            if block 
+                block
+        script 
+            include  expandList.js
+

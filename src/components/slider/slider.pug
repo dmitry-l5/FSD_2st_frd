@@ -6,6 +6,7 @@ mixin slider(arg)
         let title = arg.title?arg.title:"UNKNOWN"
         let type = arg.type=="solid"?"solid":"step";
         let count = (arg.pointCount == "two")?"two":"one";
+        let comment = arg.comment?arg.comment:"";
     .slider(
         id= arg.id, 
         aux-use_as="Slider_Base", 
@@ -16,10 +17,11 @@ mixin slider(arg)
             .title= title
             .values
                 //.min(aux-use_as="Slider_minLabel")= "MIN"
-                .max(aux-use_as="Slider_Label")= "LABEL"
+                .values(aux-use_as="Slider_Label")= "LABEL"
         .slider_box(aux-use_as="Slider_Frame", aux-base_id=id)
-            .emptyLine(aux-base_id=id)
+            
             .string(aux-base_id=id)
+                .emptyLine(aux-base_id=id)
                 .point1(aux-use_as="Slider_minPoint", aux-base_id=id)
                 .preview(aux-use_as="Slider_Preview") preview
                 .fillLine(aux-use_as="Slider_Fill_Line", aux-base_id=id)
@@ -28,6 +30,7 @@ mixin slider(arg)
         
         if block
             block
+        .comment= comment
         script
             include ../../components/slider/slider.js
 

@@ -87,3 +87,18 @@ $dark-5_color: rgba(31, 32, 65, 0.05);
     line-height: 24px;
 }
 
+%commonInput{
+    width: 100%;
+    background: #FFFFFF;
+    /* Dark 25% */
+    border: 1px solid $dark-25_color;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 40px;
+    /**/
+    background-image: url(../images/expand_more.svg);
+    background-position: right 10px top 15px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    border: 1px solid rgb(129, 129, 129);
+}

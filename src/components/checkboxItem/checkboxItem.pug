@@ -1,0 +1,28 @@
+mixin checkboxItem_2(arg)
+    -
+        let id = arg.id;
+        let state = arg.check? "true":"false";
+        let name = arg.name?arg.name:"UNKNOWN";
+        let title = arg.title?arg.title:"Title";
+        let comment = arg.comment?arg.comment:"Coment";
+    .checkboxItem(id=id, parentId = "qwerty")
+        if(arg.withoutComent)
+            div.checkboxItem__mainRow(ondblclick="return false", onselectstart="return false" )
+                if(state == "true") 
+                    input(type="checkbox",id=id, checked, name=name, use_as="checkbox", autocheck = false)
+                else
+                    input(type="checkbox",id=id, name=name, use_as="checkbox", autocheck = false)
+                span.checkboxItem__additionalRow= title
+        else
+            div.checkboxItem__mainRow
+                if(state == "true") 
+                    input(type="checkbox",id=id, checked, name=name, use_as="checkbox", autocheck = false)
+                else
+                    input(type="checkbox",id=id, name=name, use_as="checkbox", autocheck = false)
+                span= title
+            div.checkboxItem__additionalRow
+                span= comment
+        script 
+            include  checkboxItem.js
+
+
