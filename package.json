@@ -6,8 +6,8 @@
   "author": "dmitry-l5 <60506213+dmitry-l5@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/pages/SearchRoom_1.pug --open",
-    "build": "parcel src/pages/SearchRoom_1.pug -d docs --public-url ./assets "
+    "dev": "parcel src/pages/index.pug --open",
+    "build": "parcel src/pages/SearchRoom_1.pug src/pages/index.pug -d docs --public-url ./ "
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",

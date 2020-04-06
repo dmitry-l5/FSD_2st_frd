@@ -1,0 +1,37 @@
+doctype html
+include ../components/label/label
+head    
+    //link(rel="stylesheet" href="common.scss")
+    meta(charset="UTF-8")
+    title index
+    meta(name="viewport" content="width=device-width, initial-scale=1" )
+
+    link(rel="stylesheet" href="SearchRoom_1.scss")
+    //link(rel="stylesheet" href="../modules/common_modules.scss")   
+    //link(rel="stylesheet" href="../components/slider/slider.scss")   
+body
+    script
+        include ../components/common/aux_common.js
+    .page
+        //main grid
+        .base
+            //grid header
+            .header
+                include ../modules/header.pug
+            //filter bar
+            .left_side
+                include ../modules/main_1.pug
+                
+
+            //grid room prevews
+            .main
+                include ../modules/main_1.pug
+
+
+            //grid footer
+            .footer
+                include ../modules/footer.pug
+
+            //grid social links
+            .social
+                include ../modules/social.pug
