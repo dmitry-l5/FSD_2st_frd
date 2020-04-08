@@ -2,19 +2,24 @@
     display: inline-flex;
     align-items: center;
     /*background-color: darkred;*/
-}
-.label__logo{ }
-.label__text{   }
-#logo {
-    background-color: none;
-    width: 40px;
-    height: 40px
-}
-#leftPath{
-    transform:translate(-31px, 15px);
-    position:absolute;
-}
-#rigthPath {
-    transform: translate(-19px, 15px);
-    position: absolute;
+
+    .label__logo{ 
+        & > .label__circle {
+        background-color: none;
+        width: 40px;
+        height: 40px
+        }
+        & > .label__leftPath{
+        transform:translate(-31px, 15px);
+        position:absolute;
+        }
+
+        & > .label__rigthPath {
+        transform: translate(-19px, 15px);
+        position: absolute;
+        }
+    }
+    .label__text{
+        margin: 5px;
+    }
 }

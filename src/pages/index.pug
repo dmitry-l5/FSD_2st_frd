@@ -1,37 +1,46 @@
 doctype html
 include ../components/label/label
-head    
-    //link(rel="stylesheet" href="common.scss")
+include ../components/link/link
+include ../components/link/link
+include ../components/blueLink/blueLink
+include ../components/whiteLink/whiteLink
+include ../components/dropdownList/dropdownList
+head
     meta(charset="UTF-8")
     title index
     meta(name="viewport" content="width=device-width, initial-scale=1" )
-
-    link(rel="stylesheet" href="SearchRoom_1.scss")
-    //link(rel="stylesheet" href="../modules/common_modules.scss")   
-    //link(rel="stylesheet" href="../components/slider/slider.scss")   
+    link(rel="stylesheet" href="index.scss")
+    style.
+        /* / {
+            border: 1px black solid;
+        }*/
+        .page{
+            width:1440px;
+            border: 1px black solid;
+        }
 body
     script
         include ../components/common/aux_common.js
     .page
         //main grid
+
         .base
             //grid header
             .header
                 include ../modules/header.pug
             //filter bar
-            .left_side
+            //.left_side
                 include ../modules/main_1.pug
-                
-
             //grid room prevews
             .main
-                include ../modules/main_1.pug
-
-
+                //include ../modules/main_1.pug
+                .backgroundImages
+                    img(src="../images/image.png", alt="", srcset="")
+                    img(src="../images/image 2.png", alt="", srcset="")
+                    img(src="../images/image 3.png", alt="", srcset="")    
             //grid footer
             .footer
                 include ../modules/footer.pug
-
             //grid social links
             .social
                 include ../modules/social.pug

@@ -1,43 +1,36 @@
 .footerModule
-    div
-        br
-        +label
-        br
-        span.common__inputText14.
-            Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-    div
-        br
-        span.common__inputTitle Навигация
-        ul.common__inputText14
-            li О нас
-            li Новости
-            li Служба поддержки
-            li Услуги
-    div
-        br
-        span.common__inputTitle О нас
-        ul.common__inputText14
-            li О сервисе
-            li Наша команда
-            li Вакансии
-            li Инвесторы  
-    div
-        br
-        span.common__inputTitle Служба поддержки
-        ul.common__inputText14
-            li Соглашения
-            li Сообщества
-            li Связь с нами
 
-    div
-        br
-        span.common__inputTitle Подписка
-        ul.common__inputText14
-            li
-                span.common__inputText12 Получайте специальные предложения и новости сервиса
-            li
-                input( type="email" class="footer_email")
-    
+    .linkPanel
+        +label
+        .linkPanel__text.
+            Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    .linkPanel
+        .linkPanel__title
+            span Навигация
+        +link({title:"О нас", href:"#"})
+        +link({title:"Новости", href:"#"})
+        +link({title:"Служба поддержки", href:"#"})
+        +link({title:"Услуги", href:"#"})  
+    .linkPanel
+        .linkPanel__title
+            span О нас
+        +link({title:"О сервисе", href:"#"})
+        +link({title:"Наша команда", href:"#"})
+        +link({title:"Вакансии", href:"#"})
+        +link({title:"Инвесторы", href:"#"})  
+    .linkPanel
+        .linkPanel__title
+            span Служба поддержки
+        +link({title:"Соглашения", href:"#"})
+        +link({title:"Сообщества", href:"#"})
+        +link({title:"Связь с нами", href:"#"})
+    .linkPanel
+        .linkPanel__title
+            span Подписка
+        .linkPanel__text
+            span.common__inputText12 Получайте специальные предложения и новости сервиса
+        input( type="email" class="")
+
 
 
 

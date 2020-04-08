@@ -1,0 +1,17 @@
+.blueLink{
+    display: flex;
+    justify-content: center;
+    @extend %h3_text;
+
+    background: linear-gradient(180deg, $primary_color, 0%, $gradient_1_color 100%);
+    border-radius: 22px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;    
+    
+    & > a{
+        text-decoration: none;
+        color:$white_color;
+    }
+}

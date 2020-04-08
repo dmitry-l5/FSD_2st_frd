@@ -1,7 +1,6 @@
-//call as :
-//+link({})
-mixin link(arg)
+mixin whiteLink(arg)
     -
         var _title = arg.title?arg.title:"UNKNOWN",
         _href = arg.href?arg.href:"#";
-    a(class="link" href=_href)=_title
+    .whiteLink
+        a(href=_href)=_title

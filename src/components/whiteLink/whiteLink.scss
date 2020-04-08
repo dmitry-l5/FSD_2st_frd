@@ -1,0 +1,19 @@
+.whiteLink{
+    display: flex;
+    justify-content: center;
+    @extend %h3_text;
+    
+
+    border-radius: 22px;
+    border: 2px solid $primary_color;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    & > a{
+        text-decoration: none;    
+        /* Primary Color */
+        color: $primary_color;
+    }
+}

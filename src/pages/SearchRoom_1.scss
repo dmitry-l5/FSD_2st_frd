@@ -33,7 +33,7 @@
     display: -ms-grid;
         grid-template-areas: 
     "header header" 
-    "left   main" 
+    "main   main" 
     "footer footer" 
     "social social";
     -ms-grid-columns: 1fr 3fr;
@@ -106,8 +106,6 @@
         -ms-grid-column-span:2;
         grid-area:social;
     }
-
-
 ///////// IE>>>>>
 
 

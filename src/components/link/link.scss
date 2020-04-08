@@ -1,0 +1,6 @@
+.link{
+    display: block;
+    text-decoration: none;
+    @extend %link_text;
+    color:$dark-50_color;
+}

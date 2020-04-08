@@ -1,0 +1,13 @@
+mixin dropdownList(arg)
+    -
+    .dropdownList
+        .dropdownList__title
+            .dropdownList__fstElement
+            .dropdownList__arrow
+                img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")
+        .dropdownList__dashboard(use_as="DdList_Dashboard")
+            if block
+                block
+        
+        if block
+            script(src="../components/dropdownList/dropdownList.js")
