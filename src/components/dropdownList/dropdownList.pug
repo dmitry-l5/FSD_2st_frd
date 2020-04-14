@@ -1,13 +1,56 @@
 mixin dropdownList(arg)
     -
+        let showArrow  = arg.arrow=="false"?false:true;
+        let box = (arg.block=="true")?true:false;
+
     .dropdownList
         .dropdownList__title
             .dropdownList__fstElement
             .dropdownList__arrow
-                img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")
-        .dropdownList__dashboard(use_as="DdList_Dashboard")
-            if block
-                block
-        
-        if block
+                if(showArrow)
+                    img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")
+        if(box)
+            .dropdownList__dashboardBlock(use_as="Dropdown_Dashboard")
+                if block
+                    block
             script(src="../components/dropdownList/dropdownList.js")
+        else
+            .dropdownList__dashboard(use_as="Dropdown_Dashboard")
+                if block
+                    block
+            script(src="../components/dropdownList/dropdownList.js")
+            //script.
+                console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+            
+
+
+
+//mixin dropdownList(arg)
+//    -
+//        let display;
+//        if(arg.display=="box"){display = "box"}
+//        else if(arg.display=="empty")display="empty"
+//        else display = "span"
+//    .dropdownList
+//        if(display =="box")
+//            .dropdownList__titleBox
+//            .dropdownList__dashboardBox(use_as="Dropdown_Dashboard")
+//                if block
+//                    block
+//        else if(display == "span")            
+//            .dropdownList__titleSpan
+//                .dropdownList__fstElement
+//                .dropdownList__arrow
+//                    img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")
+//            .dropdownList__dashboardSpan(use_as="Dropdown_Dashboard")
+//                if block
+//                    block
+//        else
+//            .dropdownList__titleEmpty
+//                .dropdownList__fstElement
+//            .dropdownList__dashboardEmpty(use_as="Dropdown_Dashboard")
+//                if block
+//                    block
+//        
+//        if block
+//            script(src="../components/dropdownList/dropdownList.js")

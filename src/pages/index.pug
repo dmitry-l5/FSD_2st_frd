@@ -5,6 +5,8 @@ include ../components/link/link
 include ../components/blueLink/blueLink
 include ../components/whiteLink/whiteLink
 include ../components/dropdownList/dropdownList
+include ../components/dateDropdown/dateDropdown
+include ../components/calendar/calendar
 head
     meta(charset="UTF-8")
     title index
@@ -37,7 +39,39 @@ body
                 .backgroundImages
                     img(src="../images/image.png", alt="", srcset="")
                     img(src="../images/image 2.png", alt="", srcset="")
-                    img(src="../images/image 3.png", alt="", srcset="")    
+                    img(src="../images/image 3.png", alt="", srcset="")
+                .rightBottoom_text
+                    span Лучшие номера для вашей работы, отдыха и просто вдохновения
+                .shield
+                    .shield__title
+                        span Найдём номера под ваши пожелания
+                    +dropdownList({arrow:"false", block:"true"})
+                        span placeholder header calendar dropdown
+                        +calendar_2({id:"mainCalendar"})
+            
+                    br
+                    br
+                    br
+    
+                    //+dropdownList({arrow:"false"})
+                        span placeholder header calendar dropdown
+                        +calendar_2({id:"scdCalendar"})
+                        +clearAcceptPanel()
+                        span placeholder header calendar dropdown
+                        span placeholder header calendar dropdown
+                        span placeholder header calendar dropdown
+                        span placeholder header calendar dropdown
+                        span placeholder header calendar dropdown
+                        span placeholder header calendar dropdown
+                    br
+                    br
+                    br
+                    //+dropdownList({display:"empty"})
+                        span placeholder header calendar dropdown
+                        +calendar_2({id:"trdCalendar"})
+                        span placeholder header calendar dropdown
+                    
+            
             //grid footer
             .footer
                 include ../modules/footer.pug

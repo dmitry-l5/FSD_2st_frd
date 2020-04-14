@@ -93,7 +93,7 @@ border-radius: 4px;
     box-sizing: border-box;
     border-radius: 4px;
 
-    background-image: url(./components/dateDropdown/expand_more.svg);
+    background-image: url(./../components/dateDropdown/expand_more.svg);
     background-position: right 15px top 15px;
     background-size: 15px;
     background-repeat: no-repeat;
@@ -160,7 +160,7 @@ color: #1F2041;
 .dateDropdown__prevButton{
     /*float: left;*/
     border: 1px solid rgb(255, 0, 136);
-    background-image: url(./components/dateDropdown/arrow_back.svg);
+    background-image: url(./../components/dateDropdown/arrow_back.svg);
     transform: scale(1,-1);
     background-position: right 10px top 15px;
     background-size: 15px;
@@ -173,7 +173,7 @@ color: #1F2041;
     /*float: right;*/
     width: 10%;
     border: 1px solid rgb(255, 0, 136);
-    background-image: url(./components/dateDropdown/arrow_forward.svg);
+    background-image: url(./../components/dateDropdown/arrow_forward.svg);
     background-position: center;
     background-size: 15px;
     background-repeat: no-repeat;

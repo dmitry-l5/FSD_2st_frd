@@ -194,7 +194,6 @@ if (window.aux_sliders == void 0) {
             console.log("getTrueState( " + id + ", " + pos + " )");
             aux_sliders.pullToCurrent(id);
             let lab, loc;
-
             let stg = this.current.item.stages;
             for (let i = 0; i < stg.length; i++) {
                 if (pos <= stg[i].rate) {
@@ -250,7 +249,6 @@ if (window.aux_sliders == void 0) {
             });
             let elem = document.body.querySelector("[id=" + id + "]");
             let stg = elem.querySelectorAll("[" + this.attr_name.use_as + "=" + this.use_as.stage + "]");
-
             this.views.push({
                 id: elem.id,
                 base: elem,
@@ -272,7 +270,6 @@ if (window.aux_sliders == void 0) {
                 function (event) {
                     let target = event.target;
                     switch (target.getAttribute(aux_sliders.attr_name.use_as)) {
-
                         case aux_sliders.use_as.hi:
                             //console.log("hi");
                             //console.log(this);
@@ -286,9 +283,6 @@ if (window.aux_sliders == void 0) {
 
                             aux_sliders.showPreview(aux_sliders.current.id);
                             document.addEventListener('mousemove', aux_sliders.move_handler);
-
-
-
                             break;
                         case aux_sliders.use_as.low:
                             //console.log("low");
@@ -323,7 +317,6 @@ if (window.aux_sliders == void 0) {
                 //this.views[id].min.style.position = "absolute";
                 //this.views[id].max.style.position = "absolute";
                 this.views[i].max.style.left = maxValueInt * percent + "px";
-
             }
         },
         showView_current() {
@@ -344,7 +337,6 @@ if (window.aux_sliders == void 0) {
                 default:
                     break;
             }
-
         },
         //#endregion View interaction Methods
         showPreview(id) {
@@ -377,10 +369,6 @@ if (window.aux_sliders == void 0) {
             this.current.view.label.innerHTML = min + " " + this.current.item.suffix + " " + aux_sliders.labelSplitter + " " + max + " " + this.current.item.suffix;
             //this.current.view.minLabel.innerHTML = min;
             //this.current.view.maxLabel.innerHTML = max;
-
-
-
-
         },
         updateLine(id) {
             this.pullToCurrent(id);
@@ -400,21 +388,12 @@ if (window.aux_sliders == void 0) {
                     console.log(aux_sliders.current.item.type);
                     break;
             }
-
-
-
-
-
         },
         finish(event) {
             //console.log(event);
             //clear current
-
-
             this.current = null;
-
         },
-
         move_handler(event) {
             console.log("move_handler( " + event + " )");
             console.log("aux_sliders.calcPercent(aux_sliders.current.id, event.clientX)");
@@ -444,13 +423,8 @@ if (window.aux_sliders == void 0) {
                     break;
             }
             aux_sliders.updateLine(aux_sliders.current.id);
-
-
         },
     }
-
-
-
     function aux_sliders_finish(event) {
         if (aux_sliders.current) {
             document.removeEventListener('mousemove', aux_sliders.move_handler);
@@ -481,16 +455,11 @@ if (window.aux_sliders == void 0) {
     function sliders_change_handler(event) {
         aux_sliders.pullToCurrent(event.detail.id);
         //console.log(aux_sliders.current);
-
         aux_sliders.showView_current();
     }
 }
-
-
-
 var scripts = document.getElementsByTagName('script');
 var base = scripts[scripts.length - 1].parentNode;
-
 if (base.getAttribute(aux_sliders.attr_name.use_as) == aux_sliders.use_as.base) {
     aux_sliders.addData(base.id);
     aux_sliders.addView(base.id);

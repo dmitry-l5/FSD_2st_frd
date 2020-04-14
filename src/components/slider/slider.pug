@@ -19,15 +19,12 @@ mixin slider(arg)
                 //.min(aux-use_as="Slider_minLabel")= "MIN"
                 .values(aux-use_as="Slider_Label")= "LABEL"
         .slider_box(aux-use_as="Slider_Frame", aux-base_id=id)
-            
             .string(aux-base_id=id)
                 .emptyLine(aux-base_id=id)
                 .point1(aux-use_as="Slider_minPoint", aux-base_id=id)
                 .preview(aux-use_as="Slider_Preview") preview
                 .fillLine(aux-use_as="Slider_Fill_Line", aux-base_id=id)
                 .point2(aux-use_as="Slider_maxPoint", aux-base_id =id)
-
-        
         if block
             block
         .comment= comment
