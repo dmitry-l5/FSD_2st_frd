@@ -35,7 +35,7 @@
   line-height: 24px;
 }
 
-.ac > .accept, .ac > .clear, .whiteLink, .blueLink, .footerModule > .linkPanel > .linkPanel__title {
+.base > .main .shield .calendar__headContainer > div, .ac > .accept, .ac > .clear, .whiteLink, .blueLink, .footerModule > .linkPanel > .linkPanel__title {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -53,7 +53,7 @@
   line-height: 24px;
 }
 
-.base > .main .shield .calendar__headContainer > .enterBox {
+.base > .main .shield .calendar__headContainer > div > .enterBox {
   width: 100%;
   background: white;
   /* Dark 25% */
@@ -69,7 +69,7 @@
   border: 1px solid #818181;
 }
 
-.base > .main .shield .calendar__headContainer > .enterBox, .link {
+.base > .main .shield .calendar__headContainer > div > .enterBox, .link {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -227,6 +227,179 @@
   position: absolute;
   background-color: white;
   z-index: 10;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Bold.73bdbea0.svg") format("svg"), url("Montserrat-Bold.765c135b.woff") format("woff"), url("Montserrat-Bold.361393eb.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Medium.a2c9dd10.svg") format("svg"), url("Montserrat-Medium.3917c136.woff") format("woff"), url("Montserrat-Medium.53048cef.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.dropdownField {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+.dropdownField__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdownField__leftLabel {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  float: left;
+  color: #1F2041;
+  margin-top: 4px;
+}
+
+.dropdownField__rightLabel {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.5);
+  float: right;
+  margin-bottom: 8px;
+}
+
+.dropdownField__input {
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  background: #FFFFFF;
+  /* Dark 50% */
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.dropdownField__input input {
+  height: 39px;
+  background-image: url(expand_more.e6da4e87.svg);
+  background-position: right 10px top 15px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  border: 1px solid #818181;
+}
+
+.dropdownField__list {
+  display: block;
+  margin-top: -2px;
+  padding-top: 5px;
+  border-radius: 0px 0px 4px 4px;
+  border: 2px solid #818181;
+  background: white;
+  position: absolute;
+  width: 100%;
+  padding: 0px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.dropdownField__footer {
+  width: 100%;
+}
+
+.dropdownField__acceptRight {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-align: right;
+  color: #1F2041;
+  height: 30px;
+  margin-top: 3px;
+  width: 50%;
+}
+
+.dropdownField__acceptLeft {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #1F2041;
+  width: 50%;
+  height: 30px;
+  margin-top: 3px;
+}
+
+.tlistItem {
+  height: 40px;
+  margin: 0px;
+  padding-right: 4px;
+  padding-left: 10px;
+  padding-top: 0px;
+}
+
+.tlistItem__table {
+  height: 30px;
+  width: 100%;
+  border-spacing: 2px 0px;
+  margin: -2px 0px 0px 0px;
+}
+
+.tlistItem__title {
+  margin: 0px;
+  padding: 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.tlistItem__count {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.tlistItem__button {
+  width: 30px;
+  height: 30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  text-align: center;
 }
 
 .calendar_2 {
@@ -450,24 +623,31 @@
     height: 370px;
     left: 140px;
     top: 80px;
-    padding: 40px 30px 40px 30px;
+    padding: 35px 30px 40px 30px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
   }
+  .base > .main .shield .shield__title {
+    margin-bottom: 25px;
+  }
   .base > .main .shield .calendar__headContainer {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
   }
   .base > .main .shield .calendar__headContainer > * + * {
     margin-left: 15px;
   }
-  .base > .main .shield .calendar__headContainer > .enterBox {
+  .base > .main .shield .calendar__headContainer > div {
+    color: #1F2041;
+    flex: 1 1 50%;
+  }
+  .base > .main .shield .calendar__headContainer > div > .enterBox {
     padding-left: 10px;
     display: flex;
     align-items: center;
