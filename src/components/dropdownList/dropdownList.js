@@ -5,7 +5,7 @@ function dropdownListInit(){
     let scripts=document.getElementsByTagName("script");
     let base = scripts[scripts.length-1].parentNode;
     base.childNodes[0].prepend(base.childNodes[1].firstChild);
-    ///////////////////base.childNodes[1].style.visibility="hidden";
+    base.childNodes[1].style.visibility="hidden";
     //console.log("dropdownListInit");
     //console.log(base);
     //console.log((base.childNodes));
@@ -23,7 +23,7 @@ function dropdownListInit(){
         if( base.querySelector("[use_as=Dropdown_Dashboard]").style.visibility=="visible")
         {
             let dd = base.querySelector("[use_as=Dropdown_Dashboard]");
-            //////////////dd.style.visibility = "hidden";
+            dd.style.visibility = "hidden";
         }
     }
 }

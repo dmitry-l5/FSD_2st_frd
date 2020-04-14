@@ -1,9 +1,12 @@
 mixin calendar_2(arg)
     -
         let id = arg.id;
-        let nameIn = arg.in?arg.in:"arrival";
-        let nameOut = arg.in?arg.out:"departure";
-    .calendar_2(id=id, aux-use_as="Calendar_Base")
+        let In = arg.arrival?arg.arrival:"arrival";
+        let Out = arg.departure?arg.departure:"departure";
+    .calendar_2(id=id, 
+                aux-use_as="Calendar_Base", 
+                aux-departureLabelId=Out,
+                aux-arrivalLabelId=In)
         .calendar__header
             .calendar__prevButton(aux-use_as="Calendar_decMonthBtn" ) 
             .calendar__montTitle( aux-use_as="Calendar_monthTitle" ) monthTitle
@@ -35,22 +38,30 @@ mixin calendar_2(arg)
         script
             include ../../components/calendar/calendar.js
         .bottom
-            +clearAcceptPanel()
+            +clearAcceptPanel({use_for:id})
 
-mixin clearAcceptPanel()
+mixin clearAcceptPanel(arg)
     -
-    .ac
+        let targetId = arg.use_for?arg.use_for:"null"
+    .ac(aux-use_for = targetId)
         .clear(aux-use_as="clear_button") очистить
         .accept(aux-use_as="accept_button") применить
         script.
             let sripts= document.getElementsByTagName("script");
             let base = scripts[scripts.length-1].parentNode;
+            base.onclick=function(event){
+                let target = document.getElementById(this.getAttribute("aux-use_for"));
+                console.log("target")
+                console.log(target)
+                switch(event.target.getAttribute("aux-use_as"))
+                {
+                    case "accept_button":
+                        target.dispatchEvent(new Event("accept"),{bubbles: true});
+                    break;
+                    case "clear_button":
+                        target.dispatchEvent(new Event("clear"),{bubbles: true});
+                    break;
+                }
+            }
             let clear = base.querySelector("[aux-use_as=clear_button]");
             let accept = base.querySelector("[aux-use_as=accept_button]");
-            console.log(base.parentNode.parentNode);
-            clear.onclick=function(){ 
-                base.parentNode.parentNode.dispatchEvent(new Event("clear"));
-                }
-            accept.onclick=function(){
-                base.parentNode.parentNode.dispatchEvent(new Event("accept"));
-                }

@@ -5,8 +5,10 @@
 @import "./../components/blueLink/blueLink.scss";
 @import "./../components/whiteLink/whiteLink.scss";
 @import "./../components/dropdownList/dropdownList.scss";
+@import "./../components/editableDropdown/editableDropdown.scss";
 //@import "./../components/dateDropdown/dateDropdown.scss";
 @import "./../components/calendar/calendar.scss";
+//@import "./../components/enterBox/enterBox.scss";
 
 *{
     box-sizing: border-box;
@@ -148,7 +150,7 @@
                 height: 370px;
                 left: 140px;
                 top: 80px;
-                padding: 40px 30px 40px 30px;
+                padding: 35px 30px 40px 30px;
                 background: #FFFFFF;
                 border: 1px solid rgba(0, 0, 0, 0.12);
                 box-sizing: border-box;
@@ -156,9 +158,34 @@
                 border-radius: 4px;
                 & .shield__title{
                     @extend %h1_text;
+                    margin-bottom: 25px;
+                }
+                & .calendar__headContainer{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 5px;
+                    & > *+*{
+                        margin-left: 15px;
+                    }
+                    & > div{
+                        @extend %h3_text;
+                        color: $dark-100_color;
+                        flex: 1 1 50%;
+                        //border:1px solid green;
+                        & > .enterBox{
+                            padding-left: 10px;
+                            display: flex;
+                            align-items: center;
+                            @extend %link_text;
+                            @extend %commonInput;
+                            color: $dark-50_color;
+                        }
+                    }
                 }
             }
-        }        
+        }
 
         /* ---FOOTER--- */
         /* ---FOOTER--- */

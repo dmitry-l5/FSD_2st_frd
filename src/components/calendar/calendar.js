@@ -45,17 +45,8 @@ if (window.aux_calendars == void 0) {
         },
         attr_name: {
             use_as: "aux-use_as",
-            
-            type: "aux-slider_type",
-            min: "aux-slider_minValue",
-            max: "aux-slider_maxValue",
-            stageRate: "aux-stage_rate",
-            stageTitle: "aux-stage_title",
-            stageValue: "aux-stage_value",
-            stagePosition: "",
-            stageIndex: "aux-stage_index",
-            sliderType: "aux-slider_type",
-            sliderCount: "aux-slider_count",
+            arrivalInnerHTML: "aux-arrivalLabelId",
+            departureInnerHTML: "aux-departureLabelId",
         },
         attr_values: {
             use_as: {
@@ -72,14 +63,6 @@ if (window.aux_calendars == void 0) {
                 arrival: "Calendar_arrivalDate",
                 departure: "Calendar_departureDate",
             },
-            sliderType: {
-                typeStep: "step",
-                typeSolid: "solid",
-                        },
-            sliderCount: {
-                single: "one",
-                double: "two",
-            }
         },
         monthName : [
             "Январь",
@@ -95,8 +78,9 @@ if (window.aux_calendars == void 0) {
             "Ноябрь",
             "Декабрь"
         ],
-        labelSplitter: " - ",
         default: {
+            arrivalInnerHTML: "ДД.ММ.ГГГГ",
+            departureInnerHTML: "ДД.ММ.ГГГГ",
         },
         current: {},
         views: [],
@@ -188,6 +172,9 @@ if (window.aux_calendars == void 0) {
             });
             let base = document.getElementById(id);
             let tmpDays =  base.querySelector("["+ aux_calendars.attr_name.use_as+"="+ aux_calendars.attr_values.use_as.days+"]");
+
+            let tArrival = document.getElementById(base.getAttribute(aux_calendars.attr_name.arrivalInnerHTML));
+            let tDeparture = document.getElementById(base.getAttribute(aux_calendars.attr_name.departureInnerHTML));
             let tmp = {
                 id : id,
                 bese: base,
@@ -197,6 +184,8 @@ if (window.aux_calendars == void 0) {
                 cells: tmpDays.querySelectorAll("td"),
                 arrival : base.querySelector("["+ aux_calendars.attr_name.use_as+"="+ aux_calendars.attr_values.use_as.arrival+"]"),
                 departure : base.querySelector("["+ aux_calendars.attr_name.use_as+"="+ aux_calendars.attr_values.use_as.departure+"]"),
+                arrivalInnerHTML: tArrival?tArrival:null,
+                departureInnerHTML: tDeparture?tDeparture:null,
             };
             aux_calendars.views.push(tmp);
         },
@@ -366,17 +355,46 @@ if (window.aux_calendars == void 0) {
                     break;
             }
         },
+        getLabels(arg){
+            if(arg instanceof Date){
+                let day = "" + arg.getDate();
+                if(day.length == 1){day = "0" + day}                
+                let month ="" + arg.getMonth();
+                if(month.length == 1){month = "0" + month}
+                return ( day+"."+ month +"."+ arg.getFullYear());
+            }
+            else{
+                return null;
+            }
+        },
         acceptDataLitener(event){
+            
+            console.log("acceptDataLitener");
             let x = aux_calendars.getData(event.target.id);
+            if(x.date.in == null){return;}
+            if(x.date.out==null){ x.date.out = x.date.in;}
             let y = aux_calendars.getView(event.target.id);
             if(x == null||y==null){ console.error("acceptDataLitener : NULL"); return;}
             y.arrival.value = x.date.in;
             y.departure.value = x.date.out;
+            console.log(y.arrivalInnerHTML);
+            console.log(y.departureInnerHTML);
+            if(y.arrivalInnerHTML!==null){
+                y.arrivalInnerHTML.innerHTML = aux_calendars.getLabels(x.date.in)}
+            if(y.departureInnerHTML!==null){
+                y.departureInnerHTML.innerHTML = aux_calendars.getLabels(x.date.out)}
         },
         clearDataLitener(){
             let x = aux_calendars.getData(event.target.id);
+            let y = aux_calendars.getView(event.target.id);
+            if(x == null||y==null){ console.error("acceptDataLitener : NULL"); return;}
             if(x == null){onsole.error("acceptDataLitener : NULL"); return;}
             aux_calendars.resetData.apply(x);
+            if(y.arrivalInnerHTML!==null){
+                y.arrivalInnerHTML.innerHTML = aux_calendars.default.arrivalInnerHTML}
+            if(y.departureInnerHTML!==null){
+                y.departureInnerHTML.innerHTML = aux_calendars.default.departureInnerHTML}
+
         },
     }
     //#endregion  aux_calendars
@@ -403,6 +421,7 @@ function calendarInit(){
             "accept", 
             aux_calendars.acceptDataLitener
         );
+        base.dispatchEvent(new Event("clear"));
     }
     else{
         console.error("calendarInit() : atrribute - " + aux_calendars.attr_name.use_as  + 

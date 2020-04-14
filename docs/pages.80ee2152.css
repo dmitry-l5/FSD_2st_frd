@@ -53,7 +53,23 @@
   line-height: 24px;
 }
 
-.link {
+.base > .main .shield .calendar__headContainer > .enterBox {
+  width: 100%;
+  background: white;
+  /* Dark 25% */
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 40px;
+  /**/
+  background-image: url(expand_more.d4752fec.svg);
+  background-position: right 10px top 15px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  border: 1px solid #818181;
+}
+
+.base > .main .shield .calendar__headContainer > .enterBox, .link {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -184,7 +200,6 @@
 .dropdownList {
   box-sizing: border-box;
   position: relative;
-  background-color: rgba(0, 153, 255, 0.5);
 }
 .dropdownList > img {
   display: block;
@@ -193,10 +208,14 @@
   display: flex;
   align-items: center;
 }
+.dropdownList > .dropdownList__title > .dropdownList__fstElement {
+  display: block;
+}
 .dropdownList > .dropdownList__title > .dropdownList__arrow {
   margin-left: auto;
 }
 .dropdownList > .dropdownList__dashboard {
+  visibility: "hidden";
   box-sizing: border-box;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.5);
@@ -219,7 +238,7 @@
 .calendar_2 > .calendar__header {
   display: flex;
   align-content: center;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 .calendar_2 > .calendar__header > .calendar__prevButton {
@@ -438,6 +457,23 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
   }
+  .base > .main .shield .calendar__headContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .base > .main .shield .calendar__headContainer > * + * {
+    margin-left: 15px;
+  }
+  .base > .main .shield .calendar__headContainer > .enterBox {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
   /* ---FOOTER--- */
   /* ---FOOTER--- */
   /* ---FOOTER--- */

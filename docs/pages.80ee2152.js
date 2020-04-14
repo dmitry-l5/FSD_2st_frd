@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\fonts\\Montserrat-Bold.svg":[["Montserrat-Bold.73bdbea0.svg","../fonts/Montserrat-Bold.svg"],"../fonts/Montserrat-Bold.svg"],"./..\\fonts\\Montserrat-Bold.woff":[["Montserrat-Bold.765c135b.woff","../fonts/Montserrat-Bold.woff"],"../fonts/Montserrat-Bold.woff"],"./..\\fonts\\Montserrat-Bold.ttf":[["Montserrat-Bold.361393eb.ttf","../fonts/Montserrat-Bold.ttf"],"../fonts/Montserrat-Bold.ttf"],"./..\\fonts\\Montserrat-Medium.svg":[["Montserrat-Medium.a2c9dd10.svg","../fonts/Montserrat-Medium.svg"],"../fonts/Montserrat-Medium.svg"],"./..\\fonts\\Montserrat-Medium.woff":[["Montserrat-Medium.3917c136.woff","../fonts/Montserrat-Medium.woff"],"../fonts/Montserrat-Medium.woff"],"./..\\fonts\\Montserrat-Medium.ttf":[["Montserrat-Medium.53048cef.ttf","../fonts/Montserrat-Medium.ttf"],"../fonts/Montserrat-Medium.ttf"],"./..\\components\\dateDropdown\\arrow_back.svg":[["arrow_back.86a79e63.svg","../components/dateDropdown/arrow_back.svg"],"../components/dateDropdown/arrow_back.svg"],"./..\\components\\dateDropdown\\arrow_forward.svg":[["arrow_forward.1b598d5b.svg","../components/dateDropdown/arrow_forward.svg"],"../components/dateDropdown/arrow_forward.svg"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\fonts\\Montserrat-Bold.svg":[["Montserrat-Bold.73bdbea0.svg","../fonts/Montserrat-Bold.svg"],"../fonts/Montserrat-Bold.svg"],"./..\\fonts\\Montserrat-Bold.woff":[["Montserrat-Bold.765c135b.woff","../fonts/Montserrat-Bold.woff"],"../fonts/Montserrat-Bold.woff"],"./..\\fonts\\Montserrat-Bold.ttf":[["Montserrat-Bold.361393eb.ttf","../fonts/Montserrat-Bold.ttf"],"../fonts/Montserrat-Bold.ttf"],"./..\\fonts\\Montserrat-Medium.svg":[["Montserrat-Medium.a2c9dd10.svg","../fonts/Montserrat-Medium.svg"],"../fonts/Montserrat-Medium.svg"],"./..\\fonts\\Montserrat-Medium.woff":[["Montserrat-Medium.3917c136.woff","../fonts/Montserrat-Medium.woff"],"../fonts/Montserrat-Medium.woff"],"./..\\fonts\\Montserrat-Medium.ttf":[["Montserrat-Medium.53048cef.ttf","../fonts/Montserrat-Medium.ttf"],"../fonts/Montserrat-Medium.ttf"],"./..\\images\\expand_more.svg":[["expand_more.d4752fec.svg","../images/expand_more.svg"],"../images/expand_more.svg"],"./..\\components\\dateDropdown\\arrow_back.svg":[["arrow_back.86a79e63.svg","../components/dateDropdown/arrow_back.svg"],"../components/dateDropdown/arrow_back.svg"],"./..\\components\\dateDropdown\\arrow_forward.svg":[["arrow_forward.1b598d5b.svg","../components/dateDropdown/arrow_forward.svg"],"../components/dateDropdown/arrow_forward.svg"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55905" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61872" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

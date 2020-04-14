@@ -123,8 +123,8 @@ dropdownListInit();
 function dropdownListInit() {
   var scripts = document.getElementsByTagName("script");
   var base = scripts[scripts.length - 1].parentNode;
-  base.childNodes[0].prepend(base.childNodes[1].firstChild); ///////////////////base.childNodes[1].style.visibility="hidden";
-  //console.log("dropdownListInit");
+  base.childNodes[0].prepend(base.childNodes[1].firstChild);
+  base.childNodes[1].style.visibility = "hidden"; //console.log("dropdownListInit");
   //console.log(base);
   //console.log((base.childNodes));
   //console.log((base.childNodes[0]));
@@ -138,7 +138,8 @@ function dropdownListInit() {
 
   base.onmouseleave = function (event) {
     if (base.querySelector("[use_as=Dropdown_Dashboard]").style.visibility == "visible") {
-      var dd = base.querySelector("[use_as=Dropdown_Dashboard]"); //////////////dd.style.visibility = "hidden";
+      var dd = base.querySelector("[use_as=Dropdown_Dashboard]");
+      dd.style.visibility = "hidden";
     }
   };
 }
@@ -170,7 +171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55905" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61872" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

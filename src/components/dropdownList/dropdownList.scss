@@ -2,7 +2,7 @@
 .dropdownList{
     box-sizing: border-box;
     position: relative;
-    background-color: rgba(0, 153, 255, 0.5);
+    //background-color: rgba(0, 153, 255, 0.5);
     //border: 1px black solid;
     & > img{
         display: block;
@@ -11,12 +11,14 @@
         display: flex;
         align-items: center;
         & > .dropdownList__fstElement{
+            display: block;
         }
         & > .dropdownList__arrow{
             margin-left: auto;
         }
     }
     & > .dropdownList__dashboard{
+        visibility : "hidden";
         box-sizing: border-box;
         //display: flex;
         //display: block;
