@@ -1,0 +1,15 @@
+.inputPreviewBox{
+    width: 100%;
+    & > .inputPreviewBox_Title{
+        @extend %h3_text;
+        color: $dark-100_color;
+    }
+    & > .inputPreviewBox_Box{
+        @extend %commonInput;
+        @extend %link_text;
+        color: $dark-50_color;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+    }
+}

@@ -1,0 +1,187 @@
+:root{
+    font-size: 16px;
+}
+.page{
+    width: 1440px;
+    height: 1880px;
+    box-sizing: border-box;
+    border: 1px black solid;
+    padding-right: 135px;
+    padding-left: 135px;
+   /* background-color: chartreuse;*/
+}
+.page *,
+::after,
+::before{
+    box-sizing: border-box;
+    /*border: 1px black solid;*/
+}
+
+
+@import "./../styles/ColorsANDText.scss";
+@import "./../styles/common.scss";
+@import "./../components/label/label.scss";
+@import "./../components/link/link.scss";
+@import "./../components/slider/slider.scss";
+@import "./../components/expandList/expandList.scss";
+
+
+@import "./../modules/modules.scss";
+@import "./../components/blueLink/blueLink.scss";
+@import "./../components/whiteLink/whiteLink.scss";
+@import "./../components/dropdownList/dropdownList.scss";
+@import "./../components/editableDropdown/editableDropdown.scss";
+@import "./../components/inputPreviewBox/inputPreviewBox.scss";
+@import "./../components/counterItem/counterItem.scss";
+@import "./../components/clearAcceptPanel/clearAcceptPanel.scss";
+//@import "./../components/dateDropdown/dateDropdown.scss";
+@import "./../components/calendar/calendar.scss";
+@import "./../components/blueSubmit/blueSubmit.scss";
+//@import "./../components/enterBox/enterBox.scss";
+
+
+///////// IE<<<<<
+
+
+.base{
+    display: -ms-grid;
+        grid-template-areas: 
+    "header header" 
+    "main   main" 
+    "footer footer" 
+    "social social";
+    -ms-grid-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr;
+    margin: 0;
+    padding: 0;
+}
+
+
+    /* ---HEADER--- */
+    /* ---HEADER--- */
+    /* ---HEADER--- */
+    .base > .header {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-area: header;
+    }
+    .headerModule{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; 
+        -webkit-box-align: center; 
+            -ms-flex-align: center; 
+                align-items: center;
+    }
+
+    /*---LEFT SIDE---*/
+    /*---LEFT SIDE---*/
+    /*---LEFT SIDE---*/
+    .base > .left_side {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-area: left;
+       
+    }
+
+    /* ---MAIN--- */
+    /* ---MAIN--- */
+    /* ---MAIN--- */
+    .base > .main {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-area: main;
+    }
+
+    /* ---FOOTER--- */
+    /* ---FOOTER--- */
+    /* ---FOOTER--- */
+    .base > .footer {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-area: footer;
+
+    }
+    .footerModule{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;;
+    }
+
+    /*---SOCIAL---*/
+    /*---SOCIAL---*/
+    /*---SOCIAL---*/
+    .base > .social{
+        -ms-grid-row:4;
+        -ms-grid-column:1;
+        -ms-grid-column-span:2;
+        grid-area:social;
+    }
+///////// IE>>>>>
+
+
+
+@supports(display: grid){
+.base{
+    display: grid;
+    grid-template-areas: 
+    "header header" 
+    "left   main" 
+    "footer footer" 
+    "social social";
+    grid-template-columns: 1fr 3fr;
+    margin: 0;
+    padding: 0;
+}
+
+
+    /* ---HEADER--- */
+    /* ---HEADER--- */
+    /* ---HEADER--- */
+    .base > .header {
+        grid-area: header;
+    }
+    .headerModule{
+        display: flex; 
+        align-items: center;
+    }
+
+    /*---LEFT SIDE---*/
+    /*---LEFT SIDE---*/
+    /*---LEFT SIDE---*/
+    .base > .left_side {
+        grid-area: left;
+       
+    }
+
+    /* ---MAIN--- */
+    /* ---MAIN--- */
+    /* ---MAIN--- */
+    .base > .main {
+        grid-area: main;
+
+    }
+
+    /* ---FOOTER--- */
+    /* ---FOOTER--- */
+    /* ---FOOTER--- */
+    .base > .footer {
+        grid-area: footer;
+
+    }
+    .footerModule{
+        display: flex;;
+    }
+
+    /*---SOCIAL---*/
+    /*---SOCIAL---*/
+    /*---SOCIAL---*/
+    .base > .social{
+        grid-area:social;
+    }
+}
+.flex_splitter{
+    margin-left: auto;
+}

@@ -1,0 +1,223 @@
+///*(id, targetId, itemsId)*/
+mixin itemGlue(arg)
+    -
+        let id = arg.id;
+        let targetId = arg.targetId;
+        let itemsId = arg.itemsId;
+        let mute = arg.mute?true:false;
+        //let info = arg.info?arg.info:title+";"+title+";"+title+";"+title+";";
+        let info = arg.info;
+    .itemGlue(
+            id=id,
+            aux-outputId=targetId,
+            aux-itemsId=itemsId,
+            aux-wordCase = info,
+            aux-use_as = "ItemGlue_Base",
+            style={display:"none"}
+            )
+        script.
+            if(window.items_glue==void 0){
+                var items_glue={
+                    protos:{
+                        item:{
+                            id:null,
+                            title:"TITLE",
+                            caseWords:[],
+                            targetId:null,
+                            contains:[],
+                            containsData:[],
+                            getTitle:()=>{console.warn("getTitle function must be override");},
+                            reset:()=>{console.warn("reset function must be override");},
+                            accept:()=>{console.warn("accept function must be override");},
+                            mute: false,
+                        },
+
+                    },
+                    attr_name: {
+                        use_as: "aux-use_as",
+                        out:"aux-outputId",
+                        words:"aux-wordCase",
+                        list:"aux-itemsId",
+                    },
+                    attr_values: {
+                        use_as: {
+                            base: "ItemGlue_Base",
+                        },
+                    },
+                    events:{
+                        //counterItem_change:"counter_change",
+                        reset:"reset",
+                        accept:"accept",
+                        //counterItem_accept:"counter_accept",
+                    },
+                    items:[],
+                    getData(id){
+                        //console.log("getData");
+                        for(var i = 0; i < items_glue.items.length; i++){
+                        if(items_glue.items[i].id == id ){
+                            return items_glue.items[i];
+                            }
+                        }
+                        return null;
+                    },
+                    //INIT
+                    itemGlueInit(id){
+                        let base = document.getElementById(id);
+                        if(base!==null){
+                            let tmp = {};
+                            tmp.__proto__ = items_glue.protos.item;
+                            tmp.id = id;
+                            let hz2 = items_glue.parseArr(base.getAttribute( items_glue.attr_name.list ));
+                            for(let w = 0; w < hz2.length; w++){
+                                let h = document.getElementById(hz2[w]);
+                                tmp.contains.push(h);
+                                if(window.aux_counter_items !== void 0){
+                                    let counterData = aux_counter_items.getData(h.id);
+                                    tmp.containsData.push(counterData);
+                                }
+                            }
+                            tmp.targetId =base.getAttribute(items_glue.attr_name.out);
+                            let hz3 = items_glue.parseArr(base.getAttribute(items_glue.attr_name.words));
+                            hz3.forEach((item, i, arr)=>{ tmp.caseWords.push(item)});
+                            items_glue.items.push(tmp);
+
+                            base.addEventListener(items_glue.events.reset, items_glue.resetListener);
+                            base.addEventListener(items_glue.events.accept, items_glue.acceptListener);
+                        }
+                    },
+                    resetById(id){
+                        let tmp = items_glue.getData(id);
+                        if(tmp!==null){
+                            items_glue.reset.apply(tmp);
+                        }
+                    },
+                    reset(){
+                        this.contains.forEach(
+                            (item, i, arr)=>{item.dispatchEvent(
+                                new Event(aux_counter_items.events.counterItem_reset));
+                                }
+                        );
+                    },
+                    acceptById(id){
+                        let tmp = items_glue.getData(id);
+                        if(tmp!==null){
+                            items_glue.accept.apply(tmp);
+                        }
+                    },
+                    accept(){
+                        this.contains.forEach(
+                            (item, i, arr)=>{
+                                new Event(aux_counter_items.events.counterItem_accept);
+                            }
+                        );
+                        let target = document.getElementById(this.targetId);
+                        target.innerHTML = getCustomTitle(this.id);
+                    },
+                    parseArr(str){
+                        result = str.replace("]","").replace("[","").replace(/ /g,"").replace(/"/g,"").split(",");
+                        return result;
+                    },
+                    resetListener(event){
+                        //console.warn("resetListener(event)");
+                        items_glue.resetById(event.target.id);
+                    },
+                    acceptListener(event){
+                        items_glue.acceptById(event.target.id);
+                    }
+
+
+                }
+            }
+            console.log("itemGlue");
+            let sripts= document.getElementsByTagName("script");
+            let base = scripts[scripts.length-1].parentNode;
+            items_glue.itemGlueInit(base.id);
+
+            function glueHandler(event){
+
+            }
+
+            function getCustomTitle(id) {
+                let data = items_glue.getData(id);
+                let result = "";
+                if(data == null){return;}
+                if(data.mute == false){
+                    let fullCount=0;
+                    data.containsData.forEach(
+                        (item, i, arr)=>{ fullCount += item.current;/* item.input!!!*/ }
+                    );
+                result = buildTitle(fullCount, data.caseWords );
+                    data.containsData.forEach(
+                        (item, i, arr)=>{
+                            result += ", " + buildTitle(item.current, item.caseWords );
+                            }
+                    );
+                }
+                return result;
+            }
+
+            function buildTitle(countInt, infoArr){
+                //console.log("buildTitle");
+                //console.log(countInt);
+                //console.log(infoArr);
+                let result = "";
+                let countStr = ""+countInt;
+                if(countInt > 4 && countInt < 20){
+                    result = countStr + " " + infoArr[0];
+                }
+                else{
+                    let lastNumber = parseInt(countStr[countStr.length-1]);
+                    switch(lastNumber){
+                        case 0:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            result = countStr + " " + infoArr[0];
+                            break;
+                        case 1:
+                            result = countStr + " " + infoArr[1];
+                            break;
+                        case 2:
+                        case 3:
+                        case 4:
+                            result = countStr + " " + infoArr[2];
+                            break;
+                    }
+                }
+                   return result;
+                }
+            
+            document.addEventListener('keydown', (event) => {
+                const key = event.code;
+                if(window.aux_counter_items == void 0){return;}
+                switch(key){
+                    case "Numpad1":
+                    //reset
+                    for(var g = 0; g < items_glue.items.length; g++ ){
+                        items_glue.resetById(items_glue.items[g].id);
+                            }
+                        break;
+                    case "Numpad2":
+                        //accept
+                        for(var g = 0; g < items_glue.items.length; g++ ){
+                            items_glue.items[g].contains.forEach((item, i, arr)=>{
+                            if(item.getAttribute(aux_counter_items.attr_name.use_as) == 
+                                    aux_counter_items.attr_values.use_as.base){
+                                        item.dispatchEvent(new Event(aux_counter_items.events.counterItem_accept));
+                                        getCustomTitle(items_glue.items[g].id);
+                                    }
+                                
+                            else{
+                                console.error("itemGlue.pug: uncorect item list");
+                                }
+                                });
+                            }
+                        break;
+                    default:
+                        console.log('key code is ' + event.code);
+                        break;
+                    }
+                }
+            );

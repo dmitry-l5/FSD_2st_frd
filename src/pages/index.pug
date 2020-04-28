@@ -8,96 +8,90 @@ include ../components/dropdownList/dropdownList
 include ../components/dateDropdown/dateDropdown
 include ../components/calendar/calendar
 include ../components/editableDropdown/editableDropdown
+include ../components/inputPreviewBox/inputPreviewBox
+include ../components/counterItem/counterItem
+include ../components/itemGlue/itemGlue
+include ../components/clearAcceptPanel/clearAcceptPanel
+include ../components/blueSubmit/blueSubmit
 //include ../components/enterBox/enterBox
-head
-    meta(charset="UTF-8")
-    title index
-    meta(name="viewport" content="width=device-width, initial-scale=1" )
-    link(rel="stylesheet" href="index.scss")
-    style.
-        /* / {
-            border: 1px black solid;
-        }*/
-        .page{
-            /*width:1440px;*/
-            /*border: 1px black solid*/;
-        }
-body
-    script
-        include ../components/common/aux_common.js
-    .page
-        //main grid
+html
+    head
+        meta(charset="UTF-8")
+        title index
+        meta(name="viewport" content="width=device-width, initial-scale=1" )
+        link(rel="stylesheet" href="index.scss")
+        style.
+            /* / {
+                border: 1px black solid;
+            }*/
+            .page{
+                /*width:1440px;*/
+                /*border: 1px black solid*/;
+            }
+    body
+        script
+            include ../components/common/aux_common.js
+        .page
+            //main grid
 
-        .base
-            //grid header
-            .header
-                include ../modules/header.pug
-                div(id="t3")
-                div(id="t4")
-            //filter bar
-            //.left_side
-                include ../modules/main_1.pug
-            //grid room prevews
-            .main
-                //include ../modules/main_1.pug
-                .backgroundImages
-                    img(src="../images/image.png", alt="", srcset="")
-                    img(src="../images/image 2.png", alt="", srcset="")
-                    img(src="../images/image 3.png", alt="", srcset="")
-                .rightBottoom_text
-                    span Лучшие номера для вашей работы, отдыха и просто вдохновения
-                form(action="#", method="get")
-                    .shield
-                        .shield__title
-                            span Найдём номера под ваши пожелания
-                        .dateContainer
-                            +dropdownList({arrow:"false", block:"true"})
-                                .calendar__headContainer
-                                    div Прибытие
-                                        .enterBox
-                                            span(id="t1")
-                                    div Выезд
-                                        .enterBox
-                                            span(id="t2")
-                                +calendar_2({id:"mainCalendar", arrival:"t1", departure:"t2"})
-                        .guestsContainer
-                            +dropdownList({arrow:"false", block:"true"})
-                                .div 123
-                                .div 456
-                                .div 789
-                //form
-                        
-                    br
-                    br
-                    br
-                    br
-                    br
-                    br
-                    //+calendar_2({id:"scdCalendar", arrival:"t3", departure:"t4"})
-                    //+editableDropdown({id:"123"})
-                    br
-                    br
-                    br
-                    //+dropdownList({arrow:"false"})
-                        span placeholder header calendar dropdown
-                        +calendar_2({id:"scdCalendar"})
-                        +clearAcceptPanel()
-                        span placeholder header calendar dropdown
-                        span placeholder header calendar dropdown
-                        span placeholder header calendar dropdown
-                        span placeholder header calendar dropdown
-                        span placeholder header calendar dropdown
-                        span placeholder header calendar dropdown
-                    br
-                    br
-                    br
-                    //+dropdownList({display:"empty"})
-                        span placeholder header calendar dropdown
-                        +calendar_2({id:"trdCalendar"})
-                        span placeholder header calendar dropdown
-            //grid footer
-            .footer
-                include ../modules/footer.pug
-            //grid social links
-            .social
-                include ../modules/social.pug
+            .base
+                //grid header
+                .header
+                    include ../modules/header.pug
+                    div(id="t3")
+                    div(id="t4")
+                //filter bar
+                //.left_side
+                    include ../modules/main_1.pug
+                //grid room prevews
+                .main
+                    //include ../modules/main_1.pug
+                    .backgroundImages
+                        img(src="../images/image.png", alt="", srcset="")
+                        img(src="../images/image 2.png", alt="", srcset="")
+                        img(src="../images/image 3.png", alt="", srcset="")
+                    .rightBottoom_text
+                        span Лучшие номера для вашей работы, отдыха и просто вдохновения
+                    form(action="SearchRoom_1.html", method="get")
+                        .shield
+                            .shield__title
+                                span Найдём номера под ваши пожелания
+                            .dateContainer
+                                +dropdownList({arrow:"false", block:"true"})
+                                    .calendar__headContainer
+                                        +inputPreviewBox({id:"edc", targetId:"t1", title:"Прибытие"})
+                                        +inputPreviewBox({id:"cde", targetId:"t2", title:"Выезд"})
+                                    +calendar_2({id:"mainCalendar", arrival:"t1", departure:"t2"})
+                            .guestsContainer
+                                +dropdownList({arrow:"false", block:"true"})
+                                    +inputPreviewBox({id:"guestBox", targetId:"guestPreview", title:"Гости"})
+                                    +counterItem({id:"adult",
+                                      title:"Взрослые",
+                                            minCount:3,
+                                            maxCount:10,
+                                            name:"adult",
+                                            info:["Взрослых", "Взрослый", "Взрослых"]})
+                                            //info:{v1:"Взрослых", v2:"Взрослый", v3:"Взрослых"}})
+                                    +counterItem({id:"child",
+                                      title:"Дети",
+                                            minCount:3,
+                                            maxCount:10,
+                                            name:"child",
+                                            info:["Детей","Ребёнок","Ребёнка"]})
+                                    +counterItem({id:"infant",
+                                            title:"Младенцы",
+                                            minCount:3,
+                                            maxCount:10,
+                                            name:"infant",
+                                            info:["Младенцев","Младенец","Младенца"]})
+                                    +itemGlue({id:"guestGlue", targetId : "guestPreview", itemsId:["adult", "child", "infant"], title:"Сколько гостей", info:["Гостей","Гость","Гостя"] })
+                                    +clearAcceptPanel({use_for:"guestGlue"})
+                            .acceptContainer
+                                +blueSubmit({title:"Подобрать номер"})
+                                
+                //grid footer
+                .footer
+                    include ../modules/footer.pug
+                //grid social links
+                .social
+                    include ../modules/social.pug

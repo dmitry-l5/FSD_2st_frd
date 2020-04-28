@@ -6,8 +6,12 @@
 @import "./../components/whiteLink/whiteLink.scss";
 @import "./../components/dropdownList/dropdownList.scss";
 @import "./../components/editableDropdown/editableDropdown.scss";
+@import "./../components/inputPreviewBox/inputPreviewBox.scss";
+@import "./../components/counterItem/counterItem.scss";
+@import "./../components/clearAcceptPanel/clearAcceptPanel.scss";
 //@import "./../components/dateDropdown/dateDropdown.scss";
 @import "./../components/calendar/calendar.scss";
+@import "./../components/blueSubmit/blueSubmit.scss";
 //@import "./../components/enterBox/enterBox.scss";
 
 *{
@@ -110,8 +114,11 @@
             grid-area: main;
             position: relative;
             height: 830px;
-            overflow: hidden;
+            
             .backgroundImages{
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
                 position: relative;
                 & > img{
                     position: absolute;

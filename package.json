@@ -6,7 +6,7 @@
   "author": "dmitry-l5 <60506213+dmitry-l5@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/pages/index.pug --open",
+    "dev": "parcel src/pages/searchRoom.pug --open",
     "build": "parcel src/pages/index.pug -d docs --public-url ./ "
   },
   "devDependencies": {

@@ -1,3 +1,4 @@
+//requaire +clearAcceptPanel({use_for:id})
 mixin calendar_2(arg)
     -
         let id = arg.id;
@@ -33,31 +34,9 @@ mixin calendar_2(arg)
                     - for(z = 0; z < 7; z++)
                         td(class="calendar__normalCells", aux-use_as = "Calendar_dayCell" ) X
                         //td(name="cell"+(p*7 + z), class="calendar__normalCells") X
-        input(type="hidden", name=nameIn, aux-use_as="Calendar_arrivalDate")
-        input(type="hidden", name=nameOut, aux-use_as="Calendar_departureDate")
+        input(type="hidden", name=In, aux-use_as="Calendar_arrivalDate")
+        input(type="hidden", name=Out, aux-use_as="Calendar_departureDate")
         script
             include ../../components/calendar/calendar.js
         .bottom
             +clearAcceptPanel({use_for:id})
-
-mixin clearAcceptPanel(arg)
-    -
-        let targetId = arg.use_for?arg.use_for:"null"
-    .ac(aux-use_for = targetId)
-        .clear(aux-use_as="clear_button") очистить
-        .accept(aux-use_as="accept_button") применить
-        script.
-            let sripts= document.getElementsByTagName("script");
-            let base = scripts[scripts.length-1].parentNode;
-            base.onclick=function(event){
-                let target = document.getElementById(this.getAttribute("aux-use_for"));
-                switch(event.target.getAttribute("aux-use_as"))
-                {
-                    case "accept_button":
-                        target.dispatchEvent(new Event("accept"),{bubbles: true});
-                    break;
-                    case "clear_button":
-                        target.dispatchEvent(new Event("clear"),{bubbles: true});
-                    break;
-                }
-            }

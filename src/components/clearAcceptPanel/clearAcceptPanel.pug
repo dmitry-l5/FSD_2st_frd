@@ -1,0 +1,21 @@
+mixin clearAcceptPanel(arg)
+    -
+        let targetId = arg.use_for?arg.use_for:"null"
+    .ac(aux-use_for = targetId)
+        .clear(aux-use_as="clear_button") очистить
+        .accept(aux-use_as="accept_button") применить
+        script.
+            let sripts= document.getElementsByTagName("script");
+            let base = scripts[scripts.length-1].parentNode;
+            base.onclick=function(event){
+                let target = document.getElementById(this.getAttribute("aux-use_for"));
+                switch(event.target.getAttribute("aux-use_as"))
+                {
+                    case "accept_button":
+                        target.dispatchEvent(new Event("accept"),{bubbles: true});
+                    break;
+                    case "clear_button":
+                        target.dispatchEvent(new Event("reset"),{bubbles: true});
+                    break;
+                }
+            }

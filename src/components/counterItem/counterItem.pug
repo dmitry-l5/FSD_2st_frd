@@ -1,0 +1,25 @@
+mixin counterItem(arg)
+    -
+        let id = arg.id;
+        let title = arg.title?arg.title:"UNKNOWN";
+        let minCount = arg.minCount?arg.minCount:0;
+        let maxCount = arg.maxCount?arg.maxCount:0;
+        //let queryTitle = arg.queryTitle?arg.queryTitle:"UNKNOWN";
+        let name = arg.name?arg.name:"unknown_counterItem";
+        //let info = arg.info?arg.info:title+";"+title+";"+title+";"+title+";";
+        let info = arg.info;
+    .counterItem(
+            id=id,
+            aux-minValue=minCount, 
+            aux-maxValue=maxCount,
+            aux-wordCase = info,
+            aux-use_as ="CounterItem_Base"
+            )
+        .counterItem__title(name="title", data-title=name)= title
+        .counterItem__spliter
+        .counterItem__button(aux-use_as="CounterItem_decButton") -
+        .counterItem__count(aux-use_as="CounterItem_currentCount")= minCount
+        .counterItem__button(aux-use_as="CounterItem_incButton") +
+        input(type="hidden", name=name)
+        script
+            include ./../counterItem/counterItem.js

@@ -26,8 +26,8 @@ if (window.aux_calendars == void 0) {
         },
         events_name: {
             calendars_change: "calendars_change",
-            calendars_accept: "calendars_accept",
-            calendars_clear: "calendars_clear",
+            calendars_accept: "accept",
+            calendars_clear: "reset",
         },
         use_as: {
             base: "Calendar_Base",
@@ -394,7 +394,6 @@ if (window.aux_calendars == void 0) {
                 y.arrivalInnerHTML.innerHTML = aux_calendars.default.arrivalInnerHTML}
             if(y.departureInnerHTML!==null){
                 y.departureInnerHTML.innerHTML = aux_calendars.default.departureInnerHTML}
-
         },
     }
     //#endregion  aux_calendars
@@ -414,22 +413,19 @@ function calendarInit(){
         aux_calendars.showView.apply(aux_calendars.current.view,[ aux_calendars.current.item]);
         base.onclick = aux_calendars.click_handler;
         base.addEventListener(
-            "clear",
+            "reset",
             aux_calendars.clearDataLitener
             );
         base.addEventListener(
             "accept", 
             aux_calendars.acceptDataLitener
         );
-        base.dispatchEvent(new Event("clear"));
+        base.dispatchEvent(new Event("reset"));
     }
     else{
         console.error("calendarInit() : atrribute - " + aux_calendars.attr_name.use_as  + 
         ", must be equal - " + aux_calendars.use_as.base );
     }
 }
-
-
-
 
 calendarInit();

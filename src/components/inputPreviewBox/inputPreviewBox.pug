@@ -1,0 +1,17 @@
+mixin inputPreviewBox(arg)
+    -
+        let id = arg.id;
+        let targetId = arg.targetId;
+        let title = arg.title?arg.title:"#arg.title"
+    if(id==null)
+        .inputPreviewBox
+            .inputPreviewBox_Title 
+                span= title
+            .inputPreviewBox_Box
+                span(id = targetId) #value
+    else
+        .inputPreviewBox(id=id)
+            .inputPreviewBox_Title 
+                span= title
+            .inputPreviewBox_Box
+                span(id = targetId) #value

@@ -1,0 +1,35 @@
+.counterItem{
+    width: 100%;
+    background-color: greenyellow;
+    display: flex;
+    align-items: center;
+
+
+
+    & > .counterItem__title{
+        @extend %h3_text;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    & > .counterItem__spliter{
+        margin-left: auto;
+    }
+    & > .counterItem__button{
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid  $dark-25_color;
+        box-sizing: border-box;
+        border-radius: 22px;
+        @extend %body_text;
+        color: $dark-50_color;
+    }
+    & > .counterItem__count{
+        @extend %h3_text;
+        color: $dark-100_color;
+    }
+}

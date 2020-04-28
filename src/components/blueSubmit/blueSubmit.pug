@@ -1,0 +1,12 @@
+mixin blueSubmit(arg)
+    -
+        let title = arg.title?arg.title:"placeholder";
+        let btnName = arg.inputName?arg.inputName:"defaultName";
+        let btnValue = arg.inputName?arg.inputName:"defaultValue";
+    .blueSubmit
+        input(type="submit", name=btnName, value=btnValue)
+        .blueSubmit__Left
+        .blueSubmit__Center= title
+        .blueSubmit__Right
+            img(src="../components/blueSubmit/arrow_forward.svg", alt="arrow", srcset="")
+ 
