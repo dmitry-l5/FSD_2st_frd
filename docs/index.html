@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--call as :--><!--+link({})--><!--call as :--><!--+link({})--><!--mixin dropdownList(arg)--><!--    ---><!--        let display;--><!--        if(arg.display=="box"){display = "box"}--><!--        else if(arg.display=="empty")display="empty"--><!--        else display = "span"--><!--    .dropdownList--><!--        if(display =="box")--><!--            .dropdownList__titleBox--><!--            .dropdownList__dashboardBox(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else if(display == "span")            --><!--            .dropdownList__titleSpan--><!--                .dropdownList__fstElement--><!--                .dropdownList__arrow--><!--                    img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")--><!--            .dropdownList__dashboardSpan(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else--><!--            .dropdownList__titleEmpty--><!--                .dropdownList__fstElement--><!--            .dropdownList__dashboardEmpty(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        --><!--        if block--><!--            script(src="../components/dropdownList/dropdownList.js")--><!--Call as:--><!--+editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})--><!--include ../components/enterBox/enterBox--><head><meta charset="UTF-8"><title>index</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="pages.80ee2152.css"><style>/* / {
+<!DOCTYPE html><!--call as :--><!--+link({})--><!--call as :--><!--+link({})--><!--mixin dropdownList(arg)--><!--    ---><!--        let display;--><!--        if(arg.display=="box"){display = "box"}--><!--        else if(arg.display=="empty")display="empty"--><!--        else display = "span"--><!--    .dropdownList--><!--        if(display =="box")--><!--            .dropdownList__titleBox--><!--            .dropdownList__dashboardBox(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else if(display == "span")            --><!--            .dropdownList__titleSpan--><!--                .dropdownList__fstElement--><!--                .dropdownList__arrow--><!--                    img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")--><!--            .dropdownList__dashboardSpan(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else--><!--            .dropdownList__titleEmpty--><!--                .dropdownList__fstElement--><!--            .dropdownList__dashboardEmpty(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        --><!--        if block--><!--            script(src="../components/dropdownList/dropdownList.js")--><!--requaire +clearAcceptPanel({use_for:id})--><!--Call as:--><!--+editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})--><!--/*(id, targetId, itemsId)*/--><!--include ../components/enterBox/enterBox--><html><head><meta charset="UTF-8"><title>index</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="pages.80ee2152.css"><style>/* / {
     border: 1px black solid;
 }*/
 .page{
@@ -59,12 +59,12 @@ function aux_init() {
 
 
 
---></div><div class="whiteLink"><a href="#">Войти</a></div><div class="blueLink"><a href="#">Зарегистрироваться</a></div></div><div id="t3"></div><div id="t4"></div></div><!--filter bar--><!--.left_sideinclude ../modules/main_1.pug--><!--grid room prevews--><div class="main"><!--include ../modules/main_1.pug--><div class="backgroundImages"><img src="image.7cc65feb.png" alt="" srcset=""><img src="image 2.157e8df9.png" alt="" srcset=""><img src="image 3.6bf837fc.png" alt="" srcset=""></div><div class="rightBottoom_text"><span>Лучшие номера для вашей работы, отдыха и просто вдохновения</span></div><form action="#" method="get"><div class="shield"><div class="shield__title"><span>Найдём номера под ваши пожелания</span></div><div class="dateContainer"><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="calendar__headContainer"><div>Прибытие<div class="enterBox"><span id="t1"></span></div></div><div>Выезд<div class="enterBox"><span id="t2"></span></div></div></div><div class="calendar_2" id="mainCalendar" aux-use_as="Calendar_Base" aux-departureLabelId="t2" aux-arrivalLabelId="t1"><div class="calendar__header"><div class="calendar__prevButton" aux-use_as="Calendar_decMonthBtn"> </div><div class="calendar__montTitle" aux-use_as="Calendar_monthTitle">monthTitle</div><div class="calendar__yearTitle" aux-use_as="Calendar_yearTitle">yearTitle</div><div class="calendar__nextButton" aux-use_as="Calendar_incMonthBtn"> </div></div><table class="calendar__month" aux-use_as="Calendar_daysArea"><script>var shift = 40;
+--></div><div class="whiteLink"><a href="#">Войти</a></div><div class="blueLink"><a href="#">Зарегистрироваться</a></div></div><div id="t3"></div><div id="t4"></div></div><!--filter bar--><!--.left_sideinclude ../modules/main_1.pug--><!--grid room prevews--><div class="main"><!--include ../modules/main_1.pug--><div class="backgroundImages"><img src="image.7cc65feb.png" alt="" srcset=""><img src="image 2.157e8df9.png" alt="" srcset=""><img src="image 3.6bf837fc.png" alt="" srcset=""></div><div class="rightBottoom_text"><span>Лучшие номера для вашей работы, отдыха и просто вдохновения</span></div><form action="SearchRoom_1.html" method="get"><div class="shield"><div class="shield__title"><span>Найдём номера под ваши пожелания</span></div><div class="dateContainer"><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="calendar__headContainer"><div class="inputPreviewBox" id="edc"><div class="inputPreviewBox_Title"> <span>Прибытие</span></div><div class="inputPreviewBox_Box"><span id="t1">#value</span></div></div><div class="inputPreviewBox" id="cde"><div class="inputPreviewBox_Title"> <span>Выезд</span></div><div class="inputPreviewBox_Box"><span id="t2">#value</span></div></div></div><div class="calendar_2" id="mainCalendar" aux-use_as="Calendar_Base" aux-departureLabelId="t2" aux-arrivalLabelId="t1"><div class="calendar__header"><div class="calendar__prevButton" aux-use_as="Calendar_decMonthBtn"> </div><div class="calendar__montTitle" aux-use_as="Calendar_monthTitle">monthTitle</div><div class="calendar__yearTitle" aux-use_as="Calendar_yearTitle">yearTitle</div><div class="calendar__nextButton" aux-use_as="Calendar_incMonthBtn"> </div></div><table class="calendar__month" aux-use_as="Calendar_daysArea"><script>var shift = 40;
 var scripts = document.getElementsByTagName("script");
 var base = scripts[scripts.length - 1].parentNode;
 base.style.width = base.parentNode.offsetWidth - shift + "px";
 base.style.marginLeft = shift / 2 + "px";
-base.style.height = base.parentNode.offsetWidth - shift + "px";</script><tr class="calendar__daysTitle"><th aux-use_as="Calendar_weekTitle">Пн</th><th aux-use_as="Calendar_weekTitle">Вт</th><th aux-use_as="Calendar_weekTitle">Ср</th><th aux-use_as="Calendar_weekTitle">Чт</th><th aux-use_as="Calendar_weekTitle">Пт</th><th aux-use_as="Calendar_weekTitle">Сб</th><th aux-use_as="Calendar_weekTitle">Вс </th></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr></table><input type="hidden" aux-use_as="Calendar_arrivalDate"><input type="hidden" aux-use_as="Calendar_departureDate"><script>function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+base.style.height = base.parentNode.offsetWidth - shift + "px";</script><tr class="calendar__daysTitle"><th aux-use_as="Calendar_weekTitle">Пн</th><th aux-use_as="Calendar_weekTitle">Вт</th><th aux-use_as="Calendar_weekTitle">Ср</th><th aux-use_as="Calendar_weekTitle">Чт</th><th aux-use_as="Calendar_weekTitle">Пт</th><th aux-use_as="Calendar_weekTitle">Сб</th><th aux-use_as="Calendar_weekTitle">Вс </th></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr><tr><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--><td class="calendar__normalCells" aux-use_as="Calendar_dayCell">X</td><!--td(name="cell"+(p*7 + z), class="calendar__normalCells") X--></tr></table><input type="hidden" name="t1" aux-use_as="Calendar_arrivalDate"><input type="hidden" name="t2" aux-use_as="Calendar_departureDate"><script>function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //alert("This is slider JS");
 if (window.utility == void 0) {
@@ -111,8 +111,8 @@ if (window.aux_calendars == void 0) {
     },
     events_name: {
       calendars_change: "calendars_change",
-      calendars_accept: "calendars_accept",
-      calendars_clear: "calendars_clear"
+      calendars_accept: "accept",
+      calendars_clear: "reset"
     },
     use_as: {
       base: "Calendar_Base",
@@ -534,9 +534,9 @@ function calendarInit() {
     aux_calendars.pullToCurrent(base.id);
     aux_calendars.showView.apply(aux_calendars.current.view, [aux_calendars.current.item]);
     base.onclick = aux_calendars.click_handler;
-    base.addEventListener("clear", aux_calendars.clearDataLitener);
+    base.addEventListener("reset", aux_calendars.clearDataLitener);
     base.addEventListener("accept", aux_calendars.acceptDataLitener);
-    base.dispatchEvent(new Event("clear"));
+    base.dispatchEvent(new Event("reset"));
   } else {
     console.error("calendarInit() : atrribute - " + aux_calendars.attr_name.use_as + ", must be equal - " + aux_calendars.use_as.base);
   }
@@ -556,36 +556,940 @@ base.onclick = function (event) {
       break;
 
     case "clear_button":
-      target.dispatchEvent(new Event("clear"), {
+      target.dispatchEvent(new Event("reset"), {
         bubbles: true
       });
       break;
   }
-};</script></div></div></div></div><script src="dropdownList.22e49fdb.js"></script></div></div><div class="guestsContainer"><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="div">123</div><div class="div">456</div><div class="div">789</div></div><script src="dropdownList.22e49fdb.js"></script></div></div></div></form><!--formbr
-br
-br
-br
-br
-br
-//+calendar_2({id:"scdCalendar", arrival:"t3", departure:"t4"})
-//+editableDropdown({id:"123"})
-br
-br
-br
-//+dropdownList({arrow:"false"})
-    span placeholder header calendar dropdown
-    +calendar_2({id:"scdCalendar"})
-    +clearAcceptPanel()
-    span placeholder header calendar dropdown
-    span placeholder header calendar dropdown
-    span placeholder header calendar dropdown
-    span placeholder header calendar dropdown
-    span placeholder header calendar dropdown
-    span placeholder header calendar dropdown
-br
-br
-br
-//+dropdownList({display:"empty"})
-    span placeholder header calendar dropdown
-    +calendar_2({id:"trdCalendar"})
-    span placeholder header calendar dropdown--></div><!--grid footer--><div class="footer"><div class="footerModule"><div class="linkPanel"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="linkPanel__text"><span>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span></div></div><div class="linkPanel"><div class="linkPanel__title"><span>Навигация</span></div><a class="link" href="#">О нас</a><a class="link" href="#">Новости</a><a class="link" href="#">Служба поддержки</a><a class="link" href="#">Услуги</a></div><div class="linkPanel"><div class="linkPanel__title"><span>О нас</span></div><a class="link" href="#">О сервисе</a><a class="link" href="#">Наша команда</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Инвесторы</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Служба поддержки</span></div><a class="link" href="#">Соглашения</a><a class="link" href="#">Сообщества</a><a class="link" href="#">Связь с нами</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Подписка</span></div><div class="linkPanel__text"><span>Получайте специальные предложения и новости сервиса</span></div><form action="#" method="post"><input type="email"></form></div></div><!--    +label--><!--    .flex_splitter--><!--    a(class="", href="*") О нас--><!--    a(class="", href="*") Услуги--><!--    a(class="", href="*") Вакансии--><!--    a(class="", href="*") Новости--><!--    a(class="", href="*") Соглашения--><!--    //+link({ title:"О нас", href:"*"})--><!--    //+link({ title:"Услуги", href:"*"})--><!--    //+link({ title:"Вакансии", href:"*"})--><!--    //+link({ title:"Новости", href:"*"})--><!--    //+link({ title:"Соглашения", href:"*"})--><!--    span(class="common__whiteButton") Войти--><!--    span(class="common__blueButton") Зарегистрироваться--><!----><!----><!----><!----><!--    <div class="footer">--><!--                    <ul class="footer_flex">--><!--                        <li class="firstItem">--><!--                            <div class="label mbt_tmp">--><!--                                <div class="label__logo">--><!--                                    <img id="logo" src="../images/Vector-2.svg" alt="toxin" />--><!--                                    <img id="leftPath" src="../images/Vector.svg" alt="toxin" />--><!--                                    <img id="rigthPath" src="../images/Vector-1.svg" alt="toxin" />--><!--                                </div>--><!--                                <div class="label__text">--><!--                                    <img src="../images/TOXIN.svg" alt="toxin" />--><!--                                </div>--><!--                            </div>--><!--                            <div class="footer_sublist footer_text in">--><!--                                Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»--><!--                            </div>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Навигация</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>--><!--                                    О нас--><!--                                </li>--><!--                                <li>--><!--                                    Новости--><!--                                </li>--><!--                                <li>--><!--                                    Служба поддержки--><!--                                </li>--><!--                                <li>--><!--                                    Услуги--><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">О нас</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>О сервисе</li>--><!--                                <li>Наша команда</li>--><!--                                <li>Вакансии</li>--><!--                                <li>Инвесторы</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Служба поддержки</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>Соглашения</li>--><!--                                <li>Сообщества</li>--><!--                                <li>Связь с нами</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li class="lastItem">--><!--                            <span class="footer_title">Подписка</span>--><!--                            <ul class="footer_sublist footer_text">--><!--                                <li>--><!--                                    <span>Получайте специальные предложения и новости сервиса</span>--><!--                                </li>--><!--                                <li>--><!----><!--                                    <input type="email" class="footer_email" />--><!----><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                    </ul>--><!--                </div>--></div><!--grid social links--><div class="social"><div class="socialModule"><div class="socialModule__text">Copyright C2018 Toxin отель. Все права зачищены</div><div class="socialModule__links"><a> <img id="" src="twiter.f1cdd1b7.svg" alt="Twiter"></a><a><img id="" src="facebook.d989b116.svg" alt="Facebook"></a><a><img id="" src="instagram.a353b496.svg" alt="Instagram"></a></div></div></div></div></div></body>
+};</script></div></div></div></div><script src="dropdownList.22e49fdb.js"></script></div></div><div class="guestsContainer"><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="inputPreviewBox" id="guestBox"><div class="inputPreviewBox_Title"> <span>Гости</span></div><div class="inputPreviewBox_Box"><span id="guestPreview">#value</span></div></div><div class="counterItem" id="adult" aux-minValue="3" aux-maxValue="10" aux-wordCase="[&quot;Взрослых&quot;,&quot;Взрослый&quot;,&quot;Взрослых&quot;]" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="adult">Взрослые</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">3</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="adult"><script>if (window.aux_counter_items == void 0) {
+  var aux_counter_items = {
+    protos: {
+      item: {
+        min: 0,
+        current: 0,
+        max: 0,
+        get: null,
+        set: null,
+        reset: null
+      },
+      view: {
+        base: null,
+        decButton: null,
+        counter: null,
+        incButton: null,
+        input: null
+      }
+    },
+    items: [],
+    views: [],
+    attr_name: {
+      use_as: "aux-use_as",
+      minValue: "aux-minValue",
+      maxValue: "aux-maxValue",
+      caseArr: "aux-wordCase",
+      selfVisibility: "aux-visibility"
+    },
+    attr_values: {
+      use_as: {
+        base: "CounterItem_Base",
+        decButton: "CounterItem_decButton",
+        counter: "CounterItem_currentCount",
+        incButton: "CounterItem_incButton"
+      }
+    },
+    events: {
+      counterItem_change: "counter_change",
+      counterItem_reset: "reset",
+      counterItem_accept: "accept"
+    },
+    //#region model method
+    addItem: function addItem(id) {
+      if (aux_counter_items.getData(id) !== null) {
+        console.error("addItem(" + id + ") : item already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.item;
+      tmp.id = id;
+      aux_counter_items.items.push(tmp);
+      return tmp;
+    },
+    setData: function setData(current, min, max, caseword) {
+      //console.warn("setData");
+      if (current) {
+        this.current = current;
+      }
+
+      if (min) {
+        this.min = min;
+      }
+
+      if (max) {
+        this.max = max;
+      }
+
+      if (caseword) {
+        this.caseWords = caseword;
+      }
+
+      document.dispatchEvent(new CustomEvent(aux_counter_items.events.counterItem_change, {
+        detail: {
+          data: this
+        }
+      }));
+    },
+    resetData: function resetData(id) {
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      aux_counter_items.setData.apply(data, [data.min, data.min, data.max, data.caseWords]);
+
+      if (view !== null) {
+        view.input.value = data.current;
+      }
+    },
+    getData: function getData(id) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id == id) {
+          return this.items[i];
+        }
+      }
+
+      return null;
+    },
+    incValue: function incValue() {
+      console.log("incValue");
+
+      if (this.current < this.max) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current + 1, this.min, this.max]);
+      }
+    },
+    decValue: function decValue() {
+      console.log("decValue");
+
+      if (this.current > this.min) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current - 1, this.min, this.max]);
+      }
+    },
+    acceptData: function acceptData(id) {
+      //console.log("acceptData");
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      view.input.value = data.current;
+    },
+    //#endregion model method
+    //#region view method
+    addView: function addView(id) {
+      if (aux_counter_items.getView(id) !== null) {
+        console.error("getView(" + id + ") : view already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.view;
+      tmp.id = id;
+      tmp.base = document.getElementById(id);
+      tmp.decButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.decButton + "]");
+      tmp.decButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      tmp.counter = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.counter + "]");
+      tmp.incButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.incButton + "]");
+      tmp.incButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      aux_counter_items.views.push(tmp);
+      tmp.input = tmp.base.querySelector("input");
+      tmp.base.onclick = aux_counter_items.click_handler;
+      return tmp;
+    },
+    getView: function getView(id) {
+      //console.log("getView(id)");
+      for (var i = 0; i < this.views.length; i++) {
+        if (this.views[i].id == id) {
+          return this.views[i];
+        }
+      }
+
+      return null;
+    },
+    showView: function showView(data) {
+      this.input.value = data.current;
+      this.counter.innerHTML = data.current;
+      this.decButton.style.visibility = data.min < data.current ? "" : "hidden";
+      this.incButton.style.visibility = data.max > data.current ? "" : "hidden";
+    },
+    //#endregion view method
+    parseItem: function parseItem(item) {
+      var result = {};
+      result.__proto__ = aux_counter_items.protos.item;
+      result.min = parseInt(item.getAttribute(aux_counter_items.attr_name.minValue));
+      result.caseArr = parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr));
+      result.max = parseInt(item.getAttribute(aux_counter_items.attr_name.maxValue));
+      return result;
+    },
+    changeDataListener: function changeDataListener(event) {
+      //console.log("changeDataListener()"); 
+      var data = event.detail.data;
+      var view = aux_counter_items.getView(data.id);
+
+      if (view !== null) {
+        aux_counter_items.showView.apply(view, [data]);
+        view.base.dispatchEvent(new CustomEvent("xulio", {
+          detail: {
+            view: view,
+            item: data
+          }
+        }));
+      }
+    },
+    click_handler: function click_handler(event) {
+      //console.log("this.click_handler");
+      var targetUseAs = event.target.getAttribute(aux_counter_items.attr_name.use_as);
+      var item = aux_counter_items.getData(this.id);
+      var view = aux_counter_items.getView(this.id);
+
+      switch (targetUseAs) {
+        case aux_counter_items.attr_values.use_as.incButton:
+          aux_counter_items.incValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.incButton:");
+
+          break;
+
+        case aux_counter_items.attr_values.use_as.decButton:
+          aux_counter_items.decValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.decButton:");
+
+          break;
+
+        default:
+          //console.log(" aux_counter_items click_handler default");
+          break;
+      }
+    }
+  };
+}
+
+function parseArr(str) {
+  result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+  return result;
+}
+
+function CounterItemInit() {
+  var scripts = document.getElementsByTagName("script");
+  var base = scripts[scripts.length - 1].parentNode;
+  var newData = aux_counter_items.addItem(base.id);
+  newData.current = newData.min;
+  var hz1 = aux_counter_items.parseItem(base);
+  hz1.current = hz1.min;
+  aux_counter_items.setData.apply(newData, [hz1.current, hz1.min, hz1.max, hz1.caseArr]); //.apply(newData, 3, 3 , 10, [one,two,three,four]);
+
+  var newView = aux_counter_items.addView(base.id);
+  document.addEventListener(aux_counter_items.events.counterItem_change, aux_counter_items.changeDataListener);
+  base.addEventListener(aux_counter_items.events.counterItem_reset, function (event) {
+    aux_counter_items.resetData(event.target.id);
+  });
+  base.addEventListener(aux_counter_items.events.counterItem_accept, function (event) {
+    aux_counter_items.acceptData(event.target.id);
+  });
+  base.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+}
+
+CounterItemInit();</script></div><div class="counterItem" id="child" aux-minValue="3" aux-maxValue="10" aux-wordCase="[&quot;Детей&quot;,&quot;Ребёнок&quot;,&quot;Ребёнка&quot;]" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="child">Дети</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">3</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="child"><script>if (window.aux_counter_items == void 0) {
+  var aux_counter_items = {
+    protos: {
+      item: {
+        min: 0,
+        current: 0,
+        max: 0,
+        get: null,
+        set: null,
+        reset: null
+      },
+      view: {
+        base: null,
+        decButton: null,
+        counter: null,
+        incButton: null,
+        input: null
+      }
+    },
+    items: [],
+    views: [],
+    attr_name: {
+      use_as: "aux-use_as",
+      minValue: "aux-minValue",
+      maxValue: "aux-maxValue",
+      caseArr: "aux-wordCase",
+      selfVisibility: "aux-visibility"
+    },
+    attr_values: {
+      use_as: {
+        base: "CounterItem_Base",
+        decButton: "CounterItem_decButton",
+        counter: "CounterItem_currentCount",
+        incButton: "CounterItem_incButton"
+      }
+    },
+    events: {
+      counterItem_change: "counter_change",
+      counterItem_reset: "reset",
+      counterItem_accept: "accept"
+    },
+    //#region model method
+    addItem: function addItem(id) {
+      if (aux_counter_items.getData(id) !== null) {
+        console.error("addItem(" + id + ") : item already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.item;
+      tmp.id = id;
+      aux_counter_items.items.push(tmp);
+      return tmp;
+    },
+    setData: function setData(current, min, max, caseword) {
+      //console.warn("setData");
+      if (current) {
+        this.current = current;
+      }
+
+      if (min) {
+        this.min = min;
+      }
+
+      if (max) {
+        this.max = max;
+      }
+
+      if (caseword) {
+        this.caseWords = caseword;
+      }
+
+      document.dispatchEvent(new CustomEvent(aux_counter_items.events.counterItem_change, {
+        detail: {
+          data: this
+        }
+      }));
+    },
+    resetData: function resetData(id) {
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      aux_counter_items.setData.apply(data, [data.min, data.min, data.max, data.caseWords]);
+
+      if (view !== null) {
+        view.input.value = data.current;
+      }
+    },
+    getData: function getData(id) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id == id) {
+          return this.items[i];
+        }
+      }
+
+      return null;
+    },
+    incValue: function incValue() {
+      console.log("incValue");
+
+      if (this.current < this.max) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current + 1, this.min, this.max]);
+      }
+    },
+    decValue: function decValue() {
+      console.log("decValue");
+
+      if (this.current > this.min) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current - 1, this.min, this.max]);
+      }
+    },
+    acceptData: function acceptData(id) {
+      //console.log("acceptData");
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      view.input.value = data.current;
+    },
+    //#endregion model method
+    //#region view method
+    addView: function addView(id) {
+      if (aux_counter_items.getView(id) !== null) {
+        console.error("getView(" + id + ") : view already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.view;
+      tmp.id = id;
+      tmp.base = document.getElementById(id);
+      tmp.decButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.decButton + "]");
+      tmp.decButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      tmp.counter = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.counter + "]");
+      tmp.incButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.incButton + "]");
+      tmp.incButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      aux_counter_items.views.push(tmp);
+      tmp.input = tmp.base.querySelector("input");
+      tmp.base.onclick = aux_counter_items.click_handler;
+      return tmp;
+    },
+    getView: function getView(id) {
+      //console.log("getView(id)");
+      for (var i = 0; i < this.views.length; i++) {
+        if (this.views[i].id == id) {
+          return this.views[i];
+        }
+      }
+
+      return null;
+    },
+    showView: function showView(data) {
+      this.input.value = data.current;
+      this.counter.innerHTML = data.current;
+      this.decButton.style.visibility = data.min < data.current ? "" : "hidden";
+      this.incButton.style.visibility = data.max > data.current ? "" : "hidden";
+    },
+    //#endregion view method
+    parseItem: function parseItem(item) {
+      var result = {};
+      result.__proto__ = aux_counter_items.protos.item;
+      result.min = parseInt(item.getAttribute(aux_counter_items.attr_name.minValue));
+      result.caseArr = parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr));
+      result.max = parseInt(item.getAttribute(aux_counter_items.attr_name.maxValue));
+      return result;
+    },
+    changeDataListener: function changeDataListener(event) {
+      //console.log("changeDataListener()"); 
+      var data = event.detail.data;
+      var view = aux_counter_items.getView(data.id);
+
+      if (view !== null) {
+        aux_counter_items.showView.apply(view, [data]);
+        view.base.dispatchEvent(new CustomEvent("xulio", {
+          detail: {
+            view: view,
+            item: data
+          }
+        }));
+      }
+    },
+    click_handler: function click_handler(event) {
+      //console.log("this.click_handler");
+      var targetUseAs = event.target.getAttribute(aux_counter_items.attr_name.use_as);
+      var item = aux_counter_items.getData(this.id);
+      var view = aux_counter_items.getView(this.id);
+
+      switch (targetUseAs) {
+        case aux_counter_items.attr_values.use_as.incButton:
+          aux_counter_items.incValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.incButton:");
+
+          break;
+
+        case aux_counter_items.attr_values.use_as.decButton:
+          aux_counter_items.decValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.decButton:");
+
+          break;
+
+        default:
+          //console.log(" aux_counter_items click_handler default");
+          break;
+      }
+    }
+  };
+}
+
+function parseArr(str) {
+  result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+  return result;
+}
+
+function CounterItemInit() {
+  var scripts = document.getElementsByTagName("script");
+  var base = scripts[scripts.length - 1].parentNode;
+  var newData = aux_counter_items.addItem(base.id);
+  newData.current = newData.min;
+  var hz1 = aux_counter_items.parseItem(base);
+  hz1.current = hz1.min;
+  aux_counter_items.setData.apply(newData, [hz1.current, hz1.min, hz1.max, hz1.caseArr]); //.apply(newData, 3, 3 , 10, [one,two,three,four]);
+
+  var newView = aux_counter_items.addView(base.id);
+  document.addEventListener(aux_counter_items.events.counterItem_change, aux_counter_items.changeDataListener);
+  base.addEventListener(aux_counter_items.events.counterItem_reset, function (event) {
+    aux_counter_items.resetData(event.target.id);
+  });
+  base.addEventListener(aux_counter_items.events.counterItem_accept, function (event) {
+    aux_counter_items.acceptData(event.target.id);
+  });
+  base.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+}
+
+CounterItemInit();</script></div><div class="counterItem" id="infant" aux-minValue="3" aux-maxValue="10" aux-wordCase="[&quot;Младенцев&quot;,&quot;Младенец&quot;,&quot;Младенца&quot;]" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="infant">Младенцы</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">3</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="infant"><script>if (window.aux_counter_items == void 0) {
+  var aux_counter_items = {
+    protos: {
+      item: {
+        min: 0,
+        current: 0,
+        max: 0,
+        get: null,
+        set: null,
+        reset: null
+      },
+      view: {
+        base: null,
+        decButton: null,
+        counter: null,
+        incButton: null,
+        input: null
+      }
+    },
+    items: [],
+    views: [],
+    attr_name: {
+      use_as: "aux-use_as",
+      minValue: "aux-minValue",
+      maxValue: "aux-maxValue",
+      caseArr: "aux-wordCase",
+      selfVisibility: "aux-visibility"
+    },
+    attr_values: {
+      use_as: {
+        base: "CounterItem_Base",
+        decButton: "CounterItem_decButton",
+        counter: "CounterItem_currentCount",
+        incButton: "CounterItem_incButton"
+      }
+    },
+    events: {
+      counterItem_change: "counter_change",
+      counterItem_reset: "reset",
+      counterItem_accept: "accept"
+    },
+    //#region model method
+    addItem: function addItem(id) {
+      if (aux_counter_items.getData(id) !== null) {
+        console.error("addItem(" + id + ") : item already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.item;
+      tmp.id = id;
+      aux_counter_items.items.push(tmp);
+      return tmp;
+    },
+    setData: function setData(current, min, max, caseword) {
+      //console.warn("setData");
+      if (current) {
+        this.current = current;
+      }
+
+      if (min) {
+        this.min = min;
+      }
+
+      if (max) {
+        this.max = max;
+      }
+
+      if (caseword) {
+        this.caseWords = caseword;
+      }
+
+      document.dispatchEvent(new CustomEvent(aux_counter_items.events.counterItem_change, {
+        detail: {
+          data: this
+        }
+      }));
+    },
+    resetData: function resetData(id) {
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      aux_counter_items.setData.apply(data, [data.min, data.min, data.max, data.caseWords]);
+
+      if (view !== null) {
+        view.input.value = data.current;
+      }
+    },
+    getData: function getData(id) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id == id) {
+          return this.items[i];
+        }
+      }
+
+      return null;
+    },
+    incValue: function incValue() {
+      console.log("incValue");
+
+      if (this.current < this.max) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current + 1, this.min, this.max]);
+      }
+    },
+    decValue: function decValue() {
+      console.log("decValue");
+
+      if (this.current > this.min) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current - 1, this.min, this.max]);
+      }
+    },
+    acceptData: function acceptData(id) {
+      //console.log("acceptData");
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      view.input.value = data.current;
+    },
+    //#endregion model method
+    //#region view method
+    addView: function addView(id) {
+      if (aux_counter_items.getView(id) !== null) {
+        console.error("getView(" + id + ") : view already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.view;
+      tmp.id = id;
+      tmp.base = document.getElementById(id);
+      tmp.decButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.decButton + "]");
+      tmp.decButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      tmp.counter = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.counter + "]");
+      tmp.incButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.incButton + "]");
+      tmp.incButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      aux_counter_items.views.push(tmp);
+      tmp.input = tmp.base.querySelector("input");
+      tmp.base.onclick = aux_counter_items.click_handler;
+      return tmp;
+    },
+    getView: function getView(id) {
+      //console.log("getView(id)");
+      for (var i = 0; i < this.views.length; i++) {
+        if (this.views[i].id == id) {
+          return this.views[i];
+        }
+      }
+
+      return null;
+    },
+    showView: function showView(data) {
+      this.input.value = data.current;
+      this.counter.innerHTML = data.current;
+      this.decButton.style.visibility = data.min < data.current ? "" : "hidden";
+      this.incButton.style.visibility = data.max > data.current ? "" : "hidden";
+    },
+    //#endregion view method
+    parseItem: function parseItem(item) {
+      var result = {};
+      result.__proto__ = aux_counter_items.protos.item;
+      result.min = parseInt(item.getAttribute(aux_counter_items.attr_name.minValue));
+      result.caseArr = parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr));
+      result.max = parseInt(item.getAttribute(aux_counter_items.attr_name.maxValue));
+      return result;
+    },
+    changeDataListener: function changeDataListener(event) {
+      //console.log("changeDataListener()"); 
+      var data = event.detail.data;
+      var view = aux_counter_items.getView(data.id);
+
+      if (view !== null) {
+        aux_counter_items.showView.apply(view, [data]);
+        view.base.dispatchEvent(new CustomEvent("xulio", {
+          detail: {
+            view: view,
+            item: data
+          }
+        }));
+      }
+    },
+    click_handler: function click_handler(event) {
+      //console.log("this.click_handler");
+      var targetUseAs = event.target.getAttribute(aux_counter_items.attr_name.use_as);
+      var item = aux_counter_items.getData(this.id);
+      var view = aux_counter_items.getView(this.id);
+
+      switch (targetUseAs) {
+        case aux_counter_items.attr_values.use_as.incButton:
+          aux_counter_items.incValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.incButton:");
+
+          break;
+
+        case aux_counter_items.attr_values.use_as.decButton:
+          aux_counter_items.decValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.decButton:");
+
+          break;
+
+        default:
+          //console.log(" aux_counter_items click_handler default");
+          break;
+      }
+    }
+  };
+}
+
+function parseArr(str) {
+  result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+  return result;
+}
+
+function CounterItemInit() {
+  var scripts = document.getElementsByTagName("script");
+  var base = scripts[scripts.length - 1].parentNode;
+  var newData = aux_counter_items.addItem(base.id);
+  newData.current = newData.min;
+  var hz1 = aux_counter_items.parseItem(base);
+  hz1.current = hz1.min;
+  aux_counter_items.setData.apply(newData, [hz1.current, hz1.min, hz1.max, hz1.caseArr]); //.apply(newData, 3, 3 , 10, [one,two,three,four]);
+
+  var newView = aux_counter_items.addView(base.id);
+  document.addEventListener(aux_counter_items.events.counterItem_change, aux_counter_items.changeDataListener);
+  base.addEventListener(aux_counter_items.events.counterItem_reset, function (event) {
+    aux_counter_items.resetData(event.target.id);
+  });
+  base.addEventListener(aux_counter_items.events.counterItem_accept, function (event) {
+    aux_counter_items.acceptData(event.target.id);
+  });
+  base.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+}
+
+CounterItemInit();</script></div><div class="itemGlue" id="guestGlue" aux-outputId="guestPreview" aux-itemsId="[&quot;adult&quot;,&quot;child&quot;,&quot;infant&quot;]" aux-wordCase="[&quot;Гостей&quot;,&quot;Гость&quot;,&quot;Гостя&quot;]" aux-use_as="ItemGlue_Base" style="display:none;"><script>if (window.items_glue == void 0) {
+  var items_glue = {
+    protos: {
+      item: {
+        id: null,
+        title: "TITLE",
+        caseWords: [],
+        targetId: null,
+        contains: [],
+        containsData: [],
+        getTitle: function getTitle() {
+          console.warn("getTitle function must be override");
+        },
+        reset: function reset() {
+          console.warn("reset function must be override");
+        },
+        accept: function accept() {
+          console.warn("accept function must be override");
+        },
+        mute: false
+      }
+    },
+    attr_name: {
+      use_as: "aux-use_as",
+      out: "aux-outputId",
+      words: "aux-wordCase",
+      list: "aux-itemsId"
+    },
+    attr_values: {
+      use_as: {
+        base: "ItemGlue_Base"
+      }
+    },
+    events: {
+      //counterItem_change:"counter_change",
+      reset: "reset",
+      accept: "accept" //counterItem_accept:"counter_accept",
+
+    },
+    items: [],
+    getData: function getData(id) {
+      //console.log("getData");
+      for (var i = 0; i < items_glue.items.length; i++) {
+        if (items_glue.items[i].id == id) {
+          return items_glue.items[i];
+        }
+      }
+
+      return null;
+    },
+    //INIT
+    itemGlueInit: function itemGlueInit(id) {
+      var base = document.getElementById(id);
+
+      if (base !== null) {
+        var tmp = {};
+        tmp.__proto__ = items_glue.protos.item;
+        tmp.id = id;
+        var hz2 = items_glue.parseArr(base.getAttribute(items_glue.attr_name.list));
+
+        for (var w = 0; w < hz2.length; w++) {
+          var h = document.getElementById(hz2[w]);
+          tmp.contains.push(h);
+
+          if (window.aux_counter_items !== void 0) {
+            var counterData = aux_counter_items.getData(h.id);
+            tmp.containsData.push(counterData);
+          }
+        }
+
+        tmp.targetId = base.getAttribute(items_glue.attr_name.out);
+        var hz3 = items_glue.parseArr(base.getAttribute(items_glue.attr_name.words));
+        hz3.forEach(function (item, i, arr) {
+          tmp.caseWords.push(item);
+        });
+        items_glue.items.push(tmp);
+        base.addEventListener(items_glue.events.reset, items_glue.resetListener);
+        base.addEventListener(items_glue.events.accept, items_glue.acceptListener);
+      }
+    },
+    resetById: function resetById(id) {
+      var tmp = items_glue.getData(id);
+
+      if (tmp !== null) {
+        items_glue.reset.apply(tmp);
+      }
+    },
+    reset: function reset() {
+      this.contains.forEach(function (item, i, arr) {
+        item.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+      });
+    },
+    acceptById: function acceptById(id) {
+      var tmp = items_glue.getData(id);
+
+      if (tmp !== null) {
+        items_glue.accept.apply(tmp);
+      }
+    },
+    accept: function accept() {
+      this.contains.forEach(function (item, i, arr) {
+        new Event(aux_counter_items.events.counterItem_accept);
+      });
+      var target = document.getElementById(this.targetId);
+      target.innerHTML = getCustomTitle(this.id);
+    },
+    parseArr: function parseArr(str) {
+      result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+      return result;
+    },
+    resetListener: function resetListener(event) {
+      //console.warn("resetListener(event)");
+      items_glue.resetById(event.target.id);
+    },
+    acceptListener: function acceptListener(event) {
+      items_glue.acceptById(event.target.id);
+    }
+  };
+}
+
+console.log("itemGlue");
+var sripts = document.getElementsByTagName("script");
+var base = scripts[scripts.length - 1].parentNode;
+items_glue.itemGlueInit(base.id);
+
+function glueHandler(event) {}
+
+function getCustomTitle(id) {
+  var data = items_glue.getData(id);
+  var result = "";
+
+  if (data == null) {
+    return;
+  }
+
+  if (data.mute == false) {
+    var fullCount = 0;
+    data.containsData.forEach(function (item, i, arr) {
+      fullCount += item.current;
+      /* item.input!!!*/
+    });
+    result = buildTitle(fullCount, data.caseWords);
+    data.containsData.forEach(function (item, i, arr) {
+      result += ", " + buildTitle(item.current, item.caseWords);
+    });
+  }
+
+  return result;
+}
+
+function buildTitle(countInt, infoArr) {
+  //console.log("buildTitle");
+  //console.log(countInt);
+  //console.log(infoArr);
+  var result = "";
+  var countStr = "" + countInt;
+
+  if (countInt > 4 && countInt < 20) {
+    result = countStr + " " + infoArr[0];
+  } else {
+    var lastNumber = parseInt(countStr[countStr.length - 1]);
+
+    switch (lastNumber) {
+      case 0:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+        result = countStr + " " + infoArr[0];
+        break;
+
+      case 1:
+        result = countStr + " " + infoArr[1];
+        break;
+
+      case 2:
+      case 3:
+      case 4:
+        result = countStr + " " + infoArr[2];
+        break;
+    }
+  }
+
+  return result;
+}
+
+document.addEventListener('keydown', function (event) {
+  var key = event.code;
+
+  if (window.aux_counter_items == void 0) {
+    return;
+  }
+
+  switch (key) {
+    case "Numpad1":
+      //reset
+      for (var g = 0; g < items_glue.items.length; g++) {
+        items_glue.resetById(items_glue.items[g].id);
+      }
+
+      break;
+
+    case "Numpad2":
+      //accept
+      for (var g = 0; g < items_glue.items.length; g++) {
+        items_glue.items[g].contains.forEach(function (item, i, arr) {
+          if (item.getAttribute(aux_counter_items.attr_name.use_as) == aux_counter_items.attr_values.use_as.base) {
+            item.dispatchEvent(new Event(aux_counter_items.events.counterItem_accept));
+            getCustomTitle(items_glue.items[g].id);
+          } else {
+            console.error("itemGlue.pug: uncorect item list");
+          }
+        });
+      }
+
+      break;
+
+    default:
+      console.log('key code is ' + event.code);
+      break;
+  }
+});</script></div><div class="ac" aux-use_for="guestGlue"><div class="clear" aux-use_as="clear_button">очистить</div><div class="accept" aux-use_as="accept_button">применить</div><script>var sripts = document.getElementsByTagName("script");
+var base = scripts[scripts.length - 1].parentNode;
+
+base.onclick = function (event) {
+  var target = document.getElementById(this.getAttribute("aux-use_for"));
+
+  switch (event.target.getAttribute("aux-use_as")) {
+    case "accept_button":
+      target.dispatchEvent(new Event("accept"), {
+        bubbles: true
+      });
+      break;
+
+    case "clear_button":
+      target.dispatchEvent(new Event("reset"), {
+        bubbles: true
+      });
+      break;
+  }
+};</script></div></div><script src="dropdownList.22e49fdb.js"></script></div></div><div class="acceptContainer"><div class="blueSubmit"><input type="submit" name="defaultName" value="defaultValue"><div class="blueSubmit__Left"></div><div class="blueSubmit__Center">Подобрать номер</div><div class="blueSubmit__Right"><img src="arrow_forward.5e04349d.svg" alt="arrow" srcset=""></div></div></div></div></form></div><!--grid footer--><div class="footer"><div class="footerModule"><div class="linkPanel"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="linkPanel__text"><span>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span></div></div><div class="linkPanel"><div class="linkPanel__title"><span>Навигация</span></div><a class="link" href="#">О нас</a><a class="link" href="#">Новости</a><a class="link" href="#">Служба поддержки</a><a class="link" href="#">Услуги</a></div><div class="linkPanel"><div class="linkPanel__title"><span>О нас</span></div><a class="link" href="#">О сервисе</a><a class="link" href="#">Наша команда</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Инвесторы</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Служба поддержки</span></div><a class="link" href="#">Соглашения</a><a class="link" href="#">Сообщества</a><a class="link" href="#">Связь с нами</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Подписка</span></div><div class="linkPanel__text"><span>Получайте специальные предложения и новости сервиса</span></div><form action="#" method="post"><input type="email"></form></div></div><!--    +label--><!--    .flex_splitter--><!--    a(class="", href="*") О нас--><!--    a(class="", href="*") Услуги--><!--    a(class="", href="*") Вакансии--><!--    a(class="", href="*") Новости--><!--    a(class="", href="*") Соглашения--><!--    //+link({ title:"О нас", href:"*"})--><!--    //+link({ title:"Услуги", href:"*"})--><!--    //+link({ title:"Вакансии", href:"*"})--><!--    //+link({ title:"Новости", href:"*"})--><!--    //+link({ title:"Соглашения", href:"*"})--><!--    span(class="common__whiteButton") Войти--><!--    span(class="common__blueButton") Зарегистрироваться--><!----><!----><!----><!----><!--    <div class="footer">--><!--                    <ul class="footer_flex">--><!--                        <li class="firstItem">--><!--                            <div class="label mbt_tmp">--><!--                                <div class="label__logo">--><!--                                    <img id="logo" src="../images/Vector-2.svg" alt="toxin" />--><!--                                    <img id="leftPath" src="../images/Vector.svg" alt="toxin" />--><!--                                    <img id="rigthPath" src="../images/Vector-1.svg" alt="toxin" />--><!--                                </div>--><!--                                <div class="label__text">--><!--                                    <img src="../images/TOXIN.svg" alt="toxin" />--><!--                                </div>--><!--                            </div>--><!--                            <div class="footer_sublist footer_text in">--><!--                                Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»--><!--                            </div>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Навигация</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>--><!--                                    О нас--><!--                                </li>--><!--                                <li>--><!--                                    Новости--><!--                                </li>--><!--                                <li>--><!--                                    Служба поддержки--><!--                                </li>--><!--                                <li>--><!--                                    Услуги--><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">О нас</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>О сервисе</li>--><!--                                <li>Наша команда</li>--><!--                                <li>Вакансии</li>--><!--                                <li>Инвесторы</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Служба поддержки</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>Соглашения</li>--><!--                                <li>Сообщества</li>--><!--                                <li>Связь с нами</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li class="lastItem">--><!--                            <span class="footer_title">Подписка</span>--><!--                            <ul class="footer_sublist footer_text">--><!--                                <li>--><!--                                    <span>Получайте специальные предложения и новости сервиса</span>--><!--                                </li>--><!--                                <li>--><!----><!--                                    <input type="email" class="footer_email" />--><!----><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                    </ul>--><!--                </div>--></div><!--grid social links--><div class="social"><div class="socialModule"><div class="socialModule__text">Copyright C2018 Toxin отель. Все права зачищены</div><div class="socialModule__links"><a> <img id="" src="twiter.f1cdd1b7.svg" alt="Twiter"></a><a><img id="" src="facebook.d989b116.svg" alt="Facebook"></a><a><img id="" src="instagram.a353b496.svg" alt="Instagram"></a></div></div></div></div></div></body></html>
