@@ -1,3 +1,66 @@
+if(window.aux_checkbox_items == void 0){
+    var aux_checkbox_items ={
+        protos:{
+            item:{
+                id:null,
+                checked:false,
+                defaultState:false,
+                get:()=>{console.error("checkboxItem.js - aux_checkbox_items.item : get() mast be override");},
+                set:()=>{console.error("checkboxItem.js - aux_checkbox_items.item : set() mast be override");},
+                reset:()=>{console.error("checkboxItem.js - aux_checkbox_items.item : reset() mast be override");},
+            },
+            view:{
+                base: null,
+                input:null,
+                update:()=>{console.error("checkboxItem.js - aux_checkbox_items.view : update() mast be override");},
+
+            },
+        },
+        items:[],
+        views:[],
+        attr_name: {
+            use_as: "aux-use_as",
+        },
+        attr_values: {
+            use_as: {
+                base: "CheckboxItem_Base",
+            },
+        },
+        events:{
+            counterItem_change:"counter_change",
+            counterItem_reset:"reset",
+            counterItem_accept:"accept",
+        },
+        getItem(id){
+            for(let i = 0; i < aux_checkbox_items.items.length; i++)
+            {
+                if(aux_checkbox_items.items[i].id == id){
+                    return aux_checkbox_items.items[i];
+                }
+            }
+            return null;
+        },
+        getView(id){
+            for(let i = 0; i < aux_checkbox_items.views.length; i++)
+            {
+                if(aux_checkbox_items.views[i].id == id){
+                    return aux_checkbox_items.views[i];
+                }
+            }
+            return null;
+        },
+        updateView(id){
+            let item = aux_checkbox_items.getItem(id);
+            let view = aux_checkbox_items.getView(id);
+
+            view.input.checked = item.checked;
+        }
+    }
+}
+
+
+
+
 var scripts = document.getElementsByTagName("script");
 var element = scripts[scripts.length-1].parentNode;
 var cbox = element.querySelector("[use_as=checkbox]");

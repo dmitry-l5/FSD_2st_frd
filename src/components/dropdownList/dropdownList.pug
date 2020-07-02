@@ -1,7 +1,7 @@
 mixin dropdownList(arg)
     -
-        let showArrow  = arg.arrow=="false"?false:true;
-        let box = (arg.block=="true")?true:false;
+        let showArrow  = (arg.arrow==false)?false:true;
+        let box = arg.block?true:false;
 
     .dropdownList
         .dropdownList__title

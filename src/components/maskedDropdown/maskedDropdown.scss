@@ -1,0 +1,16 @@
+.maskedDropdown{
+    & .maskedDropdown__title{
+        @extend %h3_text;
+        margin-bottom: 5px;
+        color: $dark-100_color; 
+    }
+    & .maskedDropdown_outputBox{
+        @extend %commonInput;
+        display: flex;
+        align-items: center;
+        & .maskedDropdown__output {
+            @extend %link_text;
+            color: $dark-75_color; 
+        }
+    }
+}

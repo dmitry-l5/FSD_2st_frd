@@ -1,4 +1,22 @@
+script
+    include enterBox.js
 mixin enterBox(arg)
     -
         let id =arg.id?arg.id:"NULL";
-    .enterBox(id = id)
+        let title = arg.title?arg.title:"UNKNOWN";
+        let leftLabel = arg.leftLabel?arg.leftLabel:"UNKNOWN";
+        let rightLabel = arg.rightLabel?arg.rightLabel:"123456789";
+        let value = arg.defaultValue?arg.defaultValue:"";
+        let queryTitle = arg.queryTitle?arg.queryTitle:"UNKNOWN";
+        let info = arg.info?arg.info:title+";"+title+";"+title+";"+title+";";
+    .enterBox(id = id, name="base", data-info= info, data-queryTitle=queryTitle)
+        .enterBox_title
+            label.enterBox__leftLabel(for=arg.id, name="leftLabel")= leftLabel
+            label.enterBox__rightLabel(for=arg.id, name="rightLabel")= rightLabel
+        .enterBox_input(
+                        onmousedown="event.target.blur()",
+                        onmouseup="event.target.blur()",
+                        onclick="event.target.blur()"
+                        )
+            input(type="text", name="target", data-fullList="nothing",value= value, class="hz2", data-defaultValue=value)
+

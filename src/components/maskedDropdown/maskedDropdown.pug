@@ -1,0 +1,19 @@
+//../../components/maskedDropdown/maskedDropdown.js
+script
+    include maskedDropdown.js
+mixin maskedDropdown(arg)
+    -
+        let id = arg.id;
+        let title = arg.title?arg.title:"#title";
+        let value = arg.value?arg.value:"#value";
+    .maskedDropdown(id=id, aux-use_as="Masked_Base", aux-value= value)
+        .maskedDropdown__title= title
+        .maskedDropdown_outputBox
+            .maskedDropdown__output(aux-use_as="Masked_Output")
+        script.
+            let scripts = document.getElementsByTagName('script');
+            let base = scripts[scripts.length - 1].parentNode;
+            let item = aux_masked.addItem(base.id);
+            let view = aux_masked.addView(base.id);
+            aux_masked.set.apply(item, [base.getAttribute("aux-value")]);
+            aux_masked.updateView(base.id);

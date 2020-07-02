@@ -1,4 +1,72 @@
 .enterBox{
-    @extend %commonInput;
-    background-color: cyan;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative; 
+    & > .enterBox_title{
+        display: flex;
+        & > .enterBox__leftLabel{
+            @extend %h3_text;
+            color: $dark-100_color;
+        }
+        & > .enterBox__rightLabel{
+            @extend %leftLabel_text;
+            color: $dark-50_color;
+            margin-left: auto;
+        }
+    }
+    & > .enterBox_input{
+        display:flex; 
+        flex-direction:column;
+        @extend %commonInput;
+
+        & > input{
+            @extend %body_text;
+            color: $dark-75_color;
+            height:100%;
+            width:100%;
+            background-image: url(../images/expand_more.svg);
+            background-position: right 10px top 15px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            border:1px solid rgba(129, 129, 129, 0);
+        }
+
+
+    }
+}
+
+.dropdownInput{
+    & > .dropdownInput__title{
+        & > .dropdownInput__leftLabel{}
+        & > .dropdownInput__rightLabel{}
+    }
+
+    & > .dropdownInput__input{
+
+        
+        & > input{
+        }
+
+    }
+
+    & > .dropdownInput__list{
+        display: block;
+        margin-top: -2px;
+
+        border-radius:0px 0px 4px 4px;
+        border:2px solid rgb(129, 129, 129);
+        background: white;
+        position: absolute; 
+        width: 100%;
+        padding: 0px 5px 0px 10px;
+        box-sizing: border-box;
+        z-index: 1;
+
+        & > .clearAceptPanel{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
 }

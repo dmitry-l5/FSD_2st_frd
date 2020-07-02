@@ -57,16 +57,15 @@
   width: 100%;
   background: white;
   /* Dark 25% */
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border: 3px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
   height: 40px;
-  /**/
+  padding-left: 0em;
   background-image: url(expand_more.d4752fec.svg);
   background-position: right 10px top 15px;
   background-size: 15px;
   background-repeat: no-repeat;
-  border: 1px solid #818181;
 }
 
 .base > .main .shield .calendar__headContainer > div > .enterBox, .inputPreviewBox > .inputPreviewBox_Box, .link {

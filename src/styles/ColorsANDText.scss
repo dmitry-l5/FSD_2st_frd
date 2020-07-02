@@ -94,16 +94,16 @@ $white_color: #FFFFFF;
     width: 100%;
     background: rgb(255, 255, 255);
     /* Dark 25% */
-    border: 1px solid $dark-25_color;
+    border: 3px solid $dark-50_color;
     box-sizing: border-box;
     border-radius: 4px;
     height: 40px;
-    /**/
+    padding-left: 0em;
     background-image: url(../images/expand_more.svg);
     background-position: right 10px top 15px;
     background-size: 15px;
     background-repeat: no-repeat;
-    border: 1px solid rgb(129, 129, 129);
+    
 }
 %link_text{
     font-family: Montserrat;

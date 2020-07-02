@@ -1,240 +1,4 @@
-<!DOCTYPE html><!--include ../components/header/header--><!--call as :--><!--+link({})--><!--mixin dropdownList(arg)--><!--    ---><!--        let display;--><!--        if(arg.display=="box"){display = "box"}--><!--        else if(arg.display=="empty")display="empty"--><!--        else display = "span"--><!--    .dropdownList--><!--        if(display =="box")--><!--            .dropdownList__titleBox--><!--            .dropdownList__dashboardBox(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else if(display == "span")            --><!--            .dropdownList__titleSpan--><!--                .dropdownList__fstElement--><!--                .dropdownList__arrow--><!--                    img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")--><!--            .dropdownList__dashboardSpan(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else--><!--            .dropdownList__titleEmpty--><!--                .dropdownList__fstElement--><!--            .dropdownList__dashboardEmpty(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        --><!--        if block--><!--            script(src="../components/dropdownList/dropdownList.js")--><!--requaire +clearAcceptPanel({use_for:id})--><!--Call as:--><!--+editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})--><!--/*(id, targetId, itemsId)*/--><head>   <!--link(rel="stylesheet" href="common.scss")--><meta charset="UTF-8"><title>Search Room v.1</title><meta name="viewport" content="width=device-width, initial-scale=1"><style></style><link rel="stylesheet" href="SearchRoom.5b7883e0.css"><!--link(rel="stylesheet" href="../modules/common_modules.scss")   --><!--link(rel="stylesheet" href="../components/slider/slider.scss")   --><script src="SearchRoom.5b7883e0.js"></script></head><body><script>var aux = aux_init();
-
-function aux_init() {
-  if (window.aux == void 0) {
-    console.log("aux init");
-    var _aux = {
-      i: 1,
-      //#region protos
-      protos: {
-        model: {
-          values: {}
-        },
-        inputElement: {
-          id: null,
-          getState: function getState() {
-            console.error("aux.protos.inputElement.getState in aux_common.js, you need override this function before call ");
-          },
-          setState: function setState() {
-            console.error("aux.protos.inputElement.setState in aux_common.js, you need override this function before call ");
-          },
-          getExempleString: function getExempleString() {
-            console.error("aux.protos.inputElement.getExempleString in aux_common.js, you need override this function before call ");
-          }
-        },
-        list: {
-          id: null,
-          state: null,
-          heapLink: null,
-          childIds: []
-        }
-      },
-      //#endregion
-      list: [{}],
-      heap: [{}],
-      addElement: function addElement(arg) {
-        if (arg.prototype.isPrototypeOf(_aux.protos.list)) {
-          _aux.list.push(arg);
-        } else {
-          console.error("aux.addElement element mast have aux.protos.list prototype");
-        }
-      }
-    };
-    console.log(_aux);
-    return _aux;
-  }
-
-  return "nirabora-cho-to";
-}</script><div class="page"><!--main grid--><div class="base"><!--grid header--><div class="header"><div class="headerModule"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="flex_splitter"></div><a class="link" href="#">О нас</a><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"><img src="expand_more.28bd92f7.svg" alt="arrow" srcset=""></div></div><div class="dropdownList__dashboard" use_as="Dropdown_Dashboard"><a class="link" href="#">Услуги</a><a class="link" href="#">Услуги_#1</a><div class="whiteLink"><a href="#">Услуги_#2</a></div><div class="blueLink"><a href="#">Услуги_#3</a></div><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div></div><script src="dropdownList.22e49fdb.js"></script><!--script.console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-
-
-
---></div><a class="link" href="#">Вакансии</a><a class="link" href="#">Новости</a><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"><img src="expand_more.28bd92f7.svg" alt="arrow" srcset=""></div></div><div class="dropdownList__dashboard" use_as="Dropdown_Dashboard"><a class="link" href="#">Соглашения</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Новости</a></div><script src="dropdownList.22e49fdb.js"></script><!--script.console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-
-
-
---></div><div class="whiteLink"><a href="#">Войти</a></div><div class="blueLink"><a href="#">Зарегистрироваться</a></div></div></div><!--filter bar--><div class="left_side"><!--requaire : ../components/common/formItems_base.js--><script>function say() {//console.log("femcmdcakmc[owkejf[oierjg[oribofdskmcoKASMSD[OM[FOMDSFO[GSTRGOSTRORTOO");
-}
-
-function setFormItem(id) {
-  if (window.formItems == void 0) {
-    window.formItems = [];
-  }
-
-  var tmp = {
-    id: id
-  };
-  formItems.push(tmp); //console.log(formItems);
-}
-
-function infoFormItems() {//console.log(window.formItems);
-}</script><p>hello main_1.pug</p><!--////////////////////////////////////////////////////////////////////////////////////--><!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><div><span class="common__inputTitle">Даты пребывания в отеле</span><input class="common__inputDropdown"><div class="dropdownInput" id="DD_1" name="base" data-info="Гостей;Гость;Гостя;Гостей;" data-queryTitle="quest_count"><div class="dropdownInput__title" name="title"><label class="dropdownInput__leftLabel" for="DD_1" name="leftLabel">гости</label><label class="dropdownInput__rightLabel" for="DD_1" name="rightLabel"></label></div><div class="dropdownInput__input"><input class="hz2" type="text" name="target" data-fullList="nothing" value="Сколько гостей" data-defaultValue="Сколько гостей"></div><div class="dropdownInput__list" name="dropdown" style="display:none;"><div class="tlistItem" name="row" data-min="0" data-max="5" data-current="0" data-info="Взрослых;Взрослый;Взрослых;Взрослых;" data-queryTitle="adult"><div class="tlistItem__title" name="title" data-title="row">взрослые</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="tlistItem" name="row" data-min="0" data-max="4" data-current="0" data-info="Детей;Ребёнок;Ребёнка;Детей;" data-queryTitle="child"><div class="tlistItem__title" name="title" data-title="row">дети</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="tlistItem" name="row" data-min="0" data-max="3" data-current="0" data-info="Младенцев;Младенец;Младенца;Младенцев;" data-queryTitle="infant"><div class="tlistItem__title" name="title" data-title="row">младенцы</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="clearAceptPanel" name="ACPanel" id="DD_1_ACPanel" target="DD_1"><div class="clear" name="clear">очистить</div><div class="accept" name="accept">применить</div></div></div><script>var scripts = document.getElementsByTagName('script');
-var base = scripts[scripts.length - 1].parentNode;
-
-base.onclick = function (event) {
-  var rows = null;
-  var result = 0;
-  var target = event.target;
-  target.blur();
-  var panel = this.querySelector("[name=dropdown]");
-  var rowDate = {}; //console.log(target.getAttribute("name"));
-
-  switch (target.getAttribute("name")) {
-    //case "base":
-    //    break;
-    case "target":
-      panel.style.display = panel.style.display == "none" ? "block" : "none";
-      target.innerHTML = "";
-      break;
-
-    case "clear":
-      clear(this);
-      break;
-
-    case "accept":
-      inputDraw(this);
-      panel.style.display = panel.style.display == "none" ? "block" : "none";
-      break;
-
-    case "decButton":
-      if (parseInt(target.parentNode.getAttribute("data-current")) > parseInt(target.parentNode.getAttribute("data-min"))) {
-        target.parentNode.setAttribute("data-current", parseInt(target.parentNode.getAttribute("data-current")) - 1);
-      }
-
-      listItemDraw(target.parentNode);
-      break;
-
-    case "currentCount":
-      break;
-
-    case "incButton":
-      if (parseInt(target.parentNode.getAttribute("data-current")) < parseInt(target.parentNode.getAttribute("data-max"))) {
-        target.parentNode.setAttribute("data-current", parseInt(target.parentNode.getAttribute("data-current")) + 1);
-      }
-
-      listItemDraw(target.parentNode);
-      break;
-
-    default:
-      //console.log("default");
-      break;
-  }
-};
-
-function listItemDraw(item) {
-  var min = parseInt(item.getAttribute("data-min"));
-  var current = parseInt(item.getAttribute("data-current"));
-  var max = parseInt(item.getAttribute("data-max"));
-  item.querySelector("[name=currentCount]").innerHTML = current;
-  item.querySelector("[name=incButton]").style.visibility = current < max ? "visible" : "hidden";
-  item.querySelector("[name=decButton]").style.visibility = current > min ? "visible" : "hidden";
-}
-
-function clear(base) {
-  var target = base.querySelector("[name=target]");
-  var items = base.querySelector("[name=dropdown]").querySelectorAll("[name=row]");
-  base.setAttribute("data-query", base.getAttribute("data-queryTitle") + ":null");
-
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-
-    if (item.getAttribute("name") == "ACPanel") {
-      continue;
-    }
-
-    item.setAttribute("data-current", item.getAttribute("data-min"));
-    item.querySelector("[name=currentCount]").innerHTML = item.getAttribute("data-min");
-  }
-
-  target.setAttribute("value", target.getAttribute("data-defaultValue"));
-}
-
-function inputDraw(base) {
-  var target = base.querySelector("[name=target]");
-  var items = base.querySelector("[name=dropdown]").querySelectorAll("[name=row]");
-  var query = "";
-  var count = 0;
-
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-
-    if (item.getAttribute("name") == "ACPanel") {
-      continue;
-    }
-
-    count += parseInt(item.getAttribute("data-current"));
-  }
-
-  var tmpTitle = base.getAttribute("data-info");
-  var tmp_1 = tmpTitle.split(";");
-
-  if (tmp_1.length >= 4) {
-    if (count == 0) {
-      baseTitle = tmp_1[0];
-    } else if (count == 1) {
-      baseTitle = tmp_1[1];
-    } else if (count > 1 && count < 5) {
-      baseTitle = tmp_1[2];
-    } else {
-      baseTitle = tmp_1[3];
-    }
-  } else {
-    baseTitle = "errror";
-    console.log("set 'info' atribute into 'dropdownContainer' as:'samp_1;samp_2;samp_3;samp_4;'");
-  }
-
-  target.setAttribute("value", count + " " + baseTitle);
-  query = base.getAttribute("data-queryTitle") + ":";
-  var itemsValue = "";
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = items[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var item = _step.value;
-      //if (item.getAttribute("[name=ACPanel]")) { continue; }
-      count_2 = parseInt(item.getAttribute("data-current"));
-      var tmp_IT = item.getAttribute("data-info");
-      var tmp_2 = tmp_IT.split(";");
-
-      if (tmp_2.length >= 4) {
-        if (count_2 == 0) {
-          continue;
-          itemsValue = tmp_2[0];
-        } else if (count_2 == 1) {
-          itemsValue = tmp_2[1];
-        } else if (count_2 > 1 && count_2 < 5) {
-          itemsValue = tmp_2[2];
-        } else {
-          itemsValue = tmp_2[3];
-        }
-      } else {
-        itemsValue = "errror";
-        console.log("set 'info' atribute into 'dropdownItem' as:'samp_1;samp_2;samp_3;samp_4;'");
-      }
-
-      var lastValue = target.getAttribute("value");
-      target.setAttribute("value", lastValue + "," + count_2 + " " + itemsValue);
-      query += item.getAttribute("data-queryTitle") + "-" + count_2 + ";";
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
-  base.setAttribute("data-query", query);
-}</script></div></div><div><div class="slider" id="firstSlider" aux-use_as="Slider_Base" aux-slider_type="solid" aux-slider_count="one"><div class="head"><div class="title">Диапазон цены</div><div class="values"><!--.min(aux-use_as="Slider_minLabel")= "MIN"--><div class="values" aux-use_as="Slider_Label">LABEL</div></div></div><div class="slider_box" aux-use_as="Slider_Frame" aux-base_id="firstSlider"><div class="string" aux-base_id="firstSlider"><div class="emptyLine" aux-base_id="firstSlider"></div><div class="point1" aux-use_as="Slider_minPoint" aux-base_id="firstSlider"></div><div class="preview" aux-use_as="Slider_Preview">preview</div><div class="fillLine" aux-use_as="Slider_Fill_Line" aux-base_id="firstSlider"></div><div class="point2" aux-use_as="Slider_maxPoint" aux-base_id="firstSlider"></div></div></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="500" aux-stage_index="1"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="1000" aux-stage_index="2"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="5000" aux-stage_index="3"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="10000" aux-stage_index="4"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="40000" aux-stage_index="5"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="100" aux-stage_index="6"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="200" aux-stage_index="7"></div><div class="comment">Стоимость за сутки пребывания в номере</div><script>//alert("This is slider JS");
+<!DOCTYPE html><!--include ../components/header/header--><!--call as :--><!--+link({})--><!--mixin dropdownList(arg)--><!--    ---><!--        let display;--><!--        if(arg.display=="box"){display = "box"}--><!--        else if(arg.display=="empty")display="empty"--><!--        else display = "span"--><!--    .dropdownList--><!--        if(display =="box")--><!--            .dropdownList__titleBox--><!--            .dropdownList__dashboardBox(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else if(display == "span")            --><!--            .dropdownList__titleSpan--><!--                .dropdownList__fstElement--><!--                .dropdownList__arrow--><!--                    img(src="../components/dropdownList/expand_more.svg", alt="arrow", srcset="")--><!--            .dropdownList__dashboardSpan(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        else--><!--            .dropdownList__titleEmpty--><!--                .dropdownList__fstElement--><!--            .dropdownList__dashboardEmpty(use_as="Dropdown_Dashboard")--><!--                if block--><!--                    block--><!--        --><!--        if block--><!--            script(src="../components/dropdownList/dropdownList.js")--><!--requaire +clearAcceptPanel({use_for:id})--><!--Call as:--><!--+editableDropdown({id: "guestCount", Left:"Dropdown", Right:"Default"}, {name:"Взрослые", min: 0,max: 5}, {name:"Дети",min: 0,max: 4}, {name:"Младенцы",min: 0,max: 3})--><!--/*(id, targetId, itemsId)*/--><script>//alert("This is slider JS");
 if (window.utility == void 0) {
   var utility = {
     isNumber: function isNumber(value) {
@@ -245,65 +9,50 @@ if (window.utility == void 0) {
 
 if (window.aux_sliders == void 0) {
   var aux_sliders_finish = function aux_sliders_finish(event) {
+    document.removeEventListener('mousemove', aux_sliders.move_handler);
+
     if (aux_sliders.current) {
-      document.removeEventListener('mousemove', aux_sliders.move_handler);
       aux_sliders.hidePreview(aux_sliders.current.id);
-      var p1, p2;
-
-      switch (aux_sliders.current.item.points) {
-        case aux_sliders.attr_values.sliderCount.single:
-          p2 = aux_sliders.getTrueState(aux_sliders.current.id, aux_sliders.current.item.right);
-
-          if (utility.isNumber(p2.label)) {
-            p2.label = Math.round(p2.label);
-          }
-
-          console.log(utility.isNumber(p2.label));
-          console.log(Math.round(p2.label));
-          aux_sliders.changeLabel(aux_sliders.current.id, p2.label);
-          break;
-
-        case aux_sliders.attr_values.sliderCount.double:
-          p1 = aux_sliders.getTrueState(aux_sliders.current.id, aux_sliders.current.item.left);
-          p2 = aux_sliders.getTrueState(aux_sliders.current.id, aux_sliders.current.item.right);
-
-          if (utility.isNumber(p1.label)) {
-            p1.label = Math.round(p1.label);
-          }
-
-          aux_sliders.changeLabels(aux_sliders.current.id, p1.label, p2.label);
-          break;
-
-        default:
-          break;
-      }
-
       aux_sliders.current = null;
     }
   };
 
   var sliders_change_handler = function sliders_change_handler(event) {
-    aux_sliders.pullToCurrent(event.detail.id); //console.log(aux_sliders.current);
-
-    aux_sliders.showView_current();
+    aux_sliders.pullToCurrent(event.detail.id);
+    aux_sliders.updateView(event.detail.id);
   };
 
   var aux_sliders = {
     events_name: {
       sliders_change: "sliders_change"
     },
-    use_as: {
-      base: "Slider_Base",
-      frame: "Slider_Frame",
-      preview: "Slider_Preview",
-      stage: "Slider_Stage",
-      low: "Slider_minPoint",
-      hi: "Slider_maxPoint",
-      min: "Slider_minLabel",
-      max: "Slider_maxLabel",
-      label: "Slider_Label",
-      empty_line: "Slider_Empty_Line",
-      fill_line: "Slider_Fill_Line"
+    protos: {
+      item: {
+        id: null,
+        left: 0,
+        right: 100,
+        type: "step",
+        points: "one",
+        suffix: "suffix",
+        stages: []
+      },
+      view: {
+        id: null,
+        base: null,
+        frame: null,
+        preview: null,
+        fst_mark: null,
+        scd_mark: null,
+        line: null,
+        active_mark: null,
+        label: null,
+        direction: "horizontal"
+      }
+    },
+    default: {
+      slider_type: "step",
+      points_count: "one",
+      slider_suffix: "suffix"
     },
     attr_name: {
       use_as: "aux-use_as",
@@ -316,7 +65,9 @@ if (window.aux_sliders == void 0) {
       stagePosition: "",
       stageIndex: "aux-stage_index",
       sliderType: "aux-slider_type",
-      sliderCount: "aux-slider_count"
+      sliderCount: "aux-slider_count",
+      sliderSuffix: "aux-slider_suffix",
+      sliderDirection: "aux-slider_direction"
     },
     attr_values: {
       use_as: {
@@ -326,7 +77,10 @@ if (window.aux_sliders == void 0) {
         stage: "Slider_Stage",
         low: "Slider_minPoint",
         hi: "Slider_maxPoint",
-        empty_line: "",
+        min: "Slider_minLabel",
+        max: "Slider_maxLabel",
+        label: "Slider_Label",
+        empty_line: "Slider_Empty_Line",
         fill_line: "Slider_Fill_Line"
       },
       sliderType: {
@@ -336,54 +90,51 @@ if (window.aux_sliders == void 0) {
       sliderCount: {
         single: "one",
         double: "two"
+      },
+      sliderDirection: {
+        horizontal: "horizontal",
+        vertical: "vertical"
       }
     },
     labelSplitter: " - ",
-    default: {
-      slider_type: "solid",
-
-      /* solid:step*/
-      points_count: "one",
-      slider_suffix: "Ъ"
-    },
     current: {},
     views: [],
     items: [],
     pullToCurrent: function pullToCurrent(id) {
-      if (this.current == null || this.current.item == null || this.current.view == null || this.current.item.id != id || this.current.view.id != id) {
+      if (aux_sliders.current == null || aux_sliders.current.item == null || aux_sliders.current.view == null || aux_sliders.current.item.id != id || aux_sliders.current.view.id != id) {
         //document.dispatchEvent(new Event("mouseup"));
-        this.current = null;
+        aux_sliders.current = {};
+        var item = aux_sliders.getItem(id);
+        var view = aux_sliders.getView(id);
 
-        for (var _i = 0; _i < this.items.length; _i++) {
-          if (this.items[_i].id == id) {
-            this.current = {};
-            this.current.item = this.items[_i];
-
-            for (var _i2 = 0; _i2 < this.views.length; _i2++) {
-              if (this.views[_i2].id == id) {
-                this.current.id = id;
-                this.current.view = this.views[_i2];
-                return this.current;
-              }
-            }
-
-            break;
-          }
+        if (item == null || view == null) {
+          //console.error("item");
+          //console.error(item);
+          //console.error("view");
+          //console.error(view);
+          return null;
         }
+
+        aux_sliders.current.id = id;
+        aux_sliders.current.item = item;
+        aux_sliders.current.view = view;
       }
 
-      return this.current;
+      return aux_sliders.current;
     },
-    getData: function getData(id) {
-      //console.log(this.pullToCurrent(id));
-      return this.pullToCurrent(id); //aux_sliders.items.forEach(item => {
-      //    if (item.id == id) { console.log("getSliderData(" + id + ") : find"); return item; }
-      //    else { console.log("getSliderData(" + id + ") : null"); return null; }
-      //});
+    getItem: function getItem(id) {
+      for (var i = 0; i < aux_sliders.items.length; i++) {
+        if (aux_sliders.items[i].id == id) {
+          return aux_sliders.items[i];
+        }
+      } //console.warn("getSliderData(" + id + ") : null");
+
+
+      return null;
     },
     calcPercent: function calcPercent(id, pos) {
       this.pullToCurrent(id);
-      var res = (pos - this.current.view.frame.getBoundingClientRect().left - this.current.view.scd_mark.offsetWidth) * 100 / this.current.view.frame.offsetWidth;
+      var res = (pos - this.current.view.frame.getBoundingClientRect().left) * 100 / this.current.view.frame.offsetWidth;
       res = res > 100 ? 100 : res;
       res = res < 0 ? 0 : res; //console.log("calcPercent( " + id + ", " + pos + " ) = " + res);
 
@@ -391,39 +142,37 @@ if (window.aux_sliders == void 0) {
     },
     //#region Data interaction Methods  
     addData: function addData(id) {
-      aux_sliders.items.forEach(function (item) {
-        if (item.id == id) {
-          console.warn("setSliderData(" + id + ") : already exist");
-          return item;
+      for (var i = 0; i < aux_sliders.items.length; i++) {
+        if (aux_sliders.items[i].id == id) {
+          console.error("setSliderData(" + id + ") : already exist");
+          return null;
         }
-      });
-      var elem = document.body.querySelector("[id=" + id + "]");
-      var stg = elem.querySelectorAll("[" + this.attr_name.use_as + "=" + this.use_as.stage + "]"); //#region ABRACADABRA
+      }
+
+      var base = document.body.querySelector("[id=" + id + "]");
+      var stages = base.querySelectorAll("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.stage + "]"); //#region ABRACADABRA
 
       var tmpStg = [];
       var tmpArr = [];
-      var hasRate = [];
-      var onePart = 100 / stg.length;
-      var stageCount = stg.length;
-      var maxIndex = 0;
+      var maxIndex = -Infinity;
       var minIndex = Infinity;
-      var parttsCount = 0;
-      var withIndex = [];
 
-      for (var _i3 = 0; _i3 < stg.length; _i3++) {
-        if (!utility.isNumber(stg[_i3].getAttribute(aux_sliders.attr_name.stageIndex))) {
-          console.error("aux_slider.addData( " + id + " ) : All elements of ' " + aux_sliders.use_as.stage + " ' must have the numerical attribute of ' " + aux_sliders.attr_name.stageIndex + " '");
+      for (var _i = 0; _i < stages.length; _i++) {
+        if (!utility.isNumber(stages[_i].getAttribute(aux_sliders.attr_name.stageIndex))) {
+          console.error("aux_slider.addData( " + id + " ) : All elements of ' " + aux_sliders.attr_values.use_as.stage + " ' must have the numerical attribute of ' " + aux_sliders.attr_name.stageIndex + " '");
           return;
         } else {
-          if (maxIndex < parseInt(stg[_i3].getAttribute(aux_sliders.attr_name.stageIndex))) {
-            maxIndex = parseInt(stg[_i3].getAttribute(aux_sliders.attr_name.stageIndex));
+          var currentIndex = parseInt(stages[_i].getAttribute(aux_sliders.attr_name.stageIndex));
+
+          if (maxIndex < currentIndex) {
+            maxIndex = currentIndex;
           }
 
-          if (minIndex > parseInt(stg[_i3].getAttribute(aux_sliders.attr_name.stageIndex))) {
-            minIndex = parseInt(stg[_i3].getAttribute(aux_sliders.attr_name.stageIndex));
+          if (minIndex > currentIndex) {
+            minIndex = currentIndex;
           }
 
-          tmpArr[_i3] = stg[_i3];
+          tmpArr[_i] = stages[_i];
         }
       }
 
@@ -443,45 +192,40 @@ if (window.aux_sliders == void 0) {
         if (fstIndex < scdIndex) {
           return -1;
         }
-      }); //tmpArr.forEach(item => console.log(item.getAttribute(aux_sliders.attr_name.stageIndex)));
+      });
 
-      for (var _i4 = 0; _i4 < tmpArr.length; _i4++) {
+      for (var _i2 = 0; _i2 < tmpArr.length; _i2++) {
         tmpStg.push({
-          rate: (parseInt(tmpArr[_i4].getAttribute(aux_sliders.attr_name.stageIndex)) - minIndex) * partPerIndex,
+          rate: (parseInt(tmpArr[_i2].getAttribute(aux_sliders.attr_name.stageIndex)) - minIndex) * partPerIndex,
           moveWay: null,
           //eage: stg[i].getAttribute(this.attr_name.stageRate) ? stg[i].getAttribute(this.attr_name.stageRate) : Math.round((i) * 100 / (stg.length - 1)),
-          title: tmpArr[_i4].getAttribute(this.attr_name.stageTitle),
-          value: tmpArr[_i4].getAttribute(this.attr_name.stageValue)
+          title: tmpArr[_i2].getAttribute(aux_sliders.attr_name.stageTitle),
+          value: tmpArr[_i2].getAttribute(aux_sliders.attr_name.stageValue)
         });
       } //#endregion ABRACADABRA
 
 
-      console.log(" After ABRACADABRA ");
-      console.log(elem.getAttribute(this.attr_name.type));
-      aux_sliders.items.push({
-        id: id,
-        left: 0,
-        right: 100,
-        type: elem.getAttribute(this.attr_name.type) == null ? this.default.slider_type : elem.getAttribute(this.attr_name.type),
-        points: elem.getAttribute(this.attr_name.sliderCount) == null ? this.default.points_count : elem.getAttribute(this.attr_name.sliderCount) == this.attr_values.sliderCount.double ? this.attr_values.sliderCount.double : this.attr_values.sliderCount.single,
-        min: tmpStg[0].value ? tmpStg[0].value : 0,
-        max: tmpStg[tmpStg.length - 1].value ? tmpStg[tmpStg.length - 1].value : 100,
-        suffix: elem.getAttribute(this.attr_name.suffix) == null ? this.default.slider_suffix : elem.getAttribute(this.attr_name.suffix),
-        stages: tmpStg
-      });
+      var item = Object.create(aux_sliders.protos.item);
+      item.id = id, //item.    left: 0,
+      //item.    right: 100,
+      item.type = base.getAttribute(this.attr_name.type) == null ? this.default.slider_type : base.getAttribute(this.attr_name.type);
+      item.points = base.getAttribute(this.attr_name.sliderCount) == null ? this.default.points_count : base.getAttribute(this.attr_name.sliderCount) == this.attr_values.sliderCount.double ? this.attr_values.sliderCount.double : this.attr_values.sliderCount.single;
+      item.suffix = base.getAttribute(this.attr_name.sliderSuffix) == null ? this.default.slider_suffix : base.getAttribute(this.attr_name.sliderSuffix);
+      item.stages = tmpStg;
+      aux_sliders.items.push(item); //console.error(aux_sliders.items[aux_sliders.items.length-1]);
     },
     getTrueState: function getTrueState(id, pos) {
-      console.log("getTrueState( " + id + ", " + pos + " )");
+      //console.log("getTrueState( " + id + ", " + pos + " )");
       aux_sliders.pullToCurrent(id);
       var lab, loc;
       var stg = this.current.item.stages;
 
-      for (var _i5 = 0; _i5 < stg.length; _i5++) {
-        if (pos <= stg[_i5].rate) {
+      for (var i = 0; i < stg.length; i++) {
+        if (pos <= stg[i].rate) {
           switch (this.current.item.type) {
             case aux_sliders.attr_values.sliderType.typeStep:
-              loc = stg[_i5].rate;
-              lab = stg[_i5].value;
+              loc = stg[i].rate;
+              lab = stg[i].value;
               return {
                 label: lab,
                 location: loc
@@ -491,13 +235,13 @@ if (window.aux_sliders == void 0) {
             case aux_sliders.attr_values.sliderType.typeSolid:
               loc = pos;
 
-              if (_i5 == 0) {
-                lab = stg[_i5].value;
+              if (i == 0) {
+                lab = stg[i].value;
                 break;
               } else {
-                var factor = (parseInt(stg[_i5].value) - parseInt(stg[_i5 - 1].value)) / (parseInt(stg[_i5].rate) - parseInt(stg[_i5 - 1].rate)); //lab = parseInt(stg[i].value);
+                var factor = (parseInt(stg[i].value) - parseInt(stg[i - 1].value)) / (parseInt(stg[i].rate) - parseInt(stg[i - 1].rate)); //lab = parseInt(stg[i].value);
 
-                lab = parseInt(stg[_i5 - 1].value) + (parseInt(pos) - parseInt(stg[_i5 - 1].rate)) * factor;
+                lab = parseInt(stg[i - 1].value) + (parseInt(pos) - parseInt(stg[i - 1].rate)) * factor;
               }
 
               return {
@@ -517,65 +261,68 @@ if (window.aux_sliders == void 0) {
         location: loc
       };
     },
-    updateData: function updateData(id, left, right) {
-      this.pullToCurrent(id);
-      console.warn("updateData( " + id + ", " + left + ", " + right + " )");
+    updateData: function updateData(id, min, max) {
+      this.pullToCurrent(id); //console.warn("updateData( " + id + ", " + min + ", " + max + " )");
 
       if (this.current == null) {
         console.error("aux_sliders.updateData(" + id + ") : element does't exist");
         return;
       }
 
-      if (right > 100) {
-        right = 100;
-        console.warn("aux_sliders : updateData(" + id + ", " + left + ", " + right + ") : right set as 100");
+      if (max > 100) {
+        max = 100;
+        console.warn("aux_sliders : updateData(" + id + ", " + min + ", " + max + ") : max set as 100");
       }
 
-      if (left < 0) {
-        left = 0;
-        console.warn("aux_sliders : updateData(" + id + ", " + left + ", " + right + ") : left set as 0");
+      if (min < 0) {
+        min = 0;
+        console.warn("aux_sliders : updateData(" + id + ", " + min + ", " + max + ") : min set as 0");
       }
 
-      if (left > right) {
-        this.current.item.left = right;
+      if (min > max) {
+        this.current.item.left = max;
         aux_sliders.current.view.active_mark = aux_sliders.current.view.active_mark === aux_sliders.current.view.fst_mark ? aux_sliders.current.view.scd_mark : aux_sliders.current.view.fst_mark;
-        this.current.item.right = left;
-        console.warn("aux_sliders : updateData(" + id + ", " + left + ", " + right + ") : left can't more then right - left set as " + right + ", right set as " + left + "");
+        this.current.item.right = min;
+        console.warn("aux_sliders : updateData(" + id + ", " + min + ", " + max + ") : min can't more then max - min set as " + max + ", max set as " + min + "");
       } else {
-        this.current.item.left = left;
-        this.current.item.right = right;
+        this.current.item.left = min;
+        this.current.item.right = max;
       }
 
       document.dispatchEvent(new CustomEvent(aux_sliders.events_name.sliders_change, {
         detail: {
           id: id
         }
-      }));
+      })); //document.dispatchEvent(new Event("mouseup"));
     },
     //#endregion Data interaction Methods          
     //#region View interaction Methods  
     addView: function addView(id) {
       aux_sliders.views.forEach(function (view) {
         if (view.id == id) {
-          console.warn("setSliderView(" + id + ") : already exist");
+          console.error("setSliderView(" + id + ") : already exist");
           return view;
         }
       });
       var elem = document.body.querySelector("[id=" + id + "]");
-      var stg = elem.querySelectorAll("[" + this.attr_name.use_as + "=" + this.use_as.stage + "]");
-      this.views.push({
-        id: elem.id,
-        base: elem,
-        frame: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.frame + "]"),
-        preview: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.preview + "]"),
-        fst_mark: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.low + "]"),
-        scd_mark: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.hi + "]"),
-        line: elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.fill_line + "]"),
-        active_mark: null,
-        //minLabel: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.min + "]"),
-        //maxLabel: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.max + "]"),
-        label: elem.querySelector("[" + this.attr_name.use_as + "=" + this.use_as.label + "]")
-      });
+      var stg = elem.querySelectorAll("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.stage + "]");
+      var view = Object.create(aux_sliders.protos.view);
+      view.id = elem.id;
+      view.base = elem;
+      view.frame = elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.frame + "]");
+      view.preview = elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.preview + "]");
+      view.fst_mark = elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.low + "]");
+      view.scd_mark = elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.hi + "]");
+      view.line = elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.fill_line + "]");
+      view.active_mark = null;
+      view.label = elem.querySelector("[" + this.attr_name.use_as + "=" + this.attr_values.use_as.label + "]");
+      var dir = elem.getAttribute(aux_sliders.attr_name.sliderDirection);
+
+      if (dir) {
+        view.direction = dir;
+      }
+
+      this.views.push(view);
 
       aux_sliders.views[aux_sliders.views.length - 1].base.onselectstart = function () {
         return false;
@@ -585,10 +332,13 @@ if (window.aux_sliders == void 0) {
 
 
       aux_sliders.views[aux_sliders.views.length - 1].base.onmousedown = function (event) {
+        //console.error("function");
+        //console.error(this);
+        //console.error(event);
         var target = event.target;
 
         switch (target.getAttribute(aux_sliders.attr_name.use_as)) {
-          case aux_sliders.use_as.hi:
+          case aux_sliders.attr_values.use_as.hi:
             //console.log("hi");
             //console.log(this);
             //console.log(event.target);
@@ -598,11 +348,12 @@ if (window.aux_sliders == void 0) {
 
             aux_sliders.current.view.active_mark = aux_sliders.current.view.scd_mark;
             aux_sliders.locatePreview(this.id);
-            aux_sliders.showPreview(aux_sliders.current.id);
+            aux_sliders.showPreview(this.id);
+            aux_sliders.pullToCurrent(this.id);
             document.addEventListener('mousemove', aux_sliders.move_handler);
             break;
 
-          case aux_sliders.use_as.low:
+          case aux_sliders.attr_values.use_as.low:
             //console.log("low");
             //console.log(this);
             //console.log(event.target);
@@ -612,57 +363,90 @@ if (window.aux_sliders == void 0) {
 
             aux_sliders.current.view.active_mark = aux_sliders.current.view.fst_mark;
             aux_sliders.locatePreview(this.id);
-            aux_sliders.showPreview(aux_sliders.current.id);
+            aux_sliders.showPreview(this.id);
+            aux_sliders.pullToCurrent(this.id);
             document.addEventListener('mousemove', aux_sliders.move_handler);
             break;
 
           default:
-            console.log("onmousedown : ");
-            console.log(target);
-            console.log("");
+            //console.log("onmousedown : ");
+            //console.log(target);
+            //console.log("");
             break;
         }
       };
     },
-    showView: function showView(id, minValueInt, maxValueInt) {
-      this.showView_Pc(id, minValueInt, maxValueInt);
-
-      if (this.views[i].id == id) {
-        var fullWidth = frame.getBoundingClientRect().width - this.views[i].max.offsetWidth;
-        var percent = fullWidth / 100; //alert(id);
-        //console.log(this.views[i]);
-
-        this.views[i].min.style.left = minValueInt * percent + "px"; //this.views[id].min.style.position = "absolute";
-        //this.views[id].max.style.position = "absolute";
-
-        this.views[i].max.style.left = maxValueInt * percent + "px";
+    getView: function getView(id) {
+      for (var i = 0; i < aux_sliders.views.length; i++) {
+        if (aux_sliders.views[i].id == id) {
+          return aux_sliders.views[i];
+        }
       }
+
+      return null;
     },
-    showView_current: function showView_current() {
-      if (this.current.view == null || this.current.item == null) {
-        console.error("showView_current : this.current = null");
-        return;
-      }
+    updateView: function updateView(id) {
+      //let item;
+      //let view;
+      //if(aux_sliders.current && aux_sliders.current.id == id){
+      //    item = aux_sliders.current.item?aux_sliders.current.item:aux_sliders.getItem(id);
+      //    view = aux_sliders.current.view?aux_sliders.current.view:aux_sliders.getView(id);
+      //}
+      //else{
+      //    item = aux_sliders.getItem(id);
+      //    view = aux_sliders.getView(id);
+      //}
+      var item = aux_sliders.getItem(id);
+      var view = aux_sliders.getView(id);
+      var p1, p2; //locate points
 
-      var fullWidth = this.current.view.frame.getBoundingClientRect().width; // - this.current.view.max.offsetWidth;
+      var pxPerPercent;
 
-      var percent = fullWidth / 100;
+      if (false) {//view.direction == "vertical"
+      } else {
+        //view.direction == "horizontal"
+        pxPerPercent = (view.frame.getBoundingClientRect().width - view.scd_mark.offsetWidth) / 100;
 
-      switch (this.current.item.points) {
-        case aux_sliders.attr_values.sliderCount.single:
-          this.current.view.fst_mark.style.display = "none";
-          this.current.view.fst_mark.style.left = 0 + "px";
-          this.current.view.scd_mark.style.left = this.current.item.right * percent + "px";
-          break;
+        switch (item.points) {
+          case aux_sliders.attr_values.sliderCount.single:
+            view.fst_mark.style.display = "none";
+            view.fst_mark.style.left = 0 + "px";
+            view.scd_mark.style.left = item.right * pxPerPercent + "px"; //update labels
 
-        case aux_sliders.attr_values.sliderCount.double:
-          this.current.view.fst_mark.style.left = this.current.item.left * percent + "px";
-          this.current.view.scd_mark.style.left = this.current.item.right * percent + "px";
-          break;
+            p2 = aux_sliders.getTrueState(item.id, item.right);
 
-        default:
-          break;
-      }
+            if (utility.isNumber(p2.label)) {
+              p2.label = Math.round(p2.label);
+            }
+
+            aux_sliders.changeLabel(item.id, p2.label);
+            break;
+
+          case aux_sliders.attr_values.sliderCount.double:
+            view.fst_mark.style.left = item.left * pxPerPercent + "px";
+            view.scd_mark.style.left = item.right * pxPerPercent + "px"; //update labels
+
+            p1 = aux_sliders.getTrueState(item.id, item.left);
+            p2 = aux_sliders.getTrueState(item.id, item.right);
+
+            if (utility.isNumber(p1.label)) {
+              p1.label = Math.round(p1.label);
+            }
+
+            if (utility.isNumber(p2.label)) {
+              p2.label = Math.round(p2.label);
+            }
+
+            aux_sliders.changeLabels(aux_sliders.current.id, p1.label, p2.label);
+            break;
+
+          default:
+            break;
+        }
+      } //change length fill line
+
+
+      aux_sliders.updateLine(id);
     },
     //#endregion View interaction Methods
     showPreview: function showPreview(id) {
@@ -676,10 +460,7 @@ if (window.aux_sliders == void 0) {
     locatePreview: function locatePreview(id) {
       this.pullToCurrent(id);
       aux_sliders.current.view.preview.style.left = aux_sliders.current.view.active_mark.offsetLeft - aux_sliders.current.view.preview.offsetWidth / 2 + aux_sliders.current.view.active_mark.offsetWidth / 2 + "px";
-      aux_sliders.current.view.preview.style.bottom = 5 + aux_sliders.current.view.active_mark.offsetHeight + "px"; //console.log("aux_sliders.current.view.active_mark");
-      //console.log(aux_sliders.current.view.active_mark);
-      //console.log("aux_sliders.current.view.active_mark.style.left");
-      //console.log(aux_sliders.current.view.active_mark.offsetLeft);
+      aux_sliders.current.view.preview.style.bottom = 5 + aux_sliders.current.view.active_mark.offsetHeight + "px";
     },
     loadPreview: function loadPreview(id, mark) {
       this.pullToCurrent(id);
@@ -709,328 +490,304 @@ if (window.aux_sliders == void 0) {
           break;
 
         default:
-          console.log("updateLine( " + id + " )");
-          console.log(aux_sliders.current.item.type);
           break;
       }
-    },
-    finish: function finish(event) {
-      //console.log(event);
-      //clear current
-      this.current = null;
     },
     move_handler: function move_handler(event) {
-      console.log("move_handler( " + event + " )");
-      console.log("aux_sliders.calcPercent(aux_sliders.current.id, event.clientX)");
-      console.log(aux_sliders.calcPercent(aux_sliders.current.id, event.clientX));
-      var truePos = aux_sliders.getTrueState(aux_sliders.current.id, aux_sliders.calcPercent(aux_sliders.current.id, event.clientX));
+      switch (aux_sliders.current.view.direction) {
+        case aux_sliders.attr_values.sliderDirection.horizontal:
+          //console.log("horizontal");
+          //m_1.style.left = event.clientX + "px";
+          var truePos = aux_sliders.getTrueState(aux_sliders.current.id, aux_sliders.calcPercent(aux_sliders.current.id, event.clientX));
 
-      if (utility.isNumber(truePos.label)) {
-        truePos.label = Math.round(truePos.label);
-      }
+          if (utility.isNumber(truePos.label)) {
+            truePos.label = Math.round(truePos.label);
+          }
 
-      aux_sliders.loadPreview(aux_sliders.current.id, truePos.label);
+          aux_sliders.loadPreview(aux_sliders.current.id, truePos.label);
 
-      switch (aux_sliders.current.view.active_mark) {
-        case aux_sliders.current.view.fst_mark:
-          aux_sliders.locatePreview(aux_sliders.current.id);
-          aux_sliders.updateData(aux_sliders.current.id, truePos.location, //aux_sliders.calcPercent(aux_sliders.current.id, event.clientX),
-          aux_sliders.current.item.right);
+          switch (aux_sliders.current.view.active_mark) {
+            case aux_sliders.current.view.fst_mark:
+              aux_sliders.locatePreview(aux_sliders.current.id);
+              aux_sliders.updateData(aux_sliders.current.id, truePos.location, aux_sliders.current.item.right);
+              break;
+
+            case aux_sliders.current.view.scd_mark:
+              aux_sliders.locatePreview(aux_sliders.current.id);
+              aux_sliders.updateData(aux_sliders.current.id, aux_sliders.current.item.left, truePos.location);
+              break;
+          }
+
           break;
 
-        case aux_sliders.current.view.scd_mark:
-          aux_sliders.locatePreview(aux_sliders.current.id);
-          aux_sliders.updateData(aux_sliders.current.id, aux_sliders.current.item.left, truePos.location //aux_sliders.calcPercent(aux_sliders.current.id, event.clientX),
-          );
+        case aux_sliders.attr_values.sliderDirection.vertical:
+          //console.log("vertical");
+          //m_2.style.top = event.clientY + "px";
           break;
       }
+    },
+    resize_handler: function resize_handler() {
+      console.log("QWERTGFDSAZXCVB");
+      console.log(aux_sliders.items[i]);
 
-      aux_sliders.updateLine(aux_sliders.current.id);
+      for (var i = 0; i < aux_sliders.items.length; i++) {
+        aux_sliders.updateView(aux_sliders.items[i].id);
+        console.log(aux_sliders.items[i]);
+      } //aux_sliders.items.forEach(
+      //    (item, i, arr)=>{
+      //        
+      //        //console.log(item);
+      //        console.log(aux_sliders.items[i]);
+      //        //console.log(arr);
+      //        aux_sliders.updateView(aux_sliders.items[i].id);
+      //    }
+      //);
+
+    },
+    initSlider: function initSlider(base) {
+      if (base.getAttribute(aux_sliders.attr_name.use_as) == aux_sliders.attr_values.use_as.base) {
+        aux_sliders.addData(base.id);
+        aux_sliders.addView(base.id);
+        document.dispatchEvent(new CustomEvent(aux_sliders.events_name.sliders_change, {
+          detail: {
+            id: base.id
+          }
+        }));
+        aux_sliders.updateView(base.id);
+      } else {
+        console.error("Slider can't available, may be need add 'aux-use_as' attribute to parentNode");
+      }
     }
   };
   document.addEventListener('mouseup', this.aux_sliders_finish);
+  window.addEventListener('resize', aux_sliders.resize_handler);
   document.addEventListener(aux_sliders.events_name.sliders_change, sliders_change_handler);
 }
 
-var scripts = document.getElementsByTagName('script');
-var base = scripts[scripts.length - 1].parentNode;
-
-if (base.getAttribute(aux_sliders.attr_name.use_as) == aux_sliders.use_as.base) {
-  aux_sliders.addData(base.id);
-  aux_sliders.addView(base.id);
-  document.dispatchEvent(new CustomEvent(aux_sliders.events_name.sliders_change, {
-    detail: {
-      id: base.id
-    }
-  })); //aux_sliders.updateView(base.id);
-} else {
-  console.error("Slider can't available, may be need add 'aux-use_as' attribute to parentNode");
-}</script></div></div><div><div class="checkboxPanel" id="options"> <div class="checkboxPanel__title">Опции</div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz0" name="UNKNOWN"><span class="checkboxItem__additionalRow">Можно курить</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz1" name="UNKNOWN"><span class="checkboxItem__additionalRow">Можно с питомцами</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz2" name="UNKNOWN"><span class="checkboxItem__additionalRow">Можно пригласить гостей (до 10 человек)</span></div></div><script>var scripts = document.getElementsByTagName("script");
-var base = scripts[scripts.length - 1].parentNode;
-console.log(base.id);
-setFormItem(base.id);
-infoFormItems();
-
-base.onclick = function () {};</script></div></div><div><div class="checkboxPanel" id="availability"> <div class="checkboxPanel__title">доступность</div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz" name="UNKNOWN"><span>Широкий коридор</span></div><div class="checkboxItem__additionalRow"><span>Ширина коридоров в номере не менее 91 см.</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz" name="UNKNOWN"><span>Помощник для инвалидов</span></div><div class="checkboxItem__additionalRow"><span>На 1 этаже вас встретит специалист  и проводит до номера.</span></div></div><script>var scripts = document.getElementsByTagName("script");
-var base = scripts[scripts.length - 1].parentNode;
-console.log(base.id);
-setFormItem(base.id);
-infoFormItems();
-
-base.onclick = function () {};</script></div></div><div><div class="checkboxItem" id="figa" parentId="qwerty"><div class="checkboxItem__mainRow" ondblclick="return false" onselectstart="return false"><input type="checkbox" id="figa" name="UNKNOWN" use_as="checkbox"><span class="checkboxItem__additionalRow">Title</span></div><script>var scripts = document.getElementsByTagName("script");
-var element = scripts[scripts.length - 1].parentNode;
-var cbox = element.querySelector("[use_as=checkbox]"); //console.log(cbox);
-
-element.onclick = function (event) {
-  if (!(event.target.getAttribute("use_as") == "checkbox")) {
-    cbox.checked = cbox.checked ? false : true;
-  }
-};
-
-if (window.aux_heap == void 0) {
-  console.error("Can't find window.aux_heap. Try to include aux_common.js(from src/components/common/aux_common.js) the script and call the aux_init() function.");
-  var aux_heap = [];
-}
-
-{
-  var item = {
-    id: element.getAttribute("id") ? element.getAttribute("id") : console.error("need 'id' attribute in checkbox"),
-    parentId: element.getAttribute("parentId") ? element.getAttribute("parentId") : console.error("need 'parentId' attribute in checkbox"),
-    element: element,
-    data: {
-      checkbox: element.getAttribute("aux_checked") == true ? true : false
+function getParent() {
+  var scripts = document.getElementsByTagName('script');
+  var base = scripts[scripts.length - 1].parentNode;
+  return base;
+}</script><!--../../components/maskedDropdown/maskedDropdown.js--><script>var aux_masked = {
+  protos: {
+    item: {
+      id: null,
+      value: "default value",
+      set: function set() {
+        console.log("aux_masked.item->set : set mast be override");
+      }
     },
     view: {
-      checkbox: element.querySelector("[use_as=checkbox]") ? element.querySelector("[use_as=checkbox]") : console.error("checkboxItem: Can't find checkbox with attribute '[use_as=checkbox]' "),
-      setView: function setView(dataIn) {
-        this.checkbox.checked = dataIn.checkbox;
-        console.log("=====this.checkbox=====");
-        console.log(this.checkbox);
+      id: null,
+      base: null,
+      output: null,
+      update: function update() {
+        console.warn("aux_masked.view->update : update mast be override");
       }
-    },
-    getState: cbItemGet,
-    cbItemGet: cbItemGet,
-    cbItemSet: cbItemSet,
-    toogle: toogle
+    }
+  },
+  attr_name: {
+    use_as: "aux-use_as"
+  },
+  attr_value: {
+    use_as: {
+      base: "Masked_Base",
+      output: "Masked_Output"
+    }
+  },
+  items: [],
+  views: [],
+  addItem: function addItem(id) {
+    var newItem = Object.create(aux_masked.protos.item);
+    newItem.id = id;
+    this.items.push(newItem);
+    return newItem;
+  },
+  addView: function addView(id) {
+    var newView = Object.create(aux_masked.protos.view);
+    var base = document.getElementById(id);
+    newView.id = id;
+    newView.base = base;
+    var qwerty = base.querySelector("[" + aux_masked.attr_name.use_as + "=" + aux_masked.attr_value.use_as.output + "]");
+    newView.output = qwerty;
+    aux_masked.views.push(newView);
+  },
+  getItem: function getItem(id) {
+    for (var i = 0; i < aux_masked.items.length; i++) {
+      if (aux_masked.items[i].id == id) {
+        return aux_masked.items[i];
+      }
+    }
+
+    return null;
+  },
+  getView: function getView(id) {
+    for (var i = 0; i < aux_masked.views.length; i++) {
+      if (aux_masked.views[i].id == id) {
+        return aux_masked.views[i];
+      }
+    }
+
+    return null;
+  },
+  setById: function setById(id, value) {
+    var tmp = aux_masked.getItem(id);
+    aux_masked.set.apply(tmp, [value]);
+    aux_masked.updateView(id);
+  },
+  set: function set(value) {
+    console.warn("set");
+    console.warn(value);
+    this.value = value; //this.innerHTML = value;
+  },
+  updateView: function updateView(id) {
+    var item = aux_masked.getItem(id);
+    var view = aux_masked.getView(id);
+    view.output.innerHTML = item.value;
+  }
+};</script><script>if (window.utility == void 0) {
+  var utility = {
+    isNumber: function isNumber(value) {
+      return !isNaN(value) && isFinite(value);
+    }
   };
-  console.log("888888888888888888888888888888888888888888888888888888888888888888"); //item.prototype.wer = cbItemGet;
-
-  aux_heap.push(item);
-  console.log(aux_heap);
-  console.log(item);
 }
 
-function cbParseView() {
-  console.log(" cbParseView +++++++++++++++++++++++++++ cbParseView");
-  console.log(this);
-  console.log(this);
-}
-
-function toogle() {
-  var g = this.view.checkbox == true ? false : true;
-  this.view.setView({
-    checkbox: !this.view.checkbox
-  });
-}
-
-function cbItemGet(arg) {
-  console.log(arg);
-  console.log("cbItemGet");
-  console.log("cbItemGet");
-  console.log("cbItemGet");
-  console.log("cbItemGet");
-  console.log(this);
-  console.log(this.element);
-}
-
-function cbItemSet() {
-  console.log(" +++++++++++++++++++++++++++ cbItemSet");
-}</script></div><div class="expandList" id="expand_1"><div class="expandList__header"><div class="expandList__title">title</div><div class="expandList__arrow"> </div></div><div class="expandList__content"></div><script>var scripts = document.getElementsByTagName("script");
-var base = scripts[scripts.length - 1].parentNode;
-
-if (window.aux == void 0) {
-  console.error("Can't find window.aux. Try to include aux_common.js(from src/components/common/aux_common.js) the script and call the aux_init() function.");
-} else {
-  var hz = {
-    __proto__: aux.protos.inputElement,
-    model: {
-      __proto__: aux.protos.model
-    },
-    view: {},
-    getState: function getState() {
-      console.log("***********************************");
-    },
-    viewInit: function viewInit() {},
-    modelInit: function modelInit() {}
-  };
-  hz.getState();
-}</script></div></div><div><span class="common__inputTitle">удобства номера</span><input class="common__inputDropdown"></div><div class="dropdownInput" id="RR_1" name="base" data-info="Комнат;Комната;Комнаты;Комнат;" data-queryTitle="quest_count"><div class="dropdownInput__title" name="title"><label class="dropdownInput__leftLabel" for="RR_1" name="leftLabel">Удобства номера</label><label class="dropdownInput__rightLabel" for="RR_1" name="rightLabel"></label></div><div class="dropdownInput__input"><input class="hz2" type="text" name="target" data-fullList="nothing" value="Удобства номера" data-defaultValue="Удобства номера"></div><div class="dropdownInput__list" name="dropdown" style="display:none;"><div class="tlistItem" name="row" data-min="0" data-max="5" data-current="0" data-info="спален;спальня;спальни;спаленых;" data-queryTitle="adult"><div class="tlistItem__title" name="title" data-title="row">спальни</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="tlistItem" name="row" data-min="0" data-max="4" data-current="0" data-info="кроватей;кровать;кровати;кроватей;" data-queryTitle="child"><div class="tlistItem__title" name="title" data-title="row">кровати</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="tlistItem" name="row" data-min="0" data-max="3" data-current="0" data-info="ванных комнат;ванная комната;ванные комнаты;ванных комнат;" data-queryTitle="infant"><div class="tlistItem__title" name="title" data-title="row">ванные комнаты</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="clearAceptPanel" name="ACPanel" id="DD_1_ACPanel" target="DD_1"><div class="clear" name="clear">очистить</div><div class="accept" name="accept">применить</div></div></div><script>var scripts = document.getElementsByTagName('script');
-var base = scripts[scripts.length - 1].parentNode;
-
-base.onclick = function (event) {
-  var rows = null;
-  var result = 0;
-  var target = event.target;
-  target.blur();
-  var panel = this.querySelector("[name=dropdown]");
-  var rowDate = {}; //console.log(target.getAttribute("name"));
-
-  switch (target.getAttribute("name")) {
-    //case "base":
-    //    break;
-    case "target":
-      panel.style.display = panel.style.display == "none" ? "block" : "none";
-      target.innerHTML = "";
-      break;
-
-    case "clear":
-      clear(this);
-      break;
-
-    case "accept":
-      inputDraw(this);
-      panel.style.display = panel.style.display == "none" ? "block" : "none";
-      break;
-
-    case "decButton":
-      if (parseInt(target.parentNode.getAttribute("data-current")) > parseInt(target.parentNode.getAttribute("data-min"))) {
-        target.parentNode.setAttribute("data-current", parseInt(target.parentNode.getAttribute("data-current")) - 1);
+if (window.aux_viewer == void 0) {
+  var aux_viewer = {
+    protos: {
+      item: {
+        id: null,
+        images: [],
+        number: 0,
+        isLuxe: false,
+        cost: Infinity,
+        stars: 0,
+        comments: 0
       }
-
-      listItemDraw(target.parentNode);
-      break;
-
-    case "currentCount":
-      break;
-
-    case "incButton":
-      if (parseInt(target.parentNode.getAttribute("data-current")) < parseInt(target.parentNode.getAttribute("data-max"))) {
-        target.parentNode.setAttribute("data-current", parseInt(target.parentNode.getAttribute("data-current")) + 1);
+    },
+    attr_name: {
+      use_as: "aux-use_as"
+    },
+    attr_values: {
+      use_as: {
+        base: "Viewer_Base",
+        referance: "Viewer_ReferanceShield",
+        shield: "Viewer_Shield"
       }
-
-      listItemDraw(target.parentNode);
-      break;
-
-    default:
-      //console.log("default");
-      break;
-  }
-};
-
-function listItemDraw(item) {
-  var min = parseInt(item.getAttribute("data-min"));
-  var current = parseInt(item.getAttribute("data-current"));
-  var max = parseInt(item.getAttribute("data-max"));
-  item.querySelector("[name=currentCount]").innerHTML = current;
-  item.querySelector("[name=incButton]").style.visibility = current < max ? "visible" : "hidden";
-  item.querySelector("[name=decButton]").style.visibility = current > min ? "visible" : "hidden";
-}
-
-function clear(base) {
-  var target = base.querySelector("[name=target]");
-  var items = base.querySelector("[name=dropdown]").querySelectorAll("[name=row]");
-  base.setAttribute("data-query", base.getAttribute("data-queryTitle") + ":null");
-
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-
-    if (item.getAttribute("name") == "ACPanel") {
-      continue;
-    }
-
-    item.setAttribute("data-current", item.getAttribute("data-min"));
-    item.querySelector("[name=currentCount]").innerHTML = item.getAttribute("data-min");
-  }
-
-  target.setAttribute("value", target.getAttribute("data-defaultValue"));
-}
-
-function inputDraw(base) {
-  var target = base.querySelector("[name=target]");
-  var items = base.querySelector("[name=dropdown]").querySelectorAll("[name=row]");
-  var query = "";
-  var count = 0;
-
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-
-    if (item.getAttribute("name") == "ACPanel") {
-      continue;
-    }
-
-    count += parseInt(item.getAttribute("data-current"));
-  }
-
-  var tmpTitle = base.getAttribute("data-info");
-  var tmp_1 = tmpTitle.split(";");
-
-  if (tmp_1.length >= 4) {
-    if (count == 0) {
-      baseTitle = tmp_1[0];
-    } else if (count == 1) {
-      baseTitle = tmp_1[1];
-    } else if (count > 1 && count < 5) {
-      baseTitle = tmp_1[2];
-    } else {
-      baseTitle = tmp_1[3];
-    }
-  } else {
-    baseTitle = "errror";
-    console.log("set 'info' atribute into 'dropdownContainer' as:'samp_1;samp_2;samp_3;samp_4;'");
-  }
-
-  target.setAttribute("value", count + " " + baseTitle);
-  query = base.getAttribute("data-queryTitle") + ":";
-  var itemsValue = "";
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = items[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var item = _step.value;
-      //if (item.getAttribute("[name=ACPanel]")) { continue; }
-      count_2 = parseInt(item.getAttribute("data-current"));
-      var tmp_IT = item.getAttribute("data-info");
-      var tmp_2 = tmp_IT.split(";");
-
-      if (tmp_2.length >= 4) {
-        if (count_2 == 0) {
-          continue;
-          itemsValue = tmp_2[0];
-        } else if (count_2 == 1) {
-          itemsValue = tmp_2[1];
-        } else if (count_2 > 1 && count_2 < 5) {
-          itemsValue = tmp_2[2];
-        } else {
-          itemsValue = tmp_2[3];
+    },
+    base: null,
+    refShield: null,
+    items: [],
+    //#region Item methods
+    getItem: function getItem(id) {
+      for (var i = 0; i < aux_viewer.items.length; i++) {
+        if (aux_viewer.items[i].id == id) {
+          return aux_viewer.items[i];
         }
-      } else {
-        itemsValue = "errror";
-        console.log("set 'info' atribute into 'dropdownItem' as:'samp_1;samp_2;samp_3;samp_4;'");
       }
 
-      var lastValue = target.getAttribute("value");
-      target.setAttribute("value", lastValue + "," + count_2 + " " + itemsValue);
-      query += item.getAttribute("data-queryTitle") + "-" + count_2 + ";";
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
+      return null;
+    },
+    addItem: function addItem(arg) {
+      var newItem = Object.create(aux_viewer.protos.item);
+      newItem.id = arg.id;
 
-  base.setAttribute("data-query", query);
-}</script></div><div><input class="common__inputDropdown" value="дополнительные удобства"></div></div><!--grid room prevews--><div class="main"><!--requaire : ../components/common/formItems_base.js--><script>function say() {//console.log("femcmdcakmc[owkejf[oierjg[oribofdskmcoKASMSD[OM[FOMDSFO[GSTRGOSTRORTOO");
+      if (arg.images) {
+        newItem.images = arg.images;
+      }
+
+      if (arg.number) {
+        newItem.number = arg.number;
+      }
+
+      if (arg.isLuxe) {
+        newItem.isLuxe = arg.isLuxe;
+      }
+
+      if (arg.cost) {
+        newItem.cost = arg.cost;
+      }
+
+      if (arg.stars) {
+        newItem.stars = arg.stars;
+      }
+
+      if (arg.comments) {
+        newItem.comments = arg.comments;
+      }
+
+      aux_viewer.items.push(newItem);
+    },
+    resetItems: function resetItems() {
+      aux_viewer.items = [];
+    },
+    //#endregion
+    init: function init(id) {
+      if (aux_viewer.base) {
+        console.error("aux_viewer.init(".concat(id, ") : viewer already exist"));
+        return;
+      }
+
+      var tmp = document.getElementById(id);
+
+      if (!tmp) {
+        console.error("aux_viewer.init(".concat(id, ") : can't find node with ID = ").concat(id));
+        return;
+      }
+
+      aux_viewer.base = tmp;
+      aux_viewer.refShield = aux_viewer.base.querySelector("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.referance, "]"));
+
+      if (!aux_viewer.refShield) {
+        console.error("aux_viewer.init(".concat(id, ") : can't find referance node"));
+        aux_viewer.base = null;
+        aux_viewer.refShield = null;
+        return;
+      }
+
+      aux_viewer.refShield.setAttribute("defaultDisplay", aux_viewer.refShield.style.display);
+      aux_viewer.refShield.style.display = "none";
+    },
+    //#region View methods
+    addReference: function addReference() {},
+    update: function update() {
+      var hz = aux_viewer.base.querySelectorAll("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.shield, "]"));
+
+      for (var i = hz.length - 1; !(i < 0); i--) {
+        hz[i].remove();
+      }
+
+      aux_viewer.items.forEach(function (item, i, arr) {
+        var newNode = aux_viewer.refShield.cloneNode(true);
+        newNode.setAttribute(aux_viewer.attr_name.use_as, aux_viewer.attr_values.use_as.shield);
+        newNode.style.display = newNode.getAttribute("defaultDisplay");
+        console.warn(newNode); //document.body.append(newNode);
+
+        aux_viewer.base.append(newNode);
+      });
+    } //#endregion
+
+  };
+}</script><script></script><head><!--link(rel="stylesheet" href="common.scss")--><meta charset="UTF-8"><title>Search Room v.1</title><meta name="viewport" content="width=device-width, initial-scale=1"><style></style><link rel="stylesheet" href="SearchRoom.5b7883e0.css"><!--link(rel="stylesheet" href="../modules/common_modules.scss")   --><!--link(rel="stylesheet" href="../components/slider/slider.scss")   --><script src="SearchRoom.5b7883e0.js"></script></head><body><!--h1 Пример работы AJAX--><!--div(id="welcome")--><!--script.window.addEventListener("load",function() {
+    var request = new XMLHttpRequest();
+    request.open('GET','http://localhost:1234/processing.php',true);
+    request.addEventListener('readystatechange', function() {
+        if ((request.readyState==4) && (request.status==200)) {
+            var welcome = document.getElementById('welcome');
+            welcome.innerHTML = request.responseText;
+        }
+    });
+    request.send();
+});--><!--scriptinclude ../components/common/aux_common.js--><div class="page"><!--main grid--><div class="base"><!--grid header--><div class="header"><div class="headerModule"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="flex_splitter"></div><a class="link" href="#">О нас</a><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"><img src="expand_more.28bd92f7.svg" alt="arrow" srcset=""></div></div><div class="dropdownList__dashboard" use_as="Dropdown_Dashboard"><a class="link" href="#">Услуги</a><a class="link" href="#">Услуги_#1</a><div class="whiteLink"><a href="#">Услуги_#2</a></div><div class="blueLink"><a href="#">Услуги_#3</a></div><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div></div><script src="dropdownList.22e49fdb.js"></script><!--script.console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+
+
+
+--></div><a class="link" href="#">Вакансии</a><a class="link" href="#">Новости</a><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"><img src="expand_more.28bd92f7.svg" alt="arrow" srcset=""></div></div><div class="dropdownList__dashboard" use_as="Dropdown_Dashboard"><a class="link" href="#">Соглашения</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Новости</a></div><script src="dropdownList.22e49fdb.js"></script><!--script.console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+
+
+
+--></div><div class="whiteLink"><a href="#">Войти</a></div><div class="blueLink"><a href="#">Зарегистрироваться</a></div></div></div><!--filter bar--><div class="left_side"><!--requaire : ../components/common/formItems_base.js--><script>function say() {//console.log("femcmdcakmc[owkejf[oierjg[oribofdskmcoKASMSD[OM[FOMDSFO[GSTRGOSTRORTOO");
 }
 
 function setFormItem(id) {
@@ -1045,32 +802,806 @@ function setFormItem(id) {
 }
 
 function infoFormItems() {//console.log(window.formItems);
-}</script><p>hello main_1.pug</p><!--////////////////////////////////////////////////////////////////////////////////////--><!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><div class="checkboxPanel" id="testCheckbox_1"> <div class="checkboxPanel__title">Title</div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="qwe" checked="" name="one"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="123" name="UNKNOWN"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="three"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="four"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><script>var scripts = document.getElementsByTagName("script");
+}</script><p>hello main_1.pug</p><!--////////////////////////////////////////////////////////////////////////////////////--><!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--><script>//window.onresize = function(){console.log("resize");};
+document.addEventListener("keyup", function (event) {
+  switch (event.code) {
+    case "KeyA":
+      aux_sliders.updateData("firstSlider", 25, 75);
+      break;
+
+    case "KeyS":
+      aux_sliders.updateData("firstSlider", 0, 100);
+      break;
+
+    default:
+      console.log("event.code");
+      console.log(event.code);
+      break;
+  }
+});</script><div><div class="counterItem" id="separate" aux-minValue="10" aux-maxValue="20" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="unknown_counterItem">UNKNOWN</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">10</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="unknown_counterItem"><script>if (window.aux_counter_items == void 0) {
+  var aux_counter_items = {
+    protos: {
+      item: {
+        min: 0,
+        current: 0,
+        max: 0,
+        get: null,
+        set: null,
+        reset: null
+      },
+      view: {
+        base: null,
+        decButton: null,
+        counter: null,
+        incButton: null,
+        input: null
+      }
+    },
+    items: [],
+    views: [],
+    attr_name: {
+      use_as: "aux-use_as",
+      minValue: "aux-minValue",
+      maxValue: "aux-maxValue",
+      caseArr: "aux-wordCase",
+      selfVisibility: "aux-visibility"
+    },
+    attr_values: {
+      use_as: {
+        base: "CounterItem_Base",
+        decButton: "CounterItem_decButton",
+        counter: "CounterItem_currentCount",
+        incButton: "CounterItem_incButton"
+      }
+    },
+    events: {
+      counterItem_change: "counter_change",
+      counterItem_reset: "reset",
+      counterItem_accept: "accept"
+    },
+    //#region model method
+    addItem: function addItem(id) {
+      if (aux_counter_items.getData(id) !== null) {
+        console.error("addItem(" + id + ") : item already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.item;
+      tmp.id = id;
+      aux_counter_items.items.push(tmp);
+      return tmp;
+    },
+    setData: function setData(current, min, max, caseword) {
+      //console.warn("setData");
+      if (current) {
+        this.current = current;
+      }
+
+      if (min) {
+        this.min = min;
+      }
+
+      if (max) {
+        this.max = max;
+      }
+
+      if (caseword) {
+        this.caseWords = caseword;
+      }
+
+      document.dispatchEvent(new CustomEvent(aux_counter_items.events.counterItem_change, {
+        detail: {
+          data: this
+        }
+      }));
+    },
+    resetData: function resetData(id) {
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      aux_counter_items.setData.apply(data, [data.min, data.min, data.max, data.caseWords]);
+
+      if (view !== null) {
+        view.input.value = data.current;
+      }
+    },
+    getData: function getData(id) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id == id) {
+          return this.items[i];
+        }
+      }
+
+      return null;
+    },
+    incValue: function incValue() {
+      console.log("incValue");
+
+      if (this.current < this.max) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current + 1, this.min, this.max]);
+      }
+    },
+    decValue: function decValue() {
+      console.log("decValue");
+
+      if (this.current > this.min) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current - 1, this.min, this.max]);
+      }
+    },
+    acceptData: function acceptData(id) {
+      //console.log("acceptData");
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      view.input.value = data.current;
+    },
+    //#endregion model method
+    //#region view method
+    addView: function addView(id) {
+      if (aux_counter_items.getView(id) !== null) {
+        console.error("getView(" + id + ") : view already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.view;
+      tmp.id = id;
+      tmp.base = document.getElementById(id);
+      tmp.decButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.decButton + "]");
+      tmp.decButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      tmp.counter = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.counter + "]");
+      tmp.incButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.incButton + "]");
+      tmp.incButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      aux_counter_items.views.push(tmp);
+      tmp.input = tmp.base.querySelector("input");
+      tmp.base.onclick = aux_counter_items.click_handler;
+      return tmp;
+    },
+    getView: function getView(id) {
+      //console.log("getView(id)");
+      for (var i = 0; i < this.views.length; i++) {
+        if (this.views[i].id == id) {
+          return this.views[i];
+        }
+      }
+
+      return null;
+    },
+    showView: function showView(data) {
+      this.input.value = data.current;
+      this.counter.innerHTML = data.current;
+      this.decButton.style.visibility = data.min < data.current ? "" : "hidden";
+      this.incButton.style.visibility = data.max > data.current ? "" : "hidden";
+    },
+    //#endregion view method
+    parseItem: function parseItem(item) {
+      var result = {};
+      result.__proto__ = aux_counter_items.protos.item;
+      result.min = parseInt(item.getAttribute(aux_counter_items.attr_name.minValue));
+      result.caseArr = item.getAttribute(aux_counter_items.attr_name.caseArr) ? parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr)) : null;
+      result.max = parseInt(item.getAttribute(aux_counter_items.attr_name.maxValue));
+      return result;
+    },
+    changeDataListener: function changeDataListener(event) {
+      //console.log("changeDataListener()"); 
+      var data = event.detail.data;
+      var view = aux_counter_items.getView(data.id);
+
+      if (view !== null) {
+        aux_counter_items.showView.apply(view, [data]);
+        view.base.dispatchEvent(new CustomEvent("xulio", {
+          detail: {
+            view: view,
+            item: data
+          }
+        }));
+      }
+    },
+    click_handler: function click_handler(event) {
+      //console.log("this.click_handler");
+      var targetUseAs = event.target.getAttribute(aux_counter_items.attr_name.use_as);
+      var item = aux_counter_items.getData(this.id);
+      var view = aux_counter_items.getView(this.id);
+
+      switch (targetUseAs) {
+        case aux_counter_items.attr_values.use_as.incButton:
+          aux_counter_items.incValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.incButton:");
+
+          break;
+
+        case aux_counter_items.attr_values.use_as.decButton:
+          aux_counter_items.decValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.decButton:");
+
+          break;
+
+        default:
+          //console.log(" aux_counter_items click_handler default");
+          break;
+      }
+    }
+  };
+}
+
+function parseArr(str) {
+  result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+  return result;
+}
+
+function CounterItemInit() {
+  var scripts = document.getElementsByTagName("script");
+  var base = scripts[scripts.length - 1].parentNode;
+  var newData = aux_counter_items.addItem(base.id);
+  newData.current = newData.min;
+  var hz1 = aux_counter_items.parseItem(base);
+  hz1.current = hz1.min;
+  aux_counter_items.setData.apply(newData, [hz1.current, hz1.min, hz1.max, hz1.caseArr]); //.apply(newData, 3, 3 , 10, [one,two,three,four]);
+
+  var newView = aux_counter_items.addView(base.id);
+  document.addEventListener(aux_counter_items.events.counterItem_change, aux_counter_items.changeDataListener);
+  base.addEventListener(aux_counter_items.events.counterItem_reset, function (event) {
+    aux_counter_items.resetData(event.target.id);
+  });
+  base.addEventListener(aux_counter_items.events.counterItem_accept, function (event) {
+    aux_counter_items.acceptData(event.target.id);
+  });
+  base.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+}
+
+CounterItemInit();</script></div><div class="maskedDropdown" id="masked_dates" aux-use_as="Masked_Base" aux-value="хх ххх - хх ххх"><div class="maskedDropdown__title">Даты пребывания в отеле</div><div class="maskedDropdown_outputBox"><div class="maskedDropdown__output" aux-use_as="Masked_Output"></div></div><script>var scripts = document.getElementsByTagName('script');
+var base = scripts[scripts.length - 1].parentNode;
+var item = aux_masked.addItem(base.id);
+var view = aux_masked.addView(base.id);
+aux_masked.set.apply(item, [base.getAttribute("aux-value")]);
+aux_masked.updateView(base.id);</script></div><div class="maskedDropdown" id="masked_guests" aux-use_as="Masked_Base" aux-value="Сколько гостей"><div class="maskedDropdown__title">Гости</div><div class="maskedDropdown_outputBox"><div class="maskedDropdown__output" aux-use_as="Masked_Output"></div></div><script>var scripts = document.getElementsByTagName('script');
+var base = scripts[scripts.length - 1].parentNode;
+var item = aux_masked.addItem(base.id);
+var view = aux_masked.addView(base.id);
+aux_masked.set.apply(item, [base.getAttribute("aux-value")]);
+aux_masked.updateView(base.id);</script></div><!--+dropdownContainer({id:"DD_1", defaultValue:"Сколько гостей", leftLabel:"гости",queryTitle:"quest_count", info:"Гостей;Гость;Гостя;Гостей;"})+dropdownItem({  id:"01", title:"взрослые",     minCount:0, maxCount:5, queryTitle:"adult",  info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
++dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
++dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
++ACPanel({targetId:"DD_1"})--></div><div><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="enterBox" id="NULL" name="base" data-info="UNKNOWN;UNKNOWN;UNKNOWN;UNKNOWN;" data-queryTitle="UNKNOWN"><div class="enterBox_title"><label class="enterBox__leftLabel" name="leftLabel">UNKNOWN</label><label class="enterBox__rightLabel" name="rightLabel">123456789</label></div><div class="enterBox_input" onmousedown="event.target.blur()" onmouseup="event.target.blur()" onclick="event.target.blur()"><input class="hz2" type="text" name="target" data-fullList="nothing" value="" data-defaultValue=""></div></div><div class="counterItem" id="separae" aux-minValue="10" aux-maxValue="20" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="unknown_counterItem">UNKNOWN</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">10</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="unknown_counterItem"><script>if (window.aux_counter_items == void 0) {
+  var aux_counter_items = {
+    protos: {
+      item: {
+        min: 0,
+        current: 0,
+        max: 0,
+        get: null,
+        set: null,
+        reset: null
+      },
+      view: {
+        base: null,
+        decButton: null,
+        counter: null,
+        incButton: null,
+        input: null
+      }
+    },
+    items: [],
+    views: [],
+    attr_name: {
+      use_as: "aux-use_as",
+      minValue: "aux-minValue",
+      maxValue: "aux-maxValue",
+      caseArr: "aux-wordCase",
+      selfVisibility: "aux-visibility"
+    },
+    attr_values: {
+      use_as: {
+        base: "CounterItem_Base",
+        decButton: "CounterItem_decButton",
+        counter: "CounterItem_currentCount",
+        incButton: "CounterItem_incButton"
+      }
+    },
+    events: {
+      counterItem_change: "counter_change",
+      counterItem_reset: "reset",
+      counterItem_accept: "accept"
+    },
+    //#region model method
+    addItem: function addItem(id) {
+      if (aux_counter_items.getData(id) !== null) {
+        console.error("addItem(" + id + ") : item already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.item;
+      tmp.id = id;
+      aux_counter_items.items.push(tmp);
+      return tmp;
+    },
+    setData: function setData(current, min, max, caseword) {
+      //console.warn("setData");
+      if (current) {
+        this.current = current;
+      }
+
+      if (min) {
+        this.min = min;
+      }
+
+      if (max) {
+        this.max = max;
+      }
+
+      if (caseword) {
+        this.caseWords = caseword;
+      }
+
+      document.dispatchEvent(new CustomEvent(aux_counter_items.events.counterItem_change, {
+        detail: {
+          data: this
+        }
+      }));
+    },
+    resetData: function resetData(id) {
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      aux_counter_items.setData.apply(data, [data.min, data.min, data.max, data.caseWords]);
+
+      if (view !== null) {
+        view.input.value = data.current;
+      }
+    },
+    getData: function getData(id) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id == id) {
+          return this.items[i];
+        }
+      }
+
+      return null;
+    },
+    incValue: function incValue() {
+      console.log("incValue");
+
+      if (this.current < this.max) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current + 1, this.min, this.max]);
+      }
+    },
+    decValue: function decValue() {
+      console.log("decValue");
+
+      if (this.current > this.min) {
+        //console.log(this);
+        aux_counter_items.setData.apply(this, [this.current - 1, this.min, this.max]);
+      }
+    },
+    acceptData: function acceptData(id) {
+      //console.log("acceptData");
+      var data = aux_counter_items.getData(id);
+      var view = aux_counter_items.getView(id);
+      view.input.value = data.current;
+    },
+    //#endregion model method
+    //#region view method
+    addView: function addView(id) {
+      if (aux_counter_items.getView(id) !== null) {
+        console.error("getView(" + id + ") : view already exist");
+        return item;
+      }
+
+      var tmp = {};
+      tmp.__proto__ = aux_counter_items.protos.view;
+      tmp.id = id;
+      tmp.base = document.getElementById(id);
+      tmp.decButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.decButton + "]");
+      tmp.decButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      tmp.counter = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.counter + "]");
+      tmp.incButton = tmp.base.querySelector("[" + aux_counter_items.attr_name.use_as + "=" + aux_counter_items.attr_values.use_as.incButton + "]");
+      tmp.incButton.setAttribute(aux_counter_items.attr_name.selfVisibility, "visible");
+      aux_counter_items.views.push(tmp);
+      tmp.input = tmp.base.querySelector("input");
+      tmp.base.onclick = aux_counter_items.click_handler;
+      return tmp;
+    },
+    getView: function getView(id) {
+      //console.log("getView(id)");
+      for (var i = 0; i < this.views.length; i++) {
+        if (this.views[i].id == id) {
+          return this.views[i];
+        }
+      }
+
+      return null;
+    },
+    showView: function showView(data) {
+      this.input.value = data.current;
+      this.counter.innerHTML = data.current;
+      this.decButton.style.visibility = data.min < data.current ? "" : "hidden";
+      this.incButton.style.visibility = data.max > data.current ? "" : "hidden";
+    },
+    //#endregion view method
+    parseItem: function parseItem(item) {
+      var result = {};
+      result.__proto__ = aux_counter_items.protos.item;
+      result.min = parseInt(item.getAttribute(aux_counter_items.attr_name.minValue));
+      result.caseArr = item.getAttribute(aux_counter_items.attr_name.caseArr) ? parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr)) : null;
+      result.max = parseInt(item.getAttribute(aux_counter_items.attr_name.maxValue));
+      return result;
+    },
+    changeDataListener: function changeDataListener(event) {
+      //console.log("changeDataListener()"); 
+      var data = event.detail.data;
+      var view = aux_counter_items.getView(data.id);
+
+      if (view !== null) {
+        aux_counter_items.showView.apply(view, [data]);
+        view.base.dispatchEvent(new CustomEvent("xulio", {
+          detail: {
+            view: view,
+            item: data
+          }
+        }));
+      }
+    },
+    click_handler: function click_handler(event) {
+      //console.log("this.click_handler");
+      var targetUseAs = event.target.getAttribute(aux_counter_items.attr_name.use_as);
+      var item = aux_counter_items.getData(this.id);
+      var view = aux_counter_items.getView(this.id);
+
+      switch (targetUseAs) {
+        case aux_counter_items.attr_values.use_as.incButton:
+          aux_counter_items.incValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.incButton:");
+
+          break;
+
+        case aux_counter_items.attr_values.use_as.decButton:
+          aux_counter_items.decValue.apply(item); //console.log("aux_counter_items.attr_values.use_as.decButton:");
+
+          break;
+
+        default:
+          //console.log(" aux_counter_items click_handler default");
+          break;
+      }
+    }
+  };
+}
+
+function parseArr(str) {
+  result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+  return result;
+}
+
+function CounterItemInit() {
+  var scripts = document.getElementsByTagName("script");
+  var base = scripts[scripts.length - 1].parentNode;
+  var newData = aux_counter_items.addItem(base.id);
+  newData.current = newData.min;
+  var hz1 = aux_counter_items.parseItem(base);
+  hz1.current = hz1.min;
+  aux_counter_items.setData.apply(newData, [hz1.current, hz1.min, hz1.max, hz1.caseArr]); //.apply(newData, 3, 3 , 10, [one,two,three,four]);
+
+  var newView = aux_counter_items.addView(base.id);
+  document.addEventListener(aux_counter_items.events.counterItem_change, aux_counter_items.changeDataListener);
+  base.addEventListener(aux_counter_items.events.counterItem_reset, function (event) {
+    aux_counter_items.resetData(event.target.id);
+  });
+  base.addEventListener(aux_counter_items.events.counterItem_accept, function (event) {
+    aux_counter_items.acceptData(event.target.id);
+  });
+  base.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+}
+
+CounterItemInit();</script></div><div class="tlistItem" name="row" data-min="0" data-max="5" data-current="0" data-info="Взрослых;Взрослый;Взрослых;Взрослых;" data-queryTitle="adult"><div class="tlistItem__title" name="title" data-title="row">взрослые</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="tlistItem" name="row" data-min="0" data-max="4" data-current="0" data-info="Детей;Ребёнок;Ребёнка;Детей;" data-queryTitle="child"><div class="tlistItem__title" name="title" data-title="row">дети</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="tlistItem" name="row" data-min="0" data-max="3" data-current="0" data-info="Младенцев;Младенец;Младенца;Младенцев;" data-queryTitle="infant"><div class="tlistItem__title" name="title" data-title="row">младенцы</div><div class="tlistItem__spliter"></div><div class="tlistItem__button" name="decButton">-</div><div class="tlistItem__count" name="currentCount">0</div><div class="tlistItem__button" name="incButton">+</div></div><div class="clearAceptPanel" name="ACPanel" id="guests_ACPanel" target="guests"><div class="clear" name="clear">очистить</div><div class="accept" name="accept">применить</div></div></div><script src="dropdownList.22e49fdb.js"></script></div></div><div><div class="sliderHorizontal" id="firstSlider" aux-use_as="Slider_Base" aux-slider_type="solid" aux-slider_count="two" aux-slider_direction="horizontal" aux-slider_suffix="RUR"><input type="hidden" name="firstSlider"><div class="head"><div class="title">Диапазон цены</div><div class="values"><!--.min(aux-use_as="Slider_minLabel")= "MIN"--><div class="values" aux-use_as="Slider_Label">LABEL</div></div></div><div class="slider_box" aux-use_as="Slider_Frame" aux-base_id="firstSlider"><div class="string" aux-base_id="firstSlider"><div class="emptyLine" aux-base_id="firstSlider"></div><div class="preview" aux-use_as="Slider_Preview"></div><div class="fillLine" aux-use_as="Slider_Fill_Line" aux-base_id="firstSlider"></div><div class="point" aux-use_as="Slider_minPoint" aux-base_id="firstSlider"></div><div class="point" aux-use_as="Slider_maxPoint" aux-base_id="firstSlider"></div></div></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="3000" aux-stage_index="4"></div><div style="display:none;" aux-use_as="Slider_Stage" aux-stage_title="UNKNOWN" aux-stage_value="30000" aux-stage_index="5"></div><div class="comment">Стоимость за сутки пребывания в номере</div><!--.markH#mark_1--><script>var base = getParent();
+aux_sliders.initSlider(base); //var m_1 = document.getElementById("mark_1");</script><!--include ../../components/slider/slider.js--></div></div><div><div class="checkboxPanel" id="options"> <div class="checkboxPanel__title">Опции</div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz0" name="UNKNOWN"><span class="checkboxItem__additionalRow">Можно курить</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz1" name="UNKNOWN"><span class="checkboxItem__additionalRow">Можно с питомцами</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" id="hz2" name="UNKNOWN"><span class="checkboxItem__additionalRow">Можно пригласить гостей (до 10 человек)</span></div></div><div class="itemGlue" id="guestGlue" aux-outputId="guestPreview" aux-itemsId="[&quot;hz0&quot;,&quot;hz1&quot;,&quot;hz2&quot;]" aux-wordCase="[&quot;Гостей&quot;,&quot;Гость&quot;,&quot;Гостя&quot;]" aux-use_as="ItemGlue_Base" style="display:none;"><script>if (window.items_glue == void 0) {
+  var items_glue = {
+    protos: {
+      item: {
+        id: null,
+        title: "TITLE",
+        caseWords: [],
+        targetId: null,
+        contains: [],
+        containsData: [],
+        getTitle: function getTitle() {
+          console.warn("getTitle function must be override");
+        },
+        reset: function reset() {
+          console.warn("reset function must be override");
+        },
+        accept: function accept() {
+          console.warn("accept function must be override");
+        },
+        mute: false
+      }
+    },
+    attr_name: {
+      use_as: "aux-use_as",
+      out: "aux-outputId",
+      words: "aux-wordCase",
+      list: "aux-itemsId"
+    },
+    attr_values: {
+      use_as: {
+        base: "ItemGlue_Base"
+      }
+    },
+    events: {
+      //counterItem_change:"counter_change",
+      reset: "reset",
+      accept: "accept" //counterItem_accept:"counter_accept",
+
+    },
+    items: [],
+    getData: function getData(id) {
+      //console.log("getData");
+      for (var i = 0; i < items_glue.items.length; i++) {
+        if (items_glue.items[i].id == id) {
+          return items_glue.items[i];
+        }
+      }
+
+      return null;
+    },
+    //INIT
+    itemGlueInit: function itemGlueInit(id) {
+      var base = document.getElementById(id);
+
+      if (base !== null) {
+        var tmp = {};
+        tmp.__proto__ = items_glue.protos.item;
+        tmp.id = id;
+        var hz2 = items_glue.parseArr(base.getAttribute(items_glue.attr_name.list));
+
+        for (var w = 0; w < hz2.length; w++) {
+          var h = document.getElementById(hz2[w]);
+          tmp.contains.push(h);
+
+          if (window.aux_counter_items !== void 0) {
+            var counterData = aux_counter_items.getData(h.id);
+            tmp.containsData.push(counterData);
+          }
+        }
+
+        tmp.targetId = base.getAttribute(items_glue.attr_name.out);
+        var hz3 = items_glue.parseArr(base.getAttribute(items_glue.attr_name.words));
+        hz3.forEach(function (item, i, arr) {
+          tmp.caseWords.push(item);
+        });
+        items_glue.items.push(tmp);
+        base.addEventListener(items_glue.events.reset, items_glue.resetListener);
+        base.addEventListener(items_glue.events.accept, items_glue.acceptListener);
+      }
+    },
+    resetById: function resetById(id) {
+      var tmp = items_glue.getData(id);
+
+      if (tmp !== null) {
+        items_glue.reset.apply(tmp);
+      }
+    },
+    reset: function reset() {
+      this.contains.forEach(function (item, i, arr) {
+        item.dispatchEvent(new Event(aux_counter_items.events.counterItem_reset));
+      });
+    },
+    acceptById: function acceptById(id) {
+      var tmp = items_glue.getData(id);
+
+      if (tmp !== null) {
+        items_glue.accept.apply(tmp);
+      }
+    },
+    accept: function accept() {
+      this.contains.forEach(function (item, i, arr) {
+        new Event(aux_counter_items.events.counterItem_accept);
+      });
+      var target = document.getElementById(this.targetId);
+      target.innerHTML = getCustomTitle(this.id);
+    },
+    parseArr: function parseArr(str) {
+      result = str.replace("]", "").replace("[", "").replace(/ /g, "").replace(/"/g, "").split(",");
+      return result;
+    },
+    resetListener: function resetListener(event) {
+      //console.warn("resetListener(event)");
+      items_glue.resetById(event.target.id);
+    },
+    acceptListener: function acceptListener(event) {
+      items_glue.acceptById(event.target.id);
+    }
+  };
+}
+
+console.log("itemGlue");
+var sripts = document.getElementsByTagName("script");
+var base = scripts[scripts.length - 1].parentNode;
+items_glue.itemGlueInit(base.id);
+
+function glueHandler(event) {}
+
+function getCustomTitle(id) {
+  var data = items_glue.getData(id);
+  var result = "";
+
+  if (data == null) {
+    return;
+  }
+
+  if (data.mute == false) {
+    var fullCount = 0;
+    data.containsData.forEach(function (item, i, arr) {
+      fullCount += item.current;
+      /* item.input!!!*/
+    });
+    result = buildTitle(fullCount, data.caseWords);
+    data.containsData.forEach(function (item, i, arr) {
+      result += ", " + buildTitle(item.current, item.caseWords);
+    });
+  }
+
+  return result;
+}
+
+function buildTitle(countInt, infoArr) {
+  //console.log("buildTitle");
+  //console.log(countInt);
+  //console.log(infoArr);
+  var result = "";
+  var countStr = "" + countInt;
+
+  if (countInt > 4 && countInt < 20) {
+    result = countStr + " " + infoArr[0];
+  } else {
+    var lastNumber = parseInt(countStr[countStr.length - 1]);
+
+    switch (lastNumber) {
+      case 0:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+        result = countStr + " " + infoArr[0];
+        break;
+
+      case 1:
+        result = countStr + " " + infoArr[1];
+        break;
+
+      case 2:
+      case 3:
+      case 4:
+        result = countStr + " " + infoArr[2];
+        break;
+    }
+  }
+
+  return result;
+}
+
+document.addEventListener('keydown', function (event) {
+  var key = event.code;
+
+  if (window.aux_counter_items == void 0) {
+    return;
+  }
+
+  switch (key) {
+    case "Numpad1":
+      //reset
+      for (var g = 0; g < items_glue.items.length; g++) {
+        items_glue.resetById(items_glue.items[g].id);
+      }
+
+      break;
+
+    case "Numpad2":
+      //accept
+      for (var g = 0; g < items_glue.items.length; g++) {
+        items_glue.items[g].contains.forEach(function (item, i, arr) {
+          if (item.getAttribute(aux_counter_items.attr_name.use_as) == aux_counter_items.attr_values.use_as.base) {
+            item.dispatchEvent(new Event(aux_counter_items.events.counterItem_accept));
+            getCustomTitle(items_glue.items[g].id);
+          } else {
+            console.error("itemGlue.pug: uncorect item list");
+          }
+        });
+      }
+
+      break;
+
+    default:
+      console.log('key code is ' + event.code);
+      break;
+  }
+});</script></div><script>var scripts = document.getElementsByTagName("script");
 var base = scripts[scripts.length - 1].parentNode;
 console.log(base.id);
 setFormItem(base.id);
 infoFormItems();
 
-base.onclick = function () {};</script></div><div class="checkboxPanel" id="testCheckbox_2"> <div class="checkboxPanel__title">Title</div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="one"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="two"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="three"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="four"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><script>var scripts = document.getElementsByTagName("script");
-var base = scripts[scripts.length - 1].parentNode;
-console.log(base.id);
-setFormItem(base.id);
-infoFormItems();
+base.onclick = function () {};</script></div></div><!--div+checkboxContainer({id:"availability", title:"доступность"})
+    +checkboxItem({
+        id:"hz", 
+        title:"Широкий коридор", 
+        comment:"Ширина коридоров в номере не менее 91 см."
+        })
+    +checkboxItem({
+        id: "hz", 
+        title:"Помощник для инвалидов", 
+        comment:"На 1 этаже вас встретит специалист  и проводит до номера."
+        })--><!--div+checkboxItem_2({id:"figa",withoutComent:"true"})
++expandList({id:"expand_1"})--><!--divspan(class="common__inputTitle") удобства номера
+input(class="common__inputDropdown")
 
-base.onclick = function () {};</script></div><div class="checkboxPanel" id="testCheckbox_3"> <div class="checkboxPanel__title">Title</div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="one"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="two"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="three"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><div class="checkboxItem"><div class="checkboxItem__mainRow"><input type="checkbox" name="four"><span>Title</span></div><div class="checkboxItem__additionalRow"><span>Coment</span></div></div><script>var scripts = document.getElementsByTagName("script");
-var base = scripts[scripts.length - 1].parentNode;
-console.log(base.id);
-setFormItem(base.id);
-infoFormItems();
+--><!--+dropdownContainer({id:"RR_1", defaultValue:"Удобства номера", leftLabel:"Удобства номера",queryTitle:"quest_count", info:"Комнат;Комната;Комнаты;Комнат;"})+dropdownItem({  id:"01", title:"спальни", minCount:0, maxCount:5,  queryTitle:"adult", info:"спален;спальня;спальни;спаленых;"})
++dropdownItem({  id:"03", title:"кровати", minCount:0, maxCount:4,      queryTitle:"child", info:"кроватей;кровать;кровати;кроватей;"})
++dropdownItem({  id:"02", title:"ванные комнаты", minCount:0, maxCount:3,  queryTitle:"infant", info:"ванных комнат;ванная комната;ванные комнаты;ванных комнат;"})
++ACPanel({targetId:"DD_1"})--><!--divinput(class="common__inputDropdown" value="дополнительные удобства")
+--></div><!--grid room prevews--><div class="main"><!--include ../modules/main_1.pug--><div class="viewer" id="viewer"><div class="roomShield" aux-use_as="Viewer_ReferanceShield"><div class="imageBox">123</div><div class="scdRow">456</div><div class="trdRow">789</div></div><script>function getParent() {
+  var scripts = document.getElementsByTagName('script');
+  var base = scripts[scripts.length - 1].parentNode;
+  return base;
+}
 
-base.onclick = function () {};</script></div></div><!--grid footer--><div class="footer"><div class="footerModule"><div class="linkPanel"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="linkPanel__text"><span>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span></div></div><div class="linkPanel"><div class="linkPanel__title"><span>Навигация</span></div><a class="link" href="#">О нас</a><a class="link" href="#">Новости</a><a class="link" href="#">Служба поддержки</a><a class="link" href="#">Услуги</a></div><div class="linkPanel"><div class="linkPanel__title"><span>О нас</span></div><a class="link" href="#">О сервисе</a><a class="link" href="#">Наша команда</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Инвесторы</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Служба поддержки</span></div><a class="link" href="#">Соглашения</a><a class="link" href="#">Сообщества</a><a class="link" href="#">Связь с нами</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Подписка</span></div><div class="linkPanel__text"><span>Получайте специальные предложения и новости сервиса</span></div><form action="#" method="post"><input type="email"></form></div></div><!--    +label--><!--    .flex_splitter--><!--    a(class="", href="*") О нас--><!--    a(class="", href="*") Услуги--><!--    a(class="", href="*") Вакансии--><!--    a(class="", href="*") Новости--><!--    a(class="", href="*") Соглашения--><!--    //+link({ title:"О нас", href:"*"})--><!--    //+link({ title:"Услуги", href:"*"})--><!--    //+link({ title:"Вакансии", href:"*"})--><!--    //+link({ title:"Новости", href:"*"})--><!--    //+link({ title:"Соглашения", href:"*"})--><!--    span(class="common__whiteButton") Войти--><!--    span(class="common__blueButton") Зарегистрироваться--><!----><!----><!----><!----><!--    <div class="footer">--><!--                    <ul class="footer_flex">--><!--                        <li class="firstItem">--><!--                            <div class="label mbt_tmp">--><!--                                <div class="label__logo">--><!--                                    <img id="logo" src="../images/Vector-2.svg" alt="toxin" />--><!--                                    <img id="leftPath" src="../images/Vector.svg" alt="toxin" />--><!--                                    <img id="rigthPath" src="../images/Vector-1.svg" alt="toxin" />--><!--                                </div>--><!--                                <div class="label__text">--><!--                                    <img src="../images/TOXIN.svg" alt="toxin" />--><!--                                </div>--><!--                            </div>--><!--                            <div class="footer_sublist footer_text in">--><!--                                Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»--><!--                            </div>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Навигация</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>--><!--                                    О нас--><!--                                </li>--><!--                                <li>--><!--                                    Новости--><!--                                </li>--><!--                                <li>--><!--                                    Служба поддержки--><!--                                </li>--><!--                                <li>--><!--                                    Услуги--><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">О нас</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>О сервисе</li>--><!--                                <li>Наша команда</li>--><!--                                <li>Вакансии</li>--><!--                                <li>Инвесторы</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Служба поддержки</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>Соглашения</li>--><!--                                <li>Сообщества</li>--><!--                                <li>Связь с нами</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li class="lastItem">--><!--                            <span class="footer_title">Подписка</span>--><!--                            <ul class="footer_sublist footer_text">--><!--                                <li>--><!--                                    <span>Получайте специальные предложения и новости сервиса</span>--><!--                                </li>--><!--                                <li>--><!----><!--                                    <input type="email" class="footer_email" />--><!----><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                    </ul>--><!--                </div>--></div><!--grid social links--><div class="social"><div class="socialModule"><div class="socialModule__text">Copyright C2018 Toxin отель. Все права зачищены</div><div class="socialModule__links"><a> <img id="" src="twiter.f1cdd1b7.svg" alt="Twiter"></a><a><img id="" src="facebook.d989b116.svg" alt="Facebook"></a><a><img id="" src="instagram.a353b496.svg" alt="Instagram"></a></div></div><script>if (window.aux_heap != void 0) {
-  setInterval(function () {
-    return aux_heap[0].toogle();
-  }, 1000);
-  setInterval(function () {
-    return console.warn("ghghghghghghghghghghghghghghghghg");
-  }, 2000); //aux_heap[0].cbItemGet();
-  //aux_heap[0].getState("hulio");
-  //aux_heap[0].cbItemSet();
-  //alert("window.aux_heap !=void 0");
-}</script></div></div></div></body>
+var n = getParent();
+console.log(n.getAttribute("id"));</script><script>aux_viewer.init("viewer");
+aux_viewer.addItem({
+  id: "v1"
+});
+aux_viewer.addItem({
+  id: "v2"
+});
+aux_viewer.addItem({
+  id: "v3"
+});
+aux_viewer.addItem({
+  id: "v4"
+});
+aux_viewer.addItem({
+  id: "v5"
+});
+aux_viewer.addItem({
+  id: "v6"
+});
+aux_viewer.update(); //var asd = 1234567890;
+
+function qwe() {
+  var z = "asd";
+  var asd = "qwerty";
+  console.warn(this);
+  console.warn(window["qwe"]);
+  console.warn(eval("asd"));
+}
+
+qwe();</script></div><!--+checkboxContainer({id:"testCheckbox_1"})--><!--    +checkboxItem({id:"qwe", check: "da", name:"one"})--><!--    +checkboxItem({id: "123"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--><!--+checkboxContainer({id:"testCheckbox_2"})--><!--    +checkboxItem({name:"one"})--><!--    +checkboxItem({name:"two"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--><!--+checkboxContainer({id:"testCheckbox_3"})--><!--    +checkboxItem({name:"one", coment:"coment"}) --><!--    +checkboxItem({name:"two"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--></div><!--grid footer--><div class="footer"><div class="footerModule"><div class="linkPanel"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="linkPanel__text"><span>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span></div></div><div class="linkPanel"><div class="linkPanel__title"><span>Навигация</span></div><a class="link" href="#">О нас</a><a class="link" href="#">Новости</a><a class="link" href="#">Служба поддержки</a><a class="link" href="#">Услуги</a></div><div class="linkPanel"><div class="linkPanel__title"><span>О нас</span></div><a class="link" href="#">О сервисе</a><a class="link" href="#">Наша команда</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Инвесторы</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Служба поддержки</span></div><a class="link" href="#">Соглашения</a><a class="link" href="#">Сообщества</a><a class="link" href="#">Связь с нами</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Подписка</span></div><div class="linkPanel__text"><span>Получайте специальные предложения и новости сервиса</span></div><form action="#" method="post"><input type="email"></form></div></div><!--    +label--><!--    .flex_splitter--><!--    a(class="", href="*") О нас--><!--    a(class="", href="*") Услуги--><!--    a(class="", href="*") Вакансии--><!--    a(class="", href="*") Новости--><!--    a(class="", href="*") Соглашения--><!--    //+link({ title:"О нас", href:"*"})--><!--    //+link({ title:"Услуги", href:"*"})--><!--    //+link({ title:"Вакансии", href:"*"})--><!--    //+link({ title:"Новости", href:"*"})--><!--    //+link({ title:"Соглашения", href:"*"})--><!--    span(class="common__whiteButton") Войти--><!--    span(class="common__blueButton") Зарегистрироваться--><!----><!----><!----><!----><!--    <div class="footer">--><!--                    <ul class="footer_flex">--><!--                        <li class="firstItem">--><!--                            <div class="label mbt_tmp">--><!--                                <div class="label__logo">--><!--                                    <img id="logo" src="../images/Vector-2.svg" alt="toxin" />--><!--                                    <img id="leftPath" src="../images/Vector.svg" alt="toxin" />--><!--                                    <img id="rigthPath" src="../images/Vector-1.svg" alt="toxin" />--><!--                                </div>--><!--                                <div class="label__text">--><!--                                    <img src="../images/TOXIN.svg" alt="toxin" />--><!--                                </div>--><!--                            </div>--><!--                            <div class="footer_sublist footer_text in">--><!--                                Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»--><!--                            </div>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Навигация</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>--><!--                                    О нас--><!--                                </li>--><!--                                <li>--><!--                                    Новости--><!--                                </li>--><!--                                <li>--><!--                                    Служба поддержки--><!--                                </li>--><!--                                <li>--><!--                                    Услуги--><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">О нас</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>О сервисе</li>--><!--                                <li>Наша команда</li>--><!--                                <li>Вакансии</li>--><!--                                <li>Инвесторы</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Служба поддержки</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>Соглашения</li>--><!--                                <li>Сообщества</li>--><!--                                <li>Связь с нами</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li class="lastItem">--><!--                            <span class="footer_title">Подписка</span>--><!--                            <ul class="footer_sublist footer_text">--><!--                                <li>--><!--                                    <span>Получайте специальные предложения и новости сервиса</span>--><!--                                </li>--><!--                                <li>--><!----><!--                                    <input type="email" class="footer_email" />--><!----><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                    </ul>--><!--                </div>--></div><!--grid social links--><div class="social"><div class="socialModule"><div class="socialModule__text">Copyright C2018 Toxin отель. Все права зачищены</div><div class="socialModule__links"><a> <img id="" src="twiter.f1cdd1b7.svg" alt="Twiter"></a><a><img id="" src="facebook.d989b116.svg" alt="Facebook"></a><a><img id="" src="instagram.a353b496.svg" alt="Instagram"></a></div></div></div></div></div><!--Placeholder_1--><script>var monthName = {
+  0: "января",
+  1: "февраля",
+  2: "марта",
+  3: "апреля",
+  4: "мая",
+  5: "июня",
+  6: "июля",
+  7: "августа",
+  8: "сентября",
+  9: "октября",
+  10: "ноября",
+  11: "декабря"
+};
+var uri = window.location.href;
+var trueURI = decodeURI(uri);
+var vars = {};
+var parts = trueURI.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+  vars[key] = value;
+});
+console.log(vars);
+var ari = vars["t1"].replace(/[+]/gi, " ");
+var dep = vars["t2"].replace(/[+]/gi, " ");
+ari = ari.replace(/%3A/gi, ":");
+ari = ari.replace(/%2B/gi, "-");
+dep = dep.replace(/%3A/gi, ":");
+dep = dep.replace(/%2B/gi, "-");
+var a = new Date(Date.parse(ari));
+var d = new Date(Date.parse(dep));
+aux_masked.setById("masked_dates", "\u0421 ".concat(a.getDate(), " ").concat(monthName[a.getMonth()], ", \u043F\u043E ").concat(d.getDate(), " ").concat(monthName[d.getMonth()], " "));
+aux_masked.setById("masked_guests", "".concat(Number.parseInt(vars["child"]) + Number.parseInt(vars["adult"]) + Number.parseInt(vars["infant"]), " \u0433\u043E\u0441\u0442\u0435\u0439"));</script></body>

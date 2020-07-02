@@ -3,8 +3,9 @@
 }
 
 .page {
+  /*
   width: 1440px;
-  height: 1880px;
+  height: 1880px;*/
   box-sizing: border-box;
   border: 1px black solid;
   padding-right: 135px;
@@ -48,7 +49,7 @@
   line-height: 24px;
 }
 
-.blueSubmit, .ac > .accept, .ac > .clear, .counterItem > .counterItem__count, .counterItem > .counterItem__title, .inputPreviewBox > .inputPreviewBox_Title, .whiteLink, .blueLink, .footerModule > .linkPanel > .linkPanel__title, .expandList, .slider .title, .clearAceptPanel > .accept, .clearAceptPanel > .clear, .tlistItem > .tlistItem__count, .tlistItem > .tlistItem__title, .dropdownInput > .dropdownInput__title > .dropdownInput__leftLabel, .checkboxPanel__title, .checkboxItem > .checkboxItem__mainRow, .common__inputText12Up, .common__inputTitle, .common__blueButton, .common__whiteButton {
+.enterBox > .enterBox_title > .enterBox__leftLabel, .maskedDropdown .maskedDropdown__title, .blueSubmit, .ac > .accept, .ac > .clear, .counterItem > .counterItem__count, .counterItem > .counterItem__title, .inputPreviewBox > .inputPreviewBox_Title, .whiteLink, .blueLink, .footerModule > .linkPanel > .linkPanel__title, .expandList, .sliderHorizontal .head .title, .clearAceptPanel > .accept, .clearAceptPanel > .clear, .tlistItem > .tlistItem__count, .tlistItem > .tlistItem__title, .dropdownInput > .dropdownInput__title > .dropdownInput__leftLabel, .checkboxPanel__title, .checkboxItem > .checkboxItem__mainRow, .common__inputText12Up, .common__inputTitle, .common__blueButton, .common__whiteButton {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -58,7 +59,7 @@
   text-transform: uppercase;
 }
 
-.slider .comment, .checkboxItem > .checkboxItem__additionalRow {
+.sliderHorizontal .comment, .checkboxItem > .checkboxItem__additionalRow {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -67,7 +68,7 @@
   /* or 117% */
 }
 
-.values, .dropdownInput > .dropdownInput__title > .dropdownInput__rightLabel {
+.enterBox > .enterBox_title > .enterBox__rightLabel, .sliderHorizontal .head .values, .dropdownInput > .dropdownInput__title > .dropdownInput__rightLabel {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -78,7 +79,7 @@
   text-transform: uppercase;
 }
 
-.counterItem > .counterItem__button, .socialModule .socialModule__text, .footerModule > .linkPanel > .linkPanel__text, .preview, .tlistItem > .tlistItem__button, .dropdownInput > .dropdownInput__input > input, .checkboxItem * .checkboxItem__additionalRow, .common__inputText12, .common__inputText14 {
+.enterBox > .enterBox_input > input, .counterItem > .counterItem__button, .socialModule .socialModule__text, .footerModule > .linkPanel > .linkPanel__text, .sliderHorizontal .slider_box .string .preview, .sliderVertical .slider_box .string .preview, .tlistItem > .tlistItem__button, .dropdownInput > .dropdownInput__input > input, .checkboxItem * .checkboxItem__additionalRow, .common__inputText12, .common__inputText14 {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -86,23 +87,22 @@
   line-height: 24px;
 }
 
-.inputPreviewBox > .inputPreviewBox_Box {
+.enterBox > .enterBox_input, .maskedDropdown .maskedDropdown_outputBox, .inputPreviewBox > .inputPreviewBox_Box {
   width: 100%;
   background: white;
   /* Dark 25% */
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border: 3px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
   height: 40px;
-  /**/
+  padding-left: 0em;
   background-image: url(expand_more.d4752fec.svg);
   background-position: right 10px top 15px;
   background-size: 15px;
   background-repeat: no-repeat;
-  border: 1px solid #818181;
 }
 
-.inputPreviewBox > .inputPreviewBox_Box, .link {
+.maskedDropdown .maskedDropdown_outputBox .maskedDropdown__output, .inputPreviewBox > .inputPreviewBox_Box, .link {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -264,6 +264,7 @@
 .dropdownInput > .dropdownInput__input {
   display: flex;
   flex-direction: column;
+  height: 39px;
   background: #FFFFFF;
   /* Dark 50% */
   border: 1px solid rgba(31, 32, 65, 0.5);
@@ -272,7 +273,7 @@
 }
 .dropdownInput > .dropdownInput__input > input {
   color: rgba(31, 32, 65, 0.75);
-  height: 39px;
+  height: 40px;
   background-image: url(expand_more.d4752fec.svg);
   background-position: right 10px top 15px;
   background-size: 15px;
@@ -364,49 +365,49 @@
   color: rgba(31, 32, 65, 0.5);
 }
 
-.slider .head {
+.sliderVertical {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
-.slider .head .values {
-  display: flex;
-}
-.slider .title {
-  color: #1F2041;
-}
-.slider .comment {
-  color: rgba(31, 32, 65, 0.5);
-}
-
-.slider_box {
-  width: 100%;
-  height: 25px;
+.sliderVertical .slider_box {
+  flex-shrink: 0;
+  flex-grow: 1;
   position: relative;
   box-sizing: border-box;
+  border: 1px solid black;
 }
-
-.string {
+.sliderVertical .slider_box .string {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.point1 {
-  position: absolute;
-  margin-left: 0%;
-  flex: 0 0 15px;
-  /* Secondary Gradient */
-  left: 25px;
-  width: 15px;
-  height: 15px;
-  background: blueviolet;
-  border: 2px solid #FFFFFF;
-  border-radius: 10px;
-  z-index: 10;
+.sliderVertical .slider_box .string .emptyLine {
+  width: 100%;
+  height: 4px;
+  background: #FFFFFF;
+  /* Dark 25% */
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px;
 }
-
-.point2 {
+.sliderVertical .slider_box .string .preview {
+  position: absolute;
+  background-color: lime;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1;
+}
+.sliderVertical .slider_box .string .fillLine {
+  position: absolute;
+  /* Secondary Gradient */
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 3px;
+}
+.sliderVertical .slider_box .string .point {
   position: absolute;
   flex: 0 0 15px;
   margin-right: 0%;
@@ -416,10 +417,53 @@
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border: 2px solid #FFFFFF;
   border-radius: 10px;
-  z-index: 11;
 }
 
-.emptyLine {
+.markH {
+  height: 100px;
+  width: 1px;
+  background-color: brown;
+  position: absolute;
+}
+
+.markV {
+  height: 1px;
+  width: 100px;
+  background-color: brown;
+  position: absolute;
+}
+
+.sliderHorizontal .head {
+  display: flex;
+  justify-content: space-between;
+}
+.sliderHorizontal .head .title {
+  color: #1F2041;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.sliderHorizontal .head .values {
+  display: flex;
+  color: rgba(31, 32, 65, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sliderHorizontal .comment {
+  color: rgba(31, 32, 65, 0.5);
+}
+.sliderHorizontal .slider_box {
+  width: 100%;
+  height: 25px;
+  position: relative;
+  box-sizing: border-box;
+}
+.sliderHorizontal .slider_box .string {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sliderHorizontal .slider_box .string .emptyLine {
   width: 100%;
   height: 4px;
   background: #FFFFFF;
@@ -428,8 +472,14 @@
   box-sizing: border-box;
   border-radius: 3px;
 }
-
-.fillLine {
+.sliderHorizontal .slider_box .string .preview {
+  position: absolute;
+  background-color: lime;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1;
+}
+.sliderHorizontal .slider_box .string .fillLine {
   position: absolute;
   /* Secondary Gradient */
   width: 100%;
@@ -437,17 +487,16 @@
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border-radius: 3px;
 }
-
-.preview {
+.sliderHorizontal .slider_box .string .point {
   position: absolute;
-  background-color: lime;
-  border-radius: 5px;
-  white-space: nowrap;
-  z-index: 1;
-}
-
-.values {
-  color: rgba(31, 32, 65, 0.5);
+  flex: 0 0 15px;
+  margin-right: 0%;
+  /* Secondary Gradient */
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
 }
 
 .expandList {
@@ -990,6 +1039,100 @@
 .blueSubmit > .blueSubmit__Right {
   flex: 0 0 40px;
   text-align: center;
+}
+
+.maskedDropdown .maskedDropdown__title {
+  margin-bottom: 5px;
+  color: #1F2041;
+}
+.maskedDropdown .maskedDropdown_outputBox {
+  display: flex;
+  align-items: center;
+}
+.maskedDropdown .maskedDropdown_outputBox .maskedDropdown__output {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.viewer {
+  border: 1px solid darkgoldenrod;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, 1fr);
+  grid-gap: 0px;
+}
+
+.roomShield {
+  border: 1px solid black;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+}
+.roomShield > .imageBox {
+  flex: 1 1 60%;
+  background-color: blueviolet;
+}
+.roomShield > .scdRow {
+  flex: 1 1 20%;
+  background-color: chocolate;
+}
+.roomShield > .trdRow {
+  flex: 1 1 20%;
+  background-color: darkgoldenrod;
+}
+
+.enterBox {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+.enterBox > .enterBox_title {
+  display: flex;
+}
+.enterBox > .enterBox_title > .enterBox__leftLabel {
+  color: #1F2041;
+}
+.enterBox > .enterBox_title > .enterBox__rightLabel {
+  color: rgba(31, 32, 65, 0.5);
+  margin-left: auto;
+}
+.enterBox > .enterBox_input {
+  display: flex;
+  flex-direction: column;
+}
+.enterBox > .enterBox_input > input {
+  color: rgba(31, 32, 65, 0.75);
+  height: 100%;
+  width: 100%;
+  background-image: url(expand_more.d4752fec.svg);
+  background-position: right 10px top 15px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(129, 129, 129, 0);
+}
+
+.dropdownInput > .dropdownInput__list {
+  display: block;
+  margin-top: -2px;
+  border-radius: 0px 0px 4px 4px;
+  border: 2px solid #818181;
+  background: white;
+  position: absolute;
+  width: 100%;
+  padding: 0px 5px 0px 10px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.dropdownInput > .dropdownInput__list > .clearAceptPanel {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.verticalContainer {
+  background-color: rgba(0, 89, 255, 0.233);
+  height: 250px;
 }
 
 .base {

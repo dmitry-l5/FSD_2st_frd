@@ -135,7 +135,7 @@ if(window.aux_counter_items == void 0){
             let result = {};
             result.__proto__ =  aux_counter_items.protos.item;
             result.min = parseInt(item.getAttribute(aux_counter_items.attr_name.minValue));
-            result.caseArr = parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr));
+            result.caseArr = item.getAttribute(aux_counter_items.attr_name.caseArr)? parseArr(item.getAttribute(aux_counter_items.attr_name.caseArr)):null;
             result.max = parseInt(item.getAttribute(aux_counter_items.attr_name.maxValue));
             return result;
         },

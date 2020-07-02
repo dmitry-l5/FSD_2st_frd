@@ -1,35 +1,73 @@
+script
+    include slider.js
 mixin slider(arg)
     -
         let id =arg.id;
-        let direction = (arg.direction=="horizontal")?"horizontal":"vertical";
+        let inputName = arg.name?arg.name:id;
         let hz1 = true?"range":"single";
         let title = arg.title?arg.title:"UNKNOWN"
         let type = arg.type=="solid"?"solid":"step";
         let count = (arg.pointCount == "two")?"two":"one";
         let comment = arg.comment?arg.comment:"";
-    .slider(
-        id= arg.id, 
-        aux-use_as="Slider_Base", 
-        aux-slider_type=type, 
-        aux-slider_count=count,
-        )
-        .head
-            .title= title
-            .values
-                //.min(aux-use_as="Slider_minLabel")= "MIN"
-                .values(aux-use_as="Slider_Label")= "LABEL"
-        .slider_box(aux-use_as="Slider_Frame", aux-base_id=id)
-            .string(aux-base_id=id)
-                .emptyLine(aux-base_id=id)
-                .point1(aux-use_as="Slider_minPoint", aux-base_id=id)
-                .preview(aux-use_as="Slider_Preview") preview
-                .fillLine(aux-use_as="Slider_Fill_Line", aux-base_id=id)
-                .point2(aux-use_as="Slider_maxPoint", aux-base_id =id)
-        if block
-            block
-        .comment= comment
-        script
-            include ../../components/slider/slider.js
+        let direction = (arg.direction=="vertical")?"vertical":"horizontal";
+        let suffix = arg.suffix?arg.suffix:null;
+        //direction="vertical";
+    if direction=="vertical"
+        .sliderVertical(id= arg.id, aux-use_as="Slider_Base", aux-slider_type=type, aux-slider_count=count,aux-slider_direction=direction,)
+            input(type="hidden", name=inputName)
+            .head
+                .title= title
+                .values
+                    //.min(aux-use_as="Slider_minLabel")= "MIN"
+                    .values(aux-use_as="Slider_Label")= "LABEL"
+            .slider_box(aux-use_as="Slider_Frame", aux-base_id=id)
+                .string(aux-base_id=id)
+                    .emptyLine(aux-base_id=id)
+                    .preview(aux-use_as="Slider_Preview")
+                    .fillLine(aux-use_as="Slider_Fill_Line", aux-base_id=id)
+                    .point(aux-use_as="Slider_minPoint", aux-base_id=id)
+                    .point(aux-use_as="Slider_maxPoint", aux-base_id =id)
+            if block
+                block
+            .comment= comment
+            //.markV#mark_2
+            script.
+                let base = getParent();
+                aux_sliders.initSlider(base);
+                //var m_2 = document.getElementById("mark_2");
+                
+            //include ../../components/slider/slider.js
+    else
+        .sliderHorizontal( 
+            id= arg.id, 
+            aux-use_as="Slider_Base", 
+            aux-slider_type=type, 
+            aux-slider_count=count,
+            aux-slider_direction=direction,
+            aux-slider_suffix=suffix)
+            input(type="hidden", name=inputName)
+            .head
+                .title= title
+                .values
+                    //.min(aux-use_as="Slider_minLabel")= "MIN"
+                    .values(aux-use_as="Slider_Label")= "LABEL"
+            .slider_box(aux-use_as="Slider_Frame", aux-base_id=id)
+                .string(aux-base_id=id)
+                    .emptyLine(aux-base_id=id)
+                    .preview(aux-use_as="Slider_Preview")
+                    .fillLine(aux-use_as="Slider_Fill_Line", aux-base_id=id)
+                    .point(aux-use_as="Slider_minPoint", aux-base_id=id)
+                    .point(aux-use_as="Slider_maxPoint", aux-base_id =id)
+            if block
+                block
+            .comment= comment
+            //.markH#mark_1
+            script.
+                let base = getParent();
+                aux_sliders.initSlider(base);
+                //var m_1 = document.getElementById("mark_1");
+    
+            //include ../../components/slider/slider.js
 
 mixin slider_stage(arg)
     -

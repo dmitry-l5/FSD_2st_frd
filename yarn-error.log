@@ -1,8 +1,8 @@
 Arguments: 
-  D:\Program Files\nodejs\node.exe D:\Program Files (x86)\Yarn\bin\yarn.js add SearchRoom_1.scss
+  D:\Program Files\nodejs\node.exe D:\Program Files (x86)\Yarn\bin\yarn.js dev
 
 PATH: 
-  C:\Users\DLeon\AppData\Local\Temp\yarn--1585477936340-0.3663575001791597;D:\Data\web\FSD_2st_frd\git\node_modules\.bin;C:\Users\DLeon\AppData\Local\Yarn\Data\link\node_modules\.bin;D:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;D:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;D:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;D:\Program Files\SlikSvn\bin;D:\Program Files\CMake\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;D:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\FileProtector\;C:\Program Files (x86)\Common Files\Acronis\FileProtector64\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;D:\Users\DLeon\AppData\Roaming\local\bin;C:\Users\DLeon\AppData\Local\Microsoft\WindowsApps;C:\Users\DLeon\AppData\Roaming\npm;C:\Users\DLeon\AppData\Local\Yarn\bin;C:\Users\DLeon\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\DLeon\AppData\Local\GitHubDesktop\bin
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;D:\Program Files\SlikSvn\bin;D:\Program Files\CMake\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;D:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\FileProtector\;C:\Program Files (x86)\Common Files\Acronis\FileProtector64\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;D:\Users\DLeon\AppData\Roaming\local\bin;C:\Users\DLeon\AppData\Local\Microsoft\WindowsApps;C:\Users\DLeon\AppData\Roaming\npm;C:\Users\DLeon\AppData\Local\Yarn\bin;C:\Users\DLeon\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\DLeon\AppData\Local\GitHubDesktop\bin
 
 Yarn version: 
   1.21.1
@@ -14,17 +14,12 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/SearchRoom_1.scss: Not found
-      at Request.params.callback [as _callback] (D:\Program Files (x86)\Yarn\lib\cli.js:66056:18)
-      at Request.self.callback (D:\Program Files (x86)\Yarn\lib\cli.js:140665:22)
-      at Request.emit (events.js:210:5)
-      at Request.<anonymous> (D:\Program Files (x86)\Yarn\lib\cli.js:141637:10)
-      at Request.emit (events.js:210:5)
-      at IncomingMessage.<anonymous> (D:\Program Files (x86)\Yarn\lib\cli.js:141559:12)
-      at Object.onceWrapper (events.js:299:28)
-      at IncomingMessage.emit (events.js:215:7)
-      at endReadableNT (_stream_readable.js:1184:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  SyntaxError: D:\Data\web\FSD_2st_frd\git\package.json: Unexpected token / in JSON at position 367
+      at JSON.parse (<anonymous>)
+      at D:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (D:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at D:\Program Files (x86)\Yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -35,8 +30,9 @@ npm manifest:
     "author": "dmitry-l5 <60506213+dmitry-l5@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {
-      "dev": "parcel src/pages/SearchRoom_1.pug --open",
-      "build": "parcel src/pages/SearchRoom_1.pug -d docs --public-url ./assets "
+      "dev": "parcel  src/pages/Room_details.pug --open",
+      "build": "parcel src/pages/Room_details.pug -d docs --public-url ./ "
+      /*"build": "parcel src/pages/index.pug src/pages/searchRoom.pug -d docs --public-url ./ "*/
     },
     "devDependencies": {
       "parcel-bundler": "^1.12.4",

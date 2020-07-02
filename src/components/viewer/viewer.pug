@@ -1,0 +1,35 @@
+script
+    include viewer.js
+mixin viewer()
+    - var i = 10;
+    .viewer(id="viewer")
+        if block
+            block
+            script.
+                function getParent(){
+                    let scripts = document.getElementsByTagName('script');
+                    let base = scripts[scripts.length - 1].parentNode;
+                    return base;
+                }
+                let n = getParent();
+                console.log(n.getAttribute("id"));
+
+        script.
+            aux_viewer.init("viewer");
+            aux_viewer.addItem({id:"v1"});
+            aux_viewer.addItem({id:"v2"});
+            aux_viewer.addItem({id:"v3"});
+            aux_viewer.addItem({id:"v4"});
+            aux_viewer.addItem({id:"v5"});
+            aux_viewer.addItem({id:"v6"});
+            aux_viewer.update();
+            //var asd = 1234567890;
+            function qwe(){
+                let z = "asd";
+                let asd = "qwerty";
+
+                console.warn(this);
+                console.warn(window["qwe"]);
+                console.warn(eval("asd"));
+            }
+            qwe();

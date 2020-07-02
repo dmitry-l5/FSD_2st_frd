@@ -16,11 +16,12 @@ include ../components/blueSubmit/blueSubmit
 include ../components/slider/slider
 include ../components/expandList/expandList
 include ../components/checkboxItem/checkboxItem
+include ../components/maskedDropdown/maskedDropdown
+include ../components/viewer/viewer
+include ../components/roomShield/roomShield
+include ../components/enterBox/enterBox
 
-
-
-
-head    
+head
     //link(rel="stylesheet" href="common.scss")
     meta(charset="UTF-8")
     title Search Room v.1
@@ -33,7 +34,21 @@ head
     //link(rel="stylesheet" href="../modules/common_modules.scss")   
     //link(rel="stylesheet" href="../components/slider/slider.scss")   
 body
-    script
+    //h1 Пример работы AJAX
+    //div(id="welcome")
+    //script.
+        window.addEventListener("load",function() {
+            var request = new XMLHttpRequest();
+            request.open('GET','http://localhost:1234/processing.php',true);
+            request.addEventListener('readystatechange', function() {
+                if ((request.readyState==4) && (request.status==200)) {
+                    var welcome = document.getElementById('welcome');
+                    welcome.innerHTML = request.responseText;
+                }
+            });
+            request.send();
+        });
+    //script
         include ../components/common/aux_common.js
     .page
         //main grid
@@ -44,28 +59,51 @@ body
             //filter bar
             .left_side
                 include ../modules/main_1.pug
+                script.
+                    //window.onresize = function(){console.log("resize");};
+                    document.addEventListener("keyup",
+                    (event)=>{
+                        switch(event.code){
+                            case "KeyA":
+                                aux_sliders.updateData("firstSlider", 25, 75);
+                            break;
+                            case "KeyS":
+                                aux_sliders.updateData("firstSlider", 0, 100);
+                            break;
+                            default:
+                                console.log("event.code");
+                                console.log(event.code);
+                            break;
+                        }
+                    });
                 div
-                    span(class="common__inputTitle") Даты пребывания в отеле
-                    input(class="common__inputDropdown")
-
-
-                    +dropdownContainer({id:"DD_1", defaultValue:"Сколько гостей", leftLabel:"гости",queryTitle:"quest_count", info:"Гостей;Гость;Гостя;Гостей;"})
-                        +dropdownItem({  id:"01", title:"взрослые", minCount:0, maxCount:5,  queryTitle:"adult", info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
-                        +dropdownItem({  id:"03", title:"дети", minCount:0, maxCount:4,      queryTitle:"child", info:"Детей;Ребёнок;Ребёнка;Детей;"})
-                        +dropdownItem({  id:"02", title:"младенцы", minCount:0, maxCount:3,  queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
+                    +counterItem({id:"separate", minCount:10, maxCount:20})
+                    +maskedDropdown({id:"masked_dates", title:"Даты пребывания в отеле", value:"хх ххх - хх ххх"})
+                    +maskedDropdown({id:"masked_guests", title:"Гости", value:"Сколько гостей"})
+                    //+dropdownContainer({id:"DD_1", defaultValue:"Сколько гостей", leftLabel:"гости",queryTitle:"quest_count", info:"Гостей;Гость;Гостя;Гостей;"})
+                        +dropdownItem({  id:"01", title:"взрослые",     minCount:0, maxCount:5, queryTitle:"adult",  info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
+                        +dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
+                        +dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
                         +ACPanel({targetId:"DD_1"})
                 div
-                    +slider({id:"firstSlider",title:"Диапазон цены", type:"solid", comment:"Стоимость за сутки пребывания в номере"})
-                        +slider_stage({empty:"null", type:"number", value:500, move_as:"solid", index:1})
-                        +slider_stage({empty:"null", type:"number", value:1000, move_as:"solid", index:2})
-                        +slider_stage({empty:"null", type:"number", value:5000, move_as:"solid", index:3})
-                        +slider_stage({empty:"null", type:"number", value:10000, move_as:"solid", index:4})
-                        +slider_stage({empty:"null", type:"number", value:40000, move_as:"solid", index:5})
-                        +slider_stage({empty:"null", type:"number", value:100, move_as:"solid", index:6})
-                        +slider_stage({empty:"null", type:"number", value:200, move_as:"solid", index:7})
-
-
-
+                    +dropdownList({id:"guests", block:true, arrow:false})
+                        +enterBox({})
+                        +counterItem({id:"separae", minCount:10, maxCount:20})
+                        +dropdownItem({  id:"01", title:"взрослые",     minCount:0, maxCount:5, queryTitle:"adult",  info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
+                        +dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
+                        +dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
+                        +ACPanel({targetId:"guests"})
+                div
+                    +slider({
+                            id:"firstSlider",
+                            title:"Диапазон цены",
+                            pointCount:"two",
+                            comment:"Стоимость за сутки пребывания в номере",
+                            type:"solid",
+                            suffix:"RUR"
+                        })
+                        +slider_stage({type:"number", index:4, value:3000,  })
+                        +slider_stage({type:"number", index:5, value:30000, })
                 div
                     +checkboxContainer({id:"options", title:"Опции"})
                         +checkboxItem({
@@ -83,7 +121,14 @@ body
                             title:"Можно пригласить гостей (до 10 человек)",
                             withoutComent:"true"
                             })
-                div
+                        +itemGlue({
+                            id:"guestGlue", 
+                            targetId : "guestPreview", 
+                            itemsId:["hz0", "hz1", "hz2"], 
+                            title:"Сколько гостей", 
+                            info:["Гостей","Гость","Гостя"]
+                            })
+                //div
                     +checkboxContainer({id:"availability", title:"доступность"})
                         +checkboxItem({
                             id:"hz", 
@@ -95,61 +140,82 @@ body
                             title:"Помощник для инвалидов", 
                             comment:"На 1 этаже вас встретит специалист  и проводит до номера."
                             })
-                div
+                //div
                     +checkboxItem_2({id:"figa",withoutComent:"true"})
                     +expandList({id:"expand_1"})
-                div
+                //div
                     span(class="common__inputTitle") удобства номера
                     input(class="common__inputDropdown")
 
 
-                +dropdownContainer({id:"RR_1", defaultValue:"Удобства номера", leftLabel:"Удобства номера",queryTitle:"quest_count", info:"Комнат;Комната;Комнаты;Комнат;"})
+                //+dropdownContainer({id:"RR_1", defaultValue:"Удобства номера", leftLabel:"Удобства номера",queryTitle:"quest_count", info:"Комнат;Комната;Комнаты;Комнат;"})
                     +dropdownItem({  id:"01", title:"спальни", minCount:0, maxCount:5,  queryTitle:"adult", info:"спален;спальня;спальни;спаленых;"})
                     +dropdownItem({  id:"03", title:"кровати", minCount:0, maxCount:4,      queryTitle:"child", info:"кроватей;кровать;кровати;кроватей;"})
                     +dropdownItem({  id:"02", title:"ванные комнаты", minCount:0, maxCount:3,  queryTitle:"infant", info:"ванных комнат;ванная комната;ванные комнаты;ванных комнат;"})
                     +ACPanel({targetId:"DD_1"})
-                div
+                //div
                     input(class="common__inputDropdown" value="дополнительные удобства")
 
             //grid room prevews
             .main
-                include ../modules/main_1.pug
+                //include ../modules/main_1.pug
+                
+                +viewer()
+                    +roomShield()
 
-                +checkboxContainer({id:"testCheckbox_1"})
-                    +checkboxItem({id:"qwe", check: "da", name:"one"})
-                    +checkboxItem({id: "123"})
-                    +checkboxItem({name:"three"})
-                    +checkboxItem({name:"four"})
 
-                +checkboxContainer({id:"testCheckbox_2"})
-                    +checkboxItem({name:"one"})
-                    +checkboxItem({name:"two"})
-                    +checkboxItem({name:"three"})
-                    +checkboxItem({name:"four"})
-
-                +checkboxContainer({id:"testCheckbox_3"})
-                    +checkboxItem({name:"one", coment:"coment"}) 
-                    +checkboxItem({name:"two"})
-                    +checkboxItem({name:"three"})
-                    +checkboxItem({name:"four"})
+                //+checkboxContainer({id:"testCheckbox_1"})
+                //    +checkboxItem({id:"qwe", check: "da", name:"one"})
+                //    +checkboxItem({id: "123"})
+                //    +checkboxItem({name:"three"})
+                //    +checkboxItem({name:"four"})
+                //+checkboxContainer({id:"testCheckbox_2"})
+                //    +checkboxItem({name:"one"})
+                //    +checkboxItem({name:"two"})
+                //    +checkboxItem({name:"three"})
+                //    +checkboxItem({name:"four"})
+                //+checkboxContainer({id:"testCheckbox_3"})
+                //    +checkboxItem({name:"one", coment:"coment"}) 
+                //    +checkboxItem({name:"two"})
+                //    +checkboxItem({name:"three"})
+                //    +checkboxItem({name:"four"})
 
             //grid footer
             .footer
                 include ../modules/footer.pug
-
             //grid social links
             .social
                 include ../modules/social.pug
-                script.
-                    if(window.aux_heap !=void 0)
-                    {
-                        setInterval(()=>aux_heap[0].toogle(), 1000);
-                        setInterval(()=>console.warn("ghghghghghghghghghghghghghghghghg"), 2000);
-              
-    
-                        //aux_heap[0].cbItemGet();
-                        //aux_heap[0].getState("hulio");
-                        //aux_heap[0].cbItemSet();
-                        //alert("window.aux_heap !=void 0");
-                    }
-
+    //Placeholder_1
+    script.
+        let monthName = {
+            0:"января",
+            1:"февраля",
+            2:"марта",
+            3:"апреля",
+            4:"мая",
+            5:"июня",
+            6:"июля",
+            7:"августа",
+            8:"сентября",
+            9:"октября",
+            10:"ноября",
+            11:"декабря",
+        };
+        let uri = window.location.href;
+        let trueURI = decodeURI(uri);
+        var vars={};
+        var parts = trueURI.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+            });
+        console.log(vars);
+        let ari = vars["t1"].replace(/[+]/gi, " ");
+        let dep = vars["t2"].replace(/[+]/gi, " ");
+        ari = ari.replace(/%3A/gi, ":");
+        ari = ari.replace(/%2B/gi, "-");
+        dep = dep.replace(/%3A/gi, ":");
+        dep = dep.replace(/%2B/gi, "-");
+        let a = new Date(Date.parse(ari));
+        let d = new Date(Date.parse(dep));
+        aux_masked.setById("masked_dates",`С ${a.getDate()} ${monthName[a.getMonth()]}, по ${d.getDate()} ${monthName[d.getMonth()]} `);
+        aux_masked.setById("masked_guests",`${Number.parseInt(vars["child"]) + Number.parseInt(vars["adult"]) + Number.parseInt(vars["infant"])} гостей`);

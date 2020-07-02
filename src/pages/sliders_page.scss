@@ -1,9 +1,9 @@
 :root{
     font-size: 16px;
 }
-.page{/*
+.page{
     width: 1440px;
-    height: 1880px;*/
+    height: 1880px;
     box-sizing: border-box;
     border: 1px black solid;
     padding-right: 135px;
@@ -36,16 +36,11 @@
 @import "./../components/calendar/calendar.scss";
 @import "./../components/blueSubmit/blueSubmit.scss";
 @import "./../components/maskedDropdown/maskedDropdown.scss";
-@import "./../components/viewer/viewer.scss";
-@import "./../components/roomShield/roomShield.scss";
-@import "./../components/enterBox/enterBox.scss";
+//@import "./../components/enterBox/enterBox.scss";
 
 
 ///////// IE<<<<<
-.verticalContainer{
-    background-color: rgba(0, 89, 255, 0.233);
-    height: 250px;
-}
+
 
 .base{
     display: -ms-grid;
