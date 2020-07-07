@@ -8,20 +8,6 @@ if (window.utility == void 0) {
 }
 
 if (window.aux_sliders == void 0) {
-  var aux_sliders_finish = function aux_sliders_finish(event) {
-    document.removeEventListener('mousemove', aux_sliders.move_handler);
-
-    if (aux_sliders.current) {
-      aux_sliders.hidePreview(aux_sliders.current.id);
-      aux_sliders.current = null;
-    }
-  };
-
-  var sliders_change_handler = function sliders_change_handler(event) {
-    aux_sliders.pullToCurrent(event.detail.id);
-    aux_sliders.updateView(event.detail.id);
-  };
-
   var aux_sliders = {
     events_name: {
       sliders_change: "sliders_change"
@@ -559,9 +545,24 @@ if (window.aux_sliders == void 0) {
       }
     }
   };
+
+  function aux_sliders_finish(event) {
+    document.removeEventListener('mousemove', aux_sliders.move_handler);
+
+    if (aux_sliders.current) {
+      aux_sliders.hidePreview(aux_sliders.current.id);
+      aux_sliders.current = null;
+    }
+  }
+
   document.addEventListener('mouseup', this.aux_sliders_finish);
   window.addEventListener('resize', aux_sliders.resize_handler);
   document.addEventListener(aux_sliders.events_name.sliders_change, sliders_change_handler);
+
+  function sliders_change_handler(event) {
+    aux_sliders.pullToCurrent(event.detail.id);
+    aux_sliders.updateView(event.detail.id);
+  }
 }
 
 function getParent() {
@@ -673,12 +674,19 @@ if (window.aux_viewer == void 0) {
       use_as: {
         base: "Viewer_Base",
         referance: "Viewer_ReferanceShield",
-        shield: "Viewer_Shield"
+        shield: "Viewer_Shield",
+        imagesPanel: "Viewer_imagePanel",
+        number: "Viewer_numberTarget",
+        luxePanel: "Viewer_luxePanel",
+        cost: "Viewer_costTarget",
+        starsPanel: "Viewer_starsPanel",
+        comment: "Viewer_comentTarget"
       }
     },
     base: null,
     refShield: null,
     items: [],
+    views: [],
     //#region Item methods
     getItem: function getItem(id) {
       for (var i = 0; i < aux_viewer.items.length; i++) {
@@ -712,6 +720,8 @@ if (window.aux_viewer == void 0) {
       if (arg.stars) {
         newItem.stars = arg.stars;
       }
+
+      console.error(arg.comments);
 
       if (arg.comments) {
         newItem.comments = arg.comments;
@@ -761,15 +771,117 @@ if (window.aux_viewer == void 0) {
       aux_viewer.items.forEach(function (item, i, arr) {
         var newNode = aux_viewer.refShield.cloneNode(true);
         newNode.setAttribute(aux_viewer.attr_name.use_as, aux_viewer.attr_values.use_as.shield);
-        newNode.style.display = newNode.getAttribute("defaultDisplay");
-        console.warn(newNode); //document.body.append(newNode);
+        newNode.style.display = newNode.getAttribute("defaultDisplay"); //console.warn(newNode);
+        //document.body.append(newNode);
 
         aux_viewer.base.append(newNode);
-      });
-    } //#endregion
+        var part = newNode.querySelector("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.imagesPanel, "]"));
 
+        if (part) {
+          var pics = newNode.querySelectorAll("img");
+          console.error(pics);
+
+          for (var _i = 0; _i < pics.length; _i++) {
+            pics[_i].setAttribute("src", "http://localhost:80/resources/img/".concat(item.number, "/image").concat(_i + 1, ".jpg"));
+          }
+        }
+
+        part = newNode.querySelector("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.number, "]"));
+
+        if (part) {
+          part.innerHTML = item.number;
+        }
+
+        part = newNode.querySelector("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.cost, "]"));
+
+        if (part) {
+          part.innerHTML = item.cost;
+        }
+
+        part = newNode.querySelector("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.starsPanel, "]"));
+
+        if (part) {
+          var chs = part.childNodes;
+
+          for (var f = 0; f < 5; f++) {
+            if (f < item.stars) {
+              part.childNodes[f].style.visibility = "visible";
+            } else {
+              chs[f].style.visibility = "hidden";
+            }
+          }
+        }
+
+        part = newNode.querySelector("[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.luxePanel, "]")); //console.error(part);
+
+        if (part) {
+          if (item.isLuxe) {
+            part.style.visibility = "visible";
+          } else {
+            part.style.visibility = "hidden";
+          }
+        }
+
+        part = newNode.querySelector("span[".concat(aux_viewer.attr_name.use_as, "=").concat(aux_viewer.attr_values.use_as.comment, "]"));
+
+        if (part) {
+          part.innerHTML = item.comments;
+        }
+      });
+    },
+    //#endregion
+    fillTestData: function fillTestData() {
+      aux_viewer.addItem({
+        id: "s1",
+        number: 884,
+        isLuxe: false,
+        cost: 3000,
+        stars: 5,
+        comments: "123"
+      });
+      aux_viewer.addItem({
+        id: "s2",
+        number: 885,
+        isLuxe: true,
+        cost: 4000,
+        stars: 4,
+        comments: "312"
+      });
+      aux_viewer.addItem({
+        id: "s3",
+        number: 886,
+        isLuxe: false,
+        cost: 5000,
+        stars: 3,
+        comments: "231"
+      });
+      aux_viewer.addItem({
+        id: "s4",
+        number: 887,
+        isLuxe: true,
+        cost: 6000,
+        stars: 2,
+        comments: "123"
+      });
+      aux_viewer.addItem({
+        id: "s5",
+        number: 888,
+        isLuxe: false,
+        cost: 7000,
+        stars: 1,
+        comments: "312"
+      });
+      aux_viewer.addItem({
+        id: "s6",
+        number: 889,
+        isLuxe: true,
+        cost: 8000,
+        stars: 5,
+        comments: "231"
+      });
+    }
   };
-}</script><script></script><head><!--link(rel="stylesheet" href="common.scss")--><meta charset="UTF-8"><title>Search Room v.1</title><meta name="viewport" content="width=device-width, initial-scale=1"><style></style><link rel="stylesheet" href="SearchRoom.5b7883e0.css"><!--link(rel="stylesheet" href="../modules/common_modules.scss")   --><!--link(rel="stylesheet" href="../components/slider/slider.scss")   --><script src="SearchRoom.5b7883e0.js"></script></head><body><!--h1 Пример работы AJAX--><!--div(id="welcome")--><!--script.window.addEventListener("load",function() {
+}</script><script></script><head><!--link(rel="stylesheet" href="common.scss")--><meta charset="UTF-8"><title>Search Room v.1</title><meta name="viewport" content="width=device-width, initial-scale=1"><style></style><link rel="stylesheet" href="SearchRoom.5b7883e0.css"><!--link(rel="stylesheet" href="../modules/common_modules.scss")   --><!--link(rel="stylesheet" href="../components/slider/slider.scss")   --><script src="SearchRoom.5b7883e0.js"></script><script src="index.js"></script></head><body><!--h1 Пример работы AJAX--><!--div(id="welcome")--><!--script.window.addEventListener("load",function() {
     var request = new XMLHttpRequest();
     request.open('GET','http://localhost:1234/processing.php',true);
     request.addEventListener('readystatechange', function() {
@@ -779,7 +891,7 @@ if (window.aux_viewer == void 0) {
         }
     });
     request.send();
-});--><!--scriptinclude ../components/common/aux_common.js--><div class="page"><!--main grid--><div class="base"><!--grid header--><div class="header"><div class="headerModule"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="flex_splitter"></div><a class="link" href="#">О нас</a><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"><img src="expand_more.28bd92f7.svg" alt="arrow" srcset=""></div></div><div class="dropdownList__dashboard" use_as="Dropdown_Dashboard"><a class="link" href="#">Услуги</a><a class="link" href="#">Услуги_#1</a><div class="whiteLink"><a href="#">Услуги_#2</a></div><div class="blueLink"><a href="#">Услуги_#3</a></div><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div></div><script src="dropdownList.22e49fdb.js"></script><!--script.console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+});--><!--scriptinclude ../components/common/aux_common.js--><div class="page"><!--main grid--><div class="base"><!--grid header--><div class="header"><div class="headerModule"><a class="label" href="index.html"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></a><div class="flex_splitter"></div><a class="link" href="#">О нас</a><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"><img src="expand_more.28bd92f7.svg" alt="arrow" srcset=""></div></div><div class="dropdownList__dashboard" use_as="Dropdown_Dashboard"><a class="link" href="#">Услуги</a><a class="link" href="#">Услуги_#1</a><div class="whiteLink"><a href="#">Услуги_#2</a></div><div class="blueLink"><a href="#">Услуги_#3</a></div><a class="label" href="index.html"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></a></div><script src="dropdownList.22e49fdb.js"></script><!--script.console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
 
 
 
@@ -787,7 +899,7 @@ if (window.aux_viewer == void 0) {
 
 
 
---></div><div class="whiteLink"><a href="#">Войти</a></div><div class="blueLink"><a href="#">Зарегистрироваться</a></div></div></div><!--filter bar--><div class="left_side"><!--requaire : ../components/common/formItems_base.js--><script>function say() {//console.log("femcmdcakmc[owkejf[oierjg[oribofdskmcoKASMSD[OM[FOMDSFO[GSTRGOSTRORTOO");
+--></div><div class="whiteLink"><a href="#">Войти</a></div><div class="blueLink"><a href="#">Зарегистрироваться</a></div></div></div><!--filter bar--><div class="left_side"><form id="filter"><!--requaire : ../components/common/formItems_base.js--><script>function say() {//console.log("femcmdcakmc[owkejf[oierjg[oribofdskmcoKASMSD[OM[FOMDSFO[GSTRGOSTRORTOO");
 }
 
 function setFormItem(id) {
@@ -818,7 +930,7 @@ document.addEventListener("keyup", function (event) {
       console.log(event.code);
       break;
   }
-});</script><div><div class="counterItem" id="separate" aux-minValue="10" aux-maxValue="20" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="unknown_counterItem">UNKNOWN</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">10</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="unknown_counterItem"><script>if (window.aux_counter_items == void 0) {
+});</script><div></div><div class="counterItem" id="separate" aux-minValue="10" aux-maxValue="20" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="unknown_counterItem">UNKNOWN</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">10</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="unknown_counterItem"><script>if (window.aux_counter_items == void 0) {
   var aux_counter_items = {
     protos: {
       item: {
@@ -1061,7 +1173,7 @@ aux_masked.set.apply(item, [base.getAttribute("aux-value")]);
 aux_masked.updateView(base.id);</script></div><!--+dropdownContainer({id:"DD_1", defaultValue:"Сколько гостей", leftLabel:"гости",queryTitle:"quest_count", info:"Гостей;Гость;Гостя;Гостей;"})+dropdownItem({  id:"01", title:"взрослые",     minCount:0, maxCount:5, queryTitle:"adult",  info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
 +dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
 +dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
-+ACPanel({targetId:"DD_1"})--></div><div><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="enterBox" id="NULL" name="base" data-info="UNKNOWN;UNKNOWN;UNKNOWN;UNKNOWN;" data-queryTitle="UNKNOWN"><div class="enterBox_title"><label class="enterBox__leftLabel" name="leftLabel">UNKNOWN</label><label class="enterBox__rightLabel" name="rightLabel">123456789</label></div><div class="enterBox_input" onmousedown="event.target.blur()" onmouseup="event.target.blur()" onclick="event.target.blur()"><input class="hz2" type="text" name="target" data-fullList="nothing" value="" data-defaultValue=""></div></div><div class="counterItem" id="separae" aux-minValue="10" aux-maxValue="20" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="unknown_counterItem">UNKNOWN</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">10</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="unknown_counterItem"><script>if (window.aux_counter_items == void 0) {
++ACPanel({targetId:"DD_1"})--><div><div class="dropdownList"><div class="dropdownList__title"><div class="dropdownList__fstElement"></div><div class="dropdownList__arrow"></div></div><div class="dropdownList__dashboardBlock" use_as="Dropdown_Dashboard"><div class="enterBox" id="NULL" name="base" data-info="UNKNOWN;UNKNOWN;UNKNOWN;UNKNOWN;" data-queryTitle="UNKNOWN"><div class="enterBox_title"><label class="enterBox__leftLabel" name="leftLabel">UNKNOWN</label><label class="enterBox__rightLabel" name="rightLabel">123456789</label></div><div class="enterBox_input" onmousedown="event.target.blur()" onmouseup="event.target.blur()" onclick="event.target.blur()"><input class="hz2" type="text" name="target" data-fullList="nothing" value="" data-defaultValue=""></div></div><div class="counterItem" id="separae" aux-minValue="10" aux-maxValue="20" aux-use_as="CounterItem_Base"><div class="counterItem__title" name="title" data-title="unknown_counterItem">UNKNOWN</div><div class="counterItem__spliter"></div><div class="counterItem__button" aux-use_as="CounterItem_decButton">-</div><div class="counterItem__count" aux-use_as="CounterItem_currentCount">10</div><div class="counterItem__button" aux-use_as="CounterItem_incButton">+</div><input type="hidden" name="unknown_counterItem"><script>if (window.aux_counter_items == void 0) {
   var aux_counter_items = {
     protos: {
       item: {
@@ -1538,32 +1650,73 @@ input(class="common__inputDropdown")
 +dropdownItem({  id:"03", title:"кровати", minCount:0, maxCount:4,      queryTitle:"child", info:"кроватей;кровать;кровати;кроватей;"})
 +dropdownItem({  id:"02", title:"ванные комнаты", minCount:0, maxCount:3,  queryTitle:"infant", info:"ванных комнат;ванная комната;ванные комнаты;ванных комнат;"})
 +ACPanel({targetId:"DD_1"})--><!--divinput(class="common__inputDropdown" value="дополнительные удобства")
---></div><!--grid room prevews--><div class="main"><!--include ../modules/main_1.pug--><div class="viewer" id="viewer"><div class="roomShield" aux-use_as="Viewer_ReferanceShield"><div class="imageBox">123</div><div class="scdRow">456</div><div class="trdRow">789</div></div><script>function getParent() {
+    var q = {};
+
+
+--></form><div id="accept" style="border:25px solid yellow;"></div><script>var button = document.getElementById("accept");
+
+button.onclick = function () {
+  getData();
+};
+
+function init(wall_id, button_id) {
+  var tmp1 = document.getElementById(wall_id);
+
+  if (tmp1) {
+    q.wall = tmp1;
+  } else {
+    console.error("ERROR : wall_id don't exist");
+    return;
+  }
+
+  var tmp2 = document.getElementById(button_id);
+
+  if (tmp2) {
+    q.button = tmp2;
+  } else {
+    console.error("ERROR : button_id don't exist");
+    return;
+  }
+
+  q.button.onclick = function () {
+    getData();
+  };
+}
+
+function getData() {
+  //console.error(button);
+  var form = filter; // document.querySelector("[name=mainForm]");
+  //console.log(form);
+
+  var data = new FormData(form);
+  console.log(data);
+  var hz = new XMLHttpRequest();
+  hz.open("POST", "http://localhost:80/AJAX_SAMPLE.php");
+  hz.send(data);
+
+  hz.onload = function () {
+    if (hz.status != 200) {
+      console.error("Error : ".concat(hz.status, " : ").concat(hz.statusText));
+    } else {
+      console.log("Recive ans, ans.length = ".concat(hz.response.length, " byte"));
+      console.log(hz.response); //q.wall.innerHTML = hz.response;
+    }
+  };
+}</script></div><!--grid room prevews--><div class="main"><!--include ../modules/main_1.pug--><div class="viewer" id="viewer"><div class="roomShield" aux-use_as="Viewer_ReferanceShield"><div class="fstRow"><div class="imagePanel" aux-use_as="Viewer_imagePanel"><img src="" alt="default" srcset=""><img src="" alt="default" srcset=""><img src="" alt="default" srcset=""><img src="" alt="default" srcset=""></div></div><div class="scdRow"><div class="numberPanel" aux-use_as="Viewer_numberPanel"><span>№</span><span aux-use_as="Viewer_numberTarget">123</span></div><div class="luxePanel" aux-use_as="Viewer_luxePanel"><span aux-use_as="Viewer_luxeTarget">люкс</span></div><div class="costPanel" aux-use_as="Viewer_costPanel"> <span aux-use_as="Viewer_costTarget">9 900</span><span>P в сутки</span></div></div><div class="trdRow"><div class="starsPanel" aux-use_as="Viewer_starsPanel"><span>*</span><span>*</span><span>*</span><span>*</span><span>*</span></div><div class="comentPanel" aux-use_as="Viewer_comentPanel"><span aux-use_as="Viewer_comentTarget">145</span><span> коментариев</span></div></div></div><script>function getParent() {
   var scripts = document.getElementsByTagName('script');
   var base = scripts[scripts.length - 1].parentNode;
   return base;
 }
 
 var n = getParent();
-console.log(n.getAttribute("id"));</script><script>aux_viewer.init("viewer");
-aux_viewer.addItem({
-  id: "v1"
-});
-aux_viewer.addItem({
-  id: "v2"
-});
-aux_viewer.addItem({
-  id: "v3"
-});
-aux_viewer.addItem({
-  id: "v4"
-});
-aux_viewer.addItem({
-  id: "v5"
-});
-aux_viewer.addItem({
-  id: "v6"
-});
+console.log(n.getAttribute("id"));</script><script>aux_viewer.init("viewer"); //aux_viewer.addItem({id:"v1"});
+//aux_viewer.addItem({id:"v2"});
+//aux_viewer.addItem({id:"v3"});
+//aux_viewer.addItem({id:"v4"});
+//aux_viewer.addItem({id:"v5"});
+//aux_viewer.addItem({id:"v6"});
+
+aux_viewer.fillTestData();
 aux_viewer.update(); //var asd = 1234567890;
 
 function qwe() {
@@ -1574,7 +1727,7 @@ function qwe() {
   console.warn(eval("asd"));
 }
 
-qwe();</script></div><!--+checkboxContainer({id:"testCheckbox_1"})--><!--    +checkboxItem({id:"qwe", check: "da", name:"one"})--><!--    +checkboxItem({id: "123"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--><!--+checkboxContainer({id:"testCheckbox_2"})--><!--    +checkboxItem({name:"one"})--><!--    +checkboxItem({name:"two"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--><!--+checkboxContainer({id:"testCheckbox_3"})--><!--    +checkboxItem({name:"one", coment:"coment"}) --><!--    +checkboxItem({name:"two"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--></div><!--grid footer--><div class="footer"><div class="footerModule"><div class="linkPanel"><div class="label"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></div><div class="linkPanel__text"><span>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span></div></div><div class="linkPanel"><div class="linkPanel__title"><span>Навигация</span></div><a class="link" href="#">О нас</a><a class="link" href="#">Новости</a><a class="link" href="#">Служба поддержки</a><a class="link" href="#">Услуги</a></div><div class="linkPanel"><div class="linkPanel__title"><span>О нас</span></div><a class="link" href="#">О сервисе</a><a class="link" href="#">Наша команда</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Инвесторы</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Служба поддержки</span></div><a class="link" href="#">Соглашения</a><a class="link" href="#">Сообщества</a><a class="link" href="#">Связь с нами</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Подписка</span></div><div class="linkPanel__text"><span>Получайте специальные предложения и новости сервиса</span></div><form action="#" method="post"><input type="email"></form></div></div><!--    +label--><!--    .flex_splitter--><!--    a(class="", href="*") О нас--><!--    a(class="", href="*") Услуги--><!--    a(class="", href="*") Вакансии--><!--    a(class="", href="*") Новости--><!--    a(class="", href="*") Соглашения--><!--    //+link({ title:"О нас", href:"*"})--><!--    //+link({ title:"Услуги", href:"*"})--><!--    //+link({ title:"Вакансии", href:"*"})--><!--    //+link({ title:"Новости", href:"*"})--><!--    //+link({ title:"Соглашения", href:"*"})--><!--    span(class="common__whiteButton") Войти--><!--    span(class="common__blueButton") Зарегистрироваться--><!----><!----><!----><!----><!--    <div class="footer">--><!--                    <ul class="footer_flex">--><!--                        <li class="firstItem">--><!--                            <div class="label mbt_tmp">--><!--                                <div class="label__logo">--><!--                                    <img id="logo" src="../images/Vector-2.svg" alt="toxin" />--><!--                                    <img id="leftPath" src="../images/Vector.svg" alt="toxin" />--><!--                                    <img id="rigthPath" src="../images/Vector-1.svg" alt="toxin" />--><!--                                </div>--><!--                                <div class="label__text">--><!--                                    <img src="../images/TOXIN.svg" alt="toxin" />--><!--                                </div>--><!--                            </div>--><!--                            <div class="footer_sublist footer_text in">--><!--                                Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»--><!--                            </div>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Навигация</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>--><!--                                    О нас--><!--                                </li>--><!--                                <li>--><!--                                    Новости--><!--                                </li>--><!--                                <li>--><!--                                    Служба поддержки--><!--                                </li>--><!--                                <li>--><!--                                    Услуги--><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">О нас</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>О сервисе</li>--><!--                                <li>Наша команда</li>--><!--                                <li>Вакансии</li>--><!--                                <li>Инвесторы</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Служба поддержки</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>Соглашения</li>--><!--                                <li>Сообщества</li>--><!--                                <li>Связь с нами</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li class="lastItem">--><!--                            <span class="footer_title">Подписка</span>--><!--                            <ul class="footer_sublist footer_text">--><!--                                <li>--><!--                                    <span>Получайте специальные предложения и новости сервиса</span>--><!--                                </li>--><!--                                <li>--><!----><!--                                    <input type="email" class="footer_email" />--><!----><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                    </ul>--><!--                </div>--></div><!--grid social links--><div class="social"><div class="socialModule"><div class="socialModule__text">Copyright C2018 Toxin отель. Все права зачищены</div><div class="socialModule__links"><a> <img id="" src="twiter.f1cdd1b7.svg" alt="Twiter"></a><a><img id="" src="facebook.d989b116.svg" alt="Facebook"></a><a><img id="" src="instagram.a353b496.svg" alt="Instagram"></a></div></div></div></div></div><!--Placeholder_1--><script>var monthName = {
+qwe();</script></div><!--+checkboxContainer({id:"testCheckbox_1"})--><!--    +checkboxItem({id:"qwe", check: "da", name:"one"})--><!--    +checkboxItem({id: "123"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--><!--+checkboxContainer({id:"testCheckbox_2"})--><!--    +checkboxItem({name:"one"})--><!--    +checkboxItem({name:"two"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--><!--+checkboxContainer({id:"testCheckbox_3"})--><!--    +checkboxItem({name:"one", coment:"coment"}) --><!--    +checkboxItem({name:"two"})--><!--    +checkboxItem({name:"three"})--><!--    +checkboxItem({name:"four"})--></div><!--grid footer--><div class="footer"><div class="footerModule"><div class="linkPanel"><a class="label" href="index.html"><div class="label__logo"><img class="label__circle" src="Vector-2.791964d9.svg" alt="toxin"><img class="label__leftPath" src="Vector.1635a248.svg" alt="toxin"><img class="label__rigthPath" src="Vector-1.d0c18046.svg" alt="toxin"></div><div class="label__text"><img src="TOXIN.e9482b58.svg" alt="toxin"></div></a><div class="linkPanel__text"><span>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span></div></div><div class="linkPanel"><div class="linkPanel__title"><span>Навигация</span></div><a class="link" href="#">О нас</a><a class="link" href="#">Новости</a><a class="link" href="#">Служба поддержки</a><a class="link" href="#">Услуги</a></div><div class="linkPanel"><div class="linkPanel__title"><span>О нас</span></div><a class="link" href="#">О сервисе</a><a class="link" href="#">Наша команда</a><a class="link" href="#">Вакансии</a><a class="link" href="#">Инвесторы</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Служба поддержки</span></div><a class="link" href="#">Соглашения</a><a class="link" href="#">Сообщества</a><a class="link" href="#">Связь с нами</a></div><div class="linkPanel"><div class="linkPanel__title"><span>Подписка</span></div><div class="linkPanel__text"><span>Получайте специальные предложения и новости сервиса</span></div><form action="#" method="post"><input type="email"></form></div></div><!--    +label--><!--    .flex_splitter--><!--    a(class="", href="*") О нас--><!--    a(class="", href="*") Услуги--><!--    a(class="", href="*") Вакансии--><!--    a(class="", href="*") Новости--><!--    a(class="", href="*") Соглашения--><!--    //+link({ title:"О нас", href:"*"})--><!--    //+link({ title:"Услуги", href:"*"})--><!--    //+link({ title:"Вакансии", href:"*"})--><!--    //+link({ title:"Новости", href:"*"})--><!--    //+link({ title:"Соглашения", href:"*"})--><!--    span(class="common__whiteButton") Войти--><!--    span(class="common__blueButton") Зарегистрироваться--><!----><!----><!----><!----><!--    <div class="footer">--><!--                    <ul class="footer_flex">--><!--                        <li class="firstItem">--><!--                            <div class="label mbt_tmp">--><!--                                <div class="label__logo">--><!--                                    <img id="logo" src="../images/Vector-2.svg" alt="toxin" />--><!--                                    <img id="leftPath" src="../images/Vector.svg" alt="toxin" />--><!--                                    <img id="rigthPath" src="../images/Vector-1.svg" alt="toxin" />--><!--                                </div>--><!--                                <div class="label__text">--><!--                                    <img src="../images/TOXIN.svg" alt="toxin" />--><!--                                </div>--><!--                            </div>--><!--                            <div class="footer_sublist footer_text in">--><!--                                Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»--><!--                            </div>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Навигация</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>--><!--                                    О нас--><!--                                </li>--><!--                                <li>--><!--                                    Новости--><!--                                </li>--><!--                                <li>--><!--                                    Служба поддержки--><!--                                </li>--><!--                                <li>--><!--                                    Услуги--><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">О нас</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>О сервисе</li>--><!--                                <li>Наша команда</li>--><!--                                <li>Вакансии</li>--><!--                                <li>Инвесторы</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li>--><!--                            <span class="footer_title">Служба поддержки</span>--><!--                            <ul class="footer_sublist footer_list">--><!--                                <li>Соглашения</li>--><!--                                <li>Сообщества</li>--><!--                                <li>Связь с нами</li>--><!--                            </ul>--><!----><!--                        </li>--><!--                        <li class="lastItem">--><!--                            <span class="footer_title">Подписка</span>--><!--                            <ul class="footer_sublist footer_text">--><!--                                <li>--><!--                                    <span>Получайте специальные предложения и новости сервиса</span>--><!--                                </li>--><!--                                <li>--><!----><!--                                    <input type="email" class="footer_email" />--><!----><!--                                </li>--><!--                            </ul>--><!--                        </li>--><!--                    </ul>--><!--                </div>--></div><!--grid social links--><div class="social"><div class="socialModule"><div class="socialModule__text">Copyright C2018 Toxin отель. Все права зачищены</div><div class="socialModule__links"><a> <img id="" src="twiter.f1cdd1b7.svg" alt="Twiter"></a><a><img id="" src="facebook.d989b116.svg" alt="Facebook"></a><a><img id="" src="instagram.a353b496.svg" alt="Instagram"></a></div></div></div></div></div><!--Placeholder_1--><script>var monthName = {
   0: "января",
   1: "февраля",
   2: "марта",
