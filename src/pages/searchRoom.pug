@@ -58,25 +58,26 @@ body
                 include ../modules/header.pug
             //filter bar
             .left_side
-                include ../modules/main_1.pug
-                script.
-                    //window.onresize = function(){console.log("resize");};
-                    document.addEventListener("keyup",
-                    (event)=>{
-                        switch(event.code){
-                            case "KeyA":
-                                aux_sliders.updateData("firstSlider", 25, 75);
-                            break;
-                            case "KeyS":
-                                aux_sliders.updateData("firstSlider", 0, 100);
-                            break;
-                            default:
-                                console.log("event.code");
-                                console.log(event.code);
-                            break;
-                        }
-                    });
-                div
+                form#filter
+                    include ../modules/main_1.pug
+                    script.
+                        //window.onresize = function(){console.log("resize");};
+                        document.addEventListener("keyup",
+                        (event)=>{
+                            switch(event.code){
+                                case "KeyA":
+                                    aux_sliders.updateData("firstSlider", 25, 75);
+                                break;
+                                case "KeyS":
+                                    aux_sliders.updateData("firstSlider", 0, 100);
+                                break;
+                                default:
+                                    console.log("event.code");
+                                    console.log(event.code);
+                                break;
+                            }
+                        });
+                    div
                     +counterItem({id:"separate", minCount:10, maxCount:20})
                     +maskedDropdown({id:"masked_dates", title:"Даты пребывания в отеле", value:"хх ххх - хх ххх"})
                     +maskedDropdown({id:"masked_guests", title:"Гости", value:"Сколько гостей"})
@@ -85,77 +86,117 @@ body
                         +dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
                         +dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
                         +ACPanel({targetId:"DD_1"})
-                div
-                    +dropdownList({id:"guests", block:true, arrow:false})
-                        +enterBox({})
-                        +counterItem({id:"separae", minCount:10, maxCount:20})
-                        +dropdownItem({  id:"01", title:"взрослые",     minCount:0, maxCount:5, queryTitle:"adult",  info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
-                        +dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
-                        +dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
-                        +ACPanel({targetId:"guests"})
-                div
-                    +slider({
-                            id:"firstSlider",
-                            title:"Диапазон цены",
-                            pointCount:"two",
-                            comment:"Стоимость за сутки пребывания в номере",
-                            type:"solid",
-                            suffix:"RUR"
-                        })
-                        +slider_stage({type:"number", index:4, value:3000,  })
-                        +slider_stage({type:"number", index:5, value:30000, })
-                div
-                    +checkboxContainer({id:"options", title:"Опции"})
-                        +checkboxItem({
-                            id:"hz0", 
-                            title:"Можно курить",
-                            withoutComent:"true"
+                    div
+                        +dropdownList({id:"guests", block:true, arrow:false})
+                            +enterBox({})
+                            +counterItem({id:"separae", minCount:10, maxCount:20})
+                            +dropdownItem({  id:"01", title:"взрослые",     minCount:0, maxCount:5, queryTitle:"adult",  info:"Взрослых;Взрослый;Взрослых;Взрослых;"})
+                            +dropdownItem({  id:"03", title:"дети",         minCount:0, maxCount:4, queryTitle:"child",  info:"Детей;Ребёнок;Ребёнка;Детей;"})
+                            +dropdownItem({  id:"02", title:"младенцы",     minCount:0, maxCount:3, queryTitle:"infant", info:"Младенцев;Младенец;Младенца;Младенцев;"})
+                            +ACPanel({targetId:"guests"})
+                    div
+                        +slider({
+                                id:"firstSlider",
+                                title:"Диапазон цены",
+                                pointCount:"two",
+                                comment:"Стоимость за сутки пребывания в номере",
+                                type:"solid",
+                                suffix:"RUR"
                             })
-                        +checkboxItem({
-                            id: "hz1", 
-                            title:"Можно с питомцами",
-                            withoutComent:"true"
-                            })
-                        +checkboxItem({
-                            id: "hz2", 
-                            title:"Можно пригласить гостей (до 10 человек)",
-                            withoutComent:"true"
-                            })
-                        +itemGlue({
-                            id:"guestGlue", 
-                            targetId : "guestPreview", 
-                            itemsId:["hz0", "hz1", "hz2"], 
-                            title:"Сколько гостей", 
-                            info:["Гостей","Гость","Гостя"]
-                            })
-                //div
-                    +checkboxContainer({id:"availability", title:"доступность"})
-                        +checkboxItem({
-                            id:"hz", 
-                            title:"Широкий коридор", 
-                            comment:"Ширина коридоров в номере не менее 91 см."
-                            })
-                        +checkboxItem({
-                            id: "hz", 
-                            title:"Помощник для инвалидов", 
-                            comment:"На 1 этаже вас встретит специалист  и проводит до номера."
-                            })
-                //div
-                    +checkboxItem_2({id:"figa",withoutComent:"true"})
-                    +expandList({id:"expand_1"})
-                //div
-                    span(class="common__inputTitle") удобства номера
-                    input(class="common__inputDropdown")
+                            +slider_stage({type:"number", index:4, value:3000,  })
+                            +slider_stage({type:"number", index:5, value:30000, })
+                    div
+                        +checkboxContainer({id:"options", title:"Опции"})
+                            +checkboxItem({
+                                id:"hz0", 
+                                title:"Можно курить",
+                                withoutComent:"true"
+                                })
+                            +checkboxItem({
+                                id: "hz1", 
+                                title:"Можно с питомцами",
+                                withoutComent:"true"
+                                })
+                            +checkboxItem({
+                                id: "hz2", 
+                                title:"Можно пригласить гостей (до 10 человек)",
+                                withoutComent:"true"
+                                })
+                            +itemGlue({
+                                id:"guestGlue", 
+                                targetId : "guestPreview", 
+                                itemsId:["hz0", "hz1", "hz2"], 
+                                title:"Сколько гостей", 
+                                info:["Гостей","Гость","Гостя"]
+                                })
+                    //div
+                        +checkboxContainer({id:"availability", title:"доступность"})
+                            +checkboxItem({
+                                id:"hz", 
+                                title:"Широкий коридор", 
+                                comment:"Ширина коридоров в номере не менее 91 см."
+                                })
+                            +checkboxItem({
+                                id: "hz", 
+                                title:"Помощник для инвалидов", 
+                                comment:"На 1 этаже вас встретит специалист  и проводит до номера."
+                                })
+                    //div
+                        +checkboxItem_2({id:"figa",withoutComent:"true"})
+                        +expandList({id:"expand_1"})
+                    //div
+                        span(class="common__inputTitle") удобства номера
+                        input(class="common__inputDropdown")
 
 
-                //+dropdownContainer({id:"RR_1", defaultValue:"Удобства номера", leftLabel:"Удобства номера",queryTitle:"quest_count", info:"Комнат;Комната;Комнаты;Комнат;"})
-                    +dropdownItem({  id:"01", title:"спальни", minCount:0, maxCount:5,  queryTitle:"adult", info:"спален;спальня;спальни;спаленых;"})
-                    +dropdownItem({  id:"03", title:"кровати", minCount:0, maxCount:4,      queryTitle:"child", info:"кроватей;кровать;кровати;кроватей;"})
-                    +dropdownItem({  id:"02", title:"ванные комнаты", minCount:0, maxCount:3,  queryTitle:"infant", info:"ванных комнат;ванная комната;ванные комнаты;ванных комнат;"})
-                    +ACPanel({targetId:"DD_1"})
-                //div
-                    input(class="common__inputDropdown" value="дополнительные удобства")
+                    //+dropdownContainer({id:"RR_1", defaultValue:"Удобства номера", leftLabel:"Удобства номера",queryTitle:"quest_count", info:"Комнат;Комната;Комнаты;Комнат;"})
+                        +dropdownItem({  id:"01", title:"спальни", minCount:0, maxCount:5,  queryTitle:"adult", info:"спален;спальня;спальни;спаленых;"})
+                        +dropdownItem({  id:"03", title:"кровати", minCount:0, maxCount:4,      queryTitle:"child", info:"кроватей;кровать;кровати;кроватей;"})
+                        +dropdownItem({  id:"02", title:"ванные комнаты", minCount:0, maxCount:3,  queryTitle:"infant", info:"ванных комнат;ванная комната;ванные комнаты;ванных комнат;"})
+                        +ACPanel({targetId:"DD_1"})
+                    //div
+                        input(class="common__inputDropdown" value="дополнительные удобства")
+                            var q = {};
 
+
+
+                div#accept(style={border:"25px solid yellow"})
+                script.
+                    let button = document.getElementById("accept");
+                    button.onclick=function(){
+                        getData();
+                    };
+                    
+                    
+                    
+                    function init(wall_id, button_id){
+                        let tmp1 = document.getElementById(wall_id)
+                        if(tmp1){q.wall=tmp1;}else{console.error("ERROR : wall_id don't exist");return;}
+                        let tmp2 = document.getElementById(button_id)
+                        if(tmp2){q.button=tmp2;}else{console.error("ERROR : button_id don't exist");return;}
+
+                        q.button.onclick = function(){getData();};
+                    }
+                    function getData(){
+                        //console.error(button);
+                        let form = filter;// document.querySelector("[name=mainForm]");
+                        //console.log(form);
+                        let data = new FormData(form);
+                        console.log(data);
+                        let hz = new XMLHttpRequest();
+                        hz.open("POST","http://localhost:80/AJAX_SAMPLE.php");
+                        hz.send(data);
+                        hz.onload = function(){
+                            if(hz.status!=200){
+                                console.error(`Error : ${hz.status} : ${hz.statusText}`);
+                            }
+                            else{
+                                console.log(`Recive ans, ans.length = ${hz.response.length} byte`);
+                                console.log(hz.response);
+                                //q.wall.innerHTML = hz.response;
+                            }
+                        }
+                    }
             //grid room prevews
             .main
                 //include ../modules/main_1.pug

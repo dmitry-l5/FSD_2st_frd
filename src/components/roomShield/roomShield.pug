@@ -2,6 +2,30 @@
 mixin roomShield()
     -
     .roomShield(aux-use_as="Viewer_ReferanceShield")
-        .imageBox 123
-        .scdRow 456
-        .trdRow 789
+        .fstRow
+            .imagePanel( aux-use_as="Viewer_imagePanel")
+                img(src="", alt="default", srcset="")
+                img(src="", alt="default", srcset="")
+                img(src="", alt="default", srcset="")
+                img(src="", alt="default", srcset="")
+        .scdRow
+            .numberPanel(aux-use_as="Viewer_numberPanel")
+                span №
+                span(aux-use_as="Viewer_numberTarget") 123
+            .luxePanel(  aux-use_as="Viewer_luxePanel")
+                span(  aux-use_as="Viewer_luxeTarget") люкс
+            .costPanel(  aux-use_as="Viewer_costPanel") 
+                span(aux-use_as="Viewer_costTarget") 9 900
+                span P в сутки
+        .trdRow
+            .starsPanel( aux-use_as="Viewer_starsPanel")
+                span *
+                span *
+                span *
+                span *
+                span *
+            .comentPanel(aux-use_as="Viewer_comentPanel")
+                span(aux-use_as="Viewer_comentTarget") 145
+                span  коментариев
+
+

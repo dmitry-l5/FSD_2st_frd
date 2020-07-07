@@ -1,20 +1,71 @@
 .roomShield{
     //background-color: rgb(0, 255, 0);
     border: 1px solid black;
-    height: 250px;
-    //width: 100%;
+
     display: flex;
     flex-direction: column;
-    & > .imageBox{
-        flex:  1 1 60%;
+    & > .fstRow{
+        flex:  1 1 100%;
         background-color: blueviolet;
+        & .imagePanel{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            @keyframes fade {
+                0% {opacity: 0}
+                11.11% {opacity: 1;}
+                33.33% {opacity: 0;}
+                44.44% {opacity: 1;}
+                100% {opacity: 0;}
+            }
+            & img{
+                position: absolute;
+                display: inline-block;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                animation-name: fade;
+                animation-duration: 40s;
+                animation-iteration-count: infinite;
+            }
+            :nth-last-child(1){
+                animation-delay: 0s;
+            }
+            :nth-last-child(2){
+                animation-delay: 10s;
+            }
+            :nth-last-child(3){
+                animation-delay: 20s;
+            }
+            :nth-last-child(4){
+                animation-delay: 30s;
+            }
+        }
     }
     & > .scdRow{
-        flex:  1 1 20%;
+        padding-left: 1em;
+        padding-right: 1em;
+        flex:  0 0 2em;
+        margin-bottom: auto;
         background-color: chocolate;;
+        display: flex;
+        align-items: center;
+        & > .costPanel{
+            margin-left: auto;
+        }
     }
     & > .trdRow{
-        flex:  1 1 20%;
+        padding-left: 1em;
+        padding-right: 1em;
+        flex:  0 0 2em;
+        
         background-color: darkgoldenrod;
+        display: flex;
+        align-items: center;
+        & > .comentPanel{
+            margin-left: auto;
+        }
     }
 }
