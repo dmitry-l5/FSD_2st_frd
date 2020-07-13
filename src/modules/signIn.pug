@@ -1,0 +1,14 @@
+mixin signIn()
+    -
+    .signIn
+        form
+            .loginPlace
+                label
+                    .title Войти
+                    input(type="email", name="", placeholder="Email")
+                    input(type="password", name="", placeholder="Пароль")
+            .submitPlace
+                +blueSubmit({title:"Войти"})
+            .haveAccPlace
+                .haveAccText Нет аккаунта Toxin?
+                +whiteLink({title:"Создать"})

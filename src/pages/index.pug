@@ -13,6 +13,8 @@ include ../components/counterItem/counterItem
 include ../components/itemGlue/itemGlue
 include ../components/clearAcceptPanel/clearAcceptPanel
 include ../components/blueSubmit/blueSubmit
+include ../modules/signUp
+include ../modules/signIn
 //include ../components/enterBox/enterBox
 html
     head
@@ -52,18 +54,51 @@ html
                         img(src="../images/image 3.png", alt="DEFAULT", srcset="")
                     .rightBottoom_text
                         span Лучшие номера для вашей работы, отдыха и просто вдохновения
+                    .screen#screen
+                        .signup#signUp
+                            +signUp()
+                        .signin#signIn
+                            +signIn()
+                        script.
+                            document.getElementById("screen").style.display = "none"
+                            document.addEventListener("keyup",
+                            (event)=>{
+                                switch(event.code){
+                                    case "KeyQ":
+                                        document.getElementById("screen").style.display = "none"
+
+
+                                    break;
+                                    case "KeyW":
+                                        document.getElementById("screen").style.display = "flex";
+                                        document.getElementById("signIn").style.display = "none";
+                                        document.getElementById("signUp").style.display = "block";
+
+                                    break;
+                                    case "KeyE":
+                                        document.getElementById("screen").style.display = "flex";
+                                        document.getElementById("signUp").style.display = "none"
+                                        document.getElementById("signIn").style.display = "block";
+                                    break;
+                                    default:
+                                        console.log("event.code");
+                                        console.log(event.code);
+                                    break;
+                                }
+                            });
+                         
                     form(action="searchRoom.html", method="get")
                         .shield
                             .shield__title
                                 span Найдём номера под ваши пожелания
                             .dateContainer
-                                +dropdownList({arrow:"false", block:"true"})
+                                +dropdownList({arrow:false, block:true})
                                     .calendar__headContainer
                                         +inputPreviewBox({id:"edc", targetId:"t1", title:"Прибытие"})
                                         +inputPreviewBox({id:"cde", targetId:"t2", title:"Выезд"})
                                     +calendar_2({id:"mainCalendar", arrival:"t1", departure:"t2"})
                             .guestsContainer
-                                +dropdownList({arrow:"false", block:"true"})
+                                +dropdownList({arrow:false, block:true})
                                     +inputPreviewBox({id:"guestBox", targetId:"guestPreview", title:"Гости"})
                                     +counterItem({id:"adult",
                                       title:"Взрослые",

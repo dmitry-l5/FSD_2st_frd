@@ -1,0 +1,131 @@
+.signUp{
+    padding: 40px 30px 40px 30px; 
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    .signup__title{
+        text-align: left;
+        margin: 0 0 15px 0;
+        @extend %h1_text;
+    }
+
+    & .genderPlace{
+        margin: 15px 0 25px 0;
+        &  label{
+            @extend %link_text;
+        }
+        & > *{
+            margin-right: 5px;
+        }
+    }
+    & .dataPlace{
+        @extend %h3_text;
+    }
+    & .loginPlace{
+        @extend %h3_text;
+        margin: 10px 0 0 0;
+    }
+    & input[type="text"],
+    & input[type="date"],
+    & input[type="password"],
+    & input[type="email"]{
+        cursor: pointer;
+        padding-left: 10px ;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        @extend %link_text;
+        color: $dark-75_color;
+        @extend %commonInput;
+    }
+    & input[type="text"]::placeholder,
+    & input[type="date"]::placeholder,
+    & input[type="password"]::placeholder,
+    & input[type="email"]::placeholder{
+        @extend %link_text;
+        color: $dark-50_color;
+    }   
+    & input[type="text"]:hover,
+    & input[type="date"]:hover,
+    & input[type="password"]:hover,
+    & input[type="email"]:hover{
+        box-shadow: 10 10 10px rgb(0, 0, 0);
+        background-color: rgba(0, 225, 255, 0.03);
+    }   
+    & input[type="radio"]{
+        color: red;
+    }
+
+}
+.submitPlace{
+    margin: 25px 0 25px 0;
+}
+.haveAccPlace{
+    margin: 40px 0 20px 0;
+    display: flex;
+    align-items: center;
+    & > *{
+    display: inline-block;
+    }
+    & > * + *{
+        margin-left: auto;
+    }
+}
+.haveAccText{
+    display: inline-block;
+    vertical-align: top;
+    @extend %link_text;
+    color:$dark-75_color;
+}
+
+.toogleTitle{
+    display: inline-block;
+    vertical-align: top;
+    @extend %link_text;
+    color:$dark-75_color;
+}
+.spamPlace{
+    margin: 10px 0 10px 0;
+    & > * + * {
+    margin: 0 10px 0 10px;
+    }
+}
+
+
+.toogleInput{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    & > label{
+        cursor: inherit;
+        width: 40px;
+        height: 20px;
+        position: relative;
+        display: inline-block;
+        border: 1px solid $primary_color;
+        border-radius: 10px;
+        & > input[type="checkbox"]{
+            opacity: 0;
+        }
+
+        & > .background{
+            display: block;
+            
+        }
+        
+        & >.slider{
+            position: absolute;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: $dark-25_color;
+            border-radius: 8px;
+            top: 1px;
+            left: 1px;
+            transition: 0.5s;
+        }
+        & input:checked + .slider{
+            background-color: $gradient_1_color;
+            transform: translate(20px);
+        }
+    }
+}

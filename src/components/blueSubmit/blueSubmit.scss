@@ -7,7 +7,7 @@
     align-items: center;
     border-radius: 20px;
     @extend %h3_text;
-    background: linear-gradient(180deg, $primary_color, 0%, $gradient_1_color 100%);
+    background: linear-gradient(0deg, $gradient_1_color, $primary_color);
     color:$white_color;
     & > input{
         position: absolute;
@@ -28,4 +28,7 @@
         flex: 0 0 40px;
         text-align: center;
     }
+}
+.blueSubmit:hover{
+    background: linear-gradient(180deg, $primary_color, $primary_color);
 }

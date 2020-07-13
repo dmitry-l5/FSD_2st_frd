@@ -20,6 +20,7 @@ include ../components/maskedDropdown/maskedDropdown
 include ../components/viewer/viewer
 include ../components/roomShield/roomShield
 include ../components/enterBox/enterBox
+include ../components/pageIndexer/pageIndexer
 
 head
     //link(rel="stylesheet" href="common.scss")
@@ -203,7 +204,7 @@ body
                 
                 +viewer()
                     +roomShield()
-
+                +pageIndexer()
 
                 //+checkboxContainer({id:"testCheckbox_1"})
                 //    +checkboxItem({id:"qwe", check: "da", name:"one"})

@@ -1,0 +1,36 @@
+mixin signUp()
+    -
+    .signUp
+        .signup__title Регистрация аккаунта
+        form(action="#", method="post")
+            input(type="text", name="", placeholder="Имя")
+            input(type="text", name="", placeholder="Фамилия")
+            .genderPlace
+                input#male(type="radio", name="gender")
+                label(for="male") Мужчина
+                input#female(type="radio", name="gender")
+                label(for="female") Женщина
+            .dataPlace
+                label Дата рождения
+                input(type="date", name="")
+            .loginPlace
+                label Данные для входа в сервис
+                    input(type="email", name="", placeholder="Email")
+                    input(type="password", name="", placeholder="Пароль")
+            .spamPlace
+                +toogleInput()
+                .toogleTitle Получать спецпредложения
+            .submitPlace
+                +blueSubmit({title:"перейти к оплате"})
+            .haveAccPlace
+                .haveAccText Уже есть аккаунт на Toxin
+                +whiteLink({title:"Войти"})
+
+mixin toogleInput()
+    -
+    .toogleInput
+        label
+            .background
+            input(type="checkbox")
+            .slider
+            
